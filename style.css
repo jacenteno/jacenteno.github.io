@@ -103,17 +103,27 @@ h3 {
 /* Componentes */
 .skip-link {
   position: absolute;
-  top: -4rem;
-  left: 0;
+  left: -9999px; /* Hide off-screen by default */
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999; /* Ensure it's behind other content */
   background: var(--brand);
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: var(--radius);
-  z-index: 100;
 }
 
 .skip-link:focus {
+  position: static; /* Make it visible and part of the flow on focus */
+  width: auto;
+  height: auto;
+  overflow: visible;
+  z-index: 100; /* Bring it to the front */
+  left: 0;
   top: 1rem;
+  margin-left: 1rem; /* Add some margin for better appearance */
 }
 
 .topbar {
