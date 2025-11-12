@@ -1,113 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Jorge Centeno – Desarrollador Kotlin · Swift · Django</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portafolio de Jorge Centeno: apps iOS en Swift, Android/Kotlin y backends con Django.">
-  <meta name="color-scheme" content="light dark">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="manifest" href="manifest.json">
-  <meta property="og:title" content="Jorge Centeno – Dev Mobile & Backend">
-  <meta property="og:description" content="Portafolio de Jorge Centeno: Swift, Kotlin, Django.">
-  <meta property="og:image" content="https://jac.dev/og-image.jpg">
-  <meta property="og:type" content="website">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Jorge Centeno",
-    "jobTitle": "Desarrollador de Software",
-    "url": "https://jac.dev",
-    "sameAs": ["https://github.com/tu-usuario","https://linkedin.com/in/tu-usuario"]
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jorge Centeno - Portafolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Saltar al contenido</a>
-
-  <header class="topbar">
-    <div class="wrapper">
-      <button class="theme-toggle" aria-label="Cambiar tema">
-        <svg aria-hidden="true" width="24" height="24"><use href="#icon-sun"/></svg>
-      </button>
-    </div>
-  </header>
-
-  <main id="main" class="wrapper flow">
-    <section class="hero">
-      <picture>
-        <source srcset="assets/jac2025.avif" type="image/avif">
-        <source srcset="assets/jac2025.webp" type="image/webp">
-        <img src="assets/jac2025.png" width="240" height="240" alt="Jorge Centeno" class="avatar">
-      </picture>
-      <h1>Jorge Centeno</h1>
-      <p class="tagline">Desarrollador de Software <span aria-hidden="true">·</span> Kotlin, Swift & Django</p>
-      <div class="cluster">
-        <a class="btn" href="docs/Resumen JAC -Mayo-2025-Esp.pdf" download>Descargar CV</a>
-        <a class="btn btn--ghost" href="mailto:jorge@jac.dev">Contactar</a>
-      </div>
-    </section>
-
-    <section id="sobre-mi" aria-labelledby="sobre-mi-title">
-      <h2 id="sobre-mi-title">Sobre Mí</h2>
-      <p>Soy un desarrollador de software apasionado por crear aplicaciones móviles y soluciones de backend eficientes. Con experiencia en Kotlin, Swift y Django, disfruto construyendo productos sólidos y escalables. Me encanta aprender nuevas tecnologías y enfrentar desafíos técnicos.</p>
-    </section>
-
-    <section id="proyectos" aria-labelledby="proyectos-title">
-      <h2 id="proyectos-title">Proyectos destacados</h2>
-
-      <article class="card">
-        <div class="card__content">
-          <h3>iOsSig</h3>
-          <p>App iOS para firma electrónica con SwiftUI + Combine. Validación biométrica y almacenamiento seguro en Keychain.</p>
-          <a class="link-arrow" href="https://github.com/tu-usuario/iOsSig" target="_blank" rel="noopener">Ver código</a>
+    <header>
+        <div class="container">
+            <img src="images/tu-foto.jpg" alt="Foto de Jorge Centeno" class="profile-photo">
+            <h1>Jorge Centeno</h1>
+            <p>Desarrollador de Software | Kotlin, Swift & Django</p>
         </div>
-        <div class="card__tags">
-          <span class="tag">Swift</span><span class="tag">SwiftUI</span>
-        </div>
-      </article>
+    </header>
 
-      <article class="card">
-        <div class="card__content">
-          <h3>MoneyFlow</h3>
-          <p>App multiplataforma Kotlin Multiplatform Mobile con Jetpack Compose y SwiftUI compartiendo lógica de negocio.</p>
-          <a class="link-arrow" href="https://github.com/tu-usuario/MoneyFlow" target="_blank" rel="noopener">Ver código</a>
-        </div>
-        <div class="card__tags">
-          <span class="tag">Kotlin</span><span class="tag">KMM</span>
-        </div>
-      </article>
+    <main class="container">
+        <section id="about">
+            <h2>Sobre Mí</h2>
+            <p>
+                Aquí va tu resumen profesional. Habla sobre tu pasión por la tecnología, 
+                tu experiencia creando aplicaciones móviles y de backend, y tus objetivos profesionales.
+            </p>
+        </section>
 
-      <article class="card">
-        <div class="card__content">
-          <h3>Orion API</h3>
-          <p>Backend RESTful con Django 5, PostgreSQL y Docker. Documentación automática con drf-spectacular.</p>
-          <a class="link-arrow" href="https://github.com/tu-usuario/OrionAPI" target="_blank" rel="noopener">Ver código</a>
-        </div>
-        <div class="card__tags">
-          <span class="tag">Django</span><span class="tag">DRF</span>
-        </div>
-      </article>
-    </section>
-  </main>
+        <section id="projects">
+            <h2>Mis Proyectos</h2>
+            
+            <div class="project-category">
+                <h3>Proyectos en Swift (iOS)</h3>
+                <div class="project-card">
+                    <h4>Nombre del Proyecto 1 (ej. iOsSig)</h4>
+                    <p>Descripción breve del proyecto. ¿Qué problema resuelve? ¿Qué tecnologías usaste?</p>
+                    <a href="URL_DEL_PROYECTO_EN_GITHUB" target="_blank">Ver en GitHub</a>
+                </div>
+            </div>
 
-  <footer class="wrapper">
-    <div class="social-links">
-      <a href="https://github.com/jacenteno" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://linkedin.com/in/jorge-centeno" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <p>© <span id="year"></span> Jorge Centeno – built with ❤️ and plain CSS</p>
-  </footer>
+            <div class="project-category">
+                <h3>Proyectos en Kotlin (Android/Multiplatform)</h3>
+                <div class="project-card">
+                    <h4>Nombre del Proyecto 2</h4>
+                    <p>Descripción breve del proyecto.</p>
+                    <a href="URL_DEL_PROYECTO_EN_GITHUB" target="_blank">Ver en GitHub</a>
+                </div>
+            </div>
 
-  <!-- SVG sprite para iconos -->
-  <svg aria-hidden="true" style="width:0;height0;position:absolute">
-    <symbol id="icon-sun" viewBox="0 0 24 24"><path d="M12 3V4M12 20V21M5 12H4M20 12H21M18.36 5.64L17.66 6.34M6.34 17.66L5.64 18.36M18.36 18.36L17.66 17.66M6.34 6.34L5.64 5.64M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z"/></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M12 3C7.03 3 3 7.03 3 12C3 16.97 7.03 21 12 21C16.97 21 21 16.97 21 12C21 7.03 16.97 3 12 3ZM12 19C8.13 19 5 15.87 5 12C5 8.13 8.13 5 12 5C15.87 5 19 8.13 19 12C19 15.87 15.87 19 12 19Z"/></symbol>
-  </svg>
+            <div class="project-category">
+                <h3>Proyectos en Django (Python)</h3>
+                <div class="project-card">
+                    <h4>Nombre del Proyecto 3</h4>
+                    <p>Descripción breve del proyecto.</p>
+                    <a href="URL_DEL_PROYECTO_EN_GITHUB" target="_blank">Ver en GitHub</a>
+                </div>
+            </div>
+        </section>
 
-  <script src="app.js" defer></script>
+        <section id="contact">
+            <h2>Contacto y Resumen</h2>
+            <p>Puedes contactarme a través de mi correo electrónico o descargar mi resumen para más detalles.</p>
+            <a href="docs/tu-resumen.pdf" class="button" download>Descargar Resumen (CV)</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Jorge Centeno. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
