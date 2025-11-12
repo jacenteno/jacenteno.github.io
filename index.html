@@ -2,175 +2,1963 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Jorge Centeno – Desarrollador Django · Kotlin · Swift </title>
+  <title>Jorge Centeno · Full-Stack Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portafolio de Jorge Centeno: apps iOS en Swift, Android/Kotlin y backends con Django.">
-  <link rel="stylesheet" href="style.css">
-  <meta property="og:title" content="Jorge Centeno – Dev Mobile & Backend">
-  <meta property="og:description" content="Portafolio de Jorge Centeno: Swift, Kotlin, Django.">
-  <meta property="og:image" content="https://jac.dev/og-image.jpg">
-  <meta property="og:type" content="website">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Jorge Centeno",
-    "jobTitle": "Desarrollador de Software",
-    "url": "https://jac.dev",
-    "sameAs": ["https://github.com/jacenteno","https://linkedin.com/in/jacenteno"]
-  }
-  </script>
+  <meta name="description" content="Full-Stack Engineer especializado en arquitecturas móviles nativas y backends escalables. Swift · Kotlin · Django">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-dark: #0a0e27;
+      --bg-card: #151932;
+      --bg-elevated: #1a1f3a;
+      --text-primary: #e4e4e7;
+      --text-secondary: #a1a1aa;
+      --accent-blue: #3b82f6;
+      --accent-purple: #8b5cf6;
+      --accent-pink: #ec4899;
+      --accent-green: #10b981;
+      --accent-orange: #f59e0b;
+      --border: rgba(255, 255, 255, 0.1);
+      --glow-blue: rgba(59, 130, 246, 0.4);
+      --glow-purple: rgba(139, 92, 246, 0.4);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Animated Background */
+    .bg-gradient {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    .gradient-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: float 20s infinite ease-in-out;
+    }
+
+    .blob-1 {
+      width: 500px;
+      height: 500px;
+      background: var(--accent-blue);
+      top: -200px;
+      left: -200px;
+      animation-delay: 0s;
+    }
+
+    .blob-2 {
+      width: 400px;
+      height: 400px;
+      background: var(--accent-purple);
+      top: 50%;
+      right: -150px;
+      animation-delay: 5s;
+    }
+
+    .blob-3 {
+      width: 450px;
+      height: 450px;
+      background: var(--accent-pink);
+      bottom: -200px;
+      left: 30%;
+      animation-delay: 10s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(50px, -50px) scale(1.1); }
+      66% { transform: translate(-50px, 50px) scale(0.9); }
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 20px 0;
+      backdrop-filter: blur(20px);
+      background: rgba(10, 14, 39, 0.8);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-blue);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      padding: 100px 40px 80px;
+    }
+
+    .hero-content {
+      max-width: 1400px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(40px, 8vw, 80px);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+
+    /* Hero Profile Section */
+    .hero-profile {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .profile-image-container {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .profile-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 30px;
+      object-fit: cover;
+      border: 3px solid var(--accent-blue);
+      box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .profile-image:hover {
+      transform: scale(1.05) rotate(-2deg);
+      box-shadow: 0 15px 60px rgba(59, 130, 246, 0.5);
+    }
+
+    .status-ring {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      width: 28px;
+      height: 28px;
+      background: var(--bg-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid var(--bg-dark);
+    }
+
+    .status-dot {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      width: 16px;
+      height: 16px;
+      background: #10b981;
+      border-radius: 50%;
+      animation: pulse-status 2s ease-in-out infinite;
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+
+    @keyframes pulse-status {
+      0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      }
+      50% {
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+      }
+    }
+
+    .profile-info h1 {
+      font-size: 42px;
+      font-weight: 800;
+      margin: 0 0 10px 0;
+      letter-spacing: -1px;
+    }
+
+    .role-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent-blue);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-headline {
+      font-size: clamp(32px, 6vw, 56px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 15px;
+      letter-spacing: -1px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient-shift 5s ease infinite;
+    }
+
+    @keyframes gradient-shift {
+      0%, 100% { filter: hue-rotate(0deg); }
+      50% { filter: hue-rotate(30deg); }
+    }
+
+    .hero-text .subtitle {
+      font-size: clamp(18px, 3vw, 28px);
+      color: var(--text-secondary);
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .highlight {
+      color: var(--accent-blue);
+      font-weight: 600;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      line-height: 1.8;
+      max-width: 600px;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 16px 32px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      color: white;
+      box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 50px rgba(59, 130, 246, 0.5);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 2px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-blue);
+      background: var(--bg-elevated);
+    }
+
+    /* Stack Visualization */
+    .stack-visual {
+      position: relative;
+    }
+
+    .stack-container {
+      position: relative;
+      height: 600px;
+    }
+
+    .stack-layer {
+      position: absolute;
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      backdrop-filter: blur(20px);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .stack-layer:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: var(--accent-blue);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      z-index: 10 !important;
+    }
+
+    .layer-mobile {
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+    }
+
+    .layer-backend {
+      top: 180px;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+    }
+
+    .layer-data {
+      top: 360px;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(245, 158, 11, 0.1));
+    }
+
+    .layer-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .layer-icon {
+      font-size: 32px;
+    }
+
+    .layer-title {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .layer-tech {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tech-tag {
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .tech-tag:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .tech-ios { color: #3b82f6; }
+    .tech-android { color: #10b981; }
+    .tech-backend { color: #8b5cf6; }
+    .tech-data { color: #f59e0b; }
+
+    /* Stats Section */
+    .stats {
+      padding: 80px 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stats-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .stat-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-blue);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .stat-number {
+      font-size: 48px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    /* Projects Section */
+    .projects {
+      padding: 80px 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .projects-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 60px;
+      letter-spacing: -1px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent-blue);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+    }
+
+    .project-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .project-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+
+    .project-card h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .project-card p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .project-features {
+      margin: 20px 0;
+    }
+
+    .project-features ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .project-features li {
+      padding-left: 25px;
+      position: relative;
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    .project-features li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent-blue);
+      font-weight: bold;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-weight: 600;
+      transition: gap 0.3s;
+    }
+
+    .project-link:hover {
+      gap: 12px;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 120px 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 80px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-container::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .contact-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      color: var(--text-secondary);
+      font-size: 18px;
+      margin-bottom: 50px;
+      line-height: 1.7;
+    }
+
+    .contact-methods {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
+      text-align: left;
+    }
+
+    .contact-method {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 25px;
+      transition: all 0.3s;
+      display: flex;
+      align-items: start;
+      gap: 15px;
+    }
+
+    .contact-method:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-blue);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .method-icon {
+      font-size: 32px;
+      flex-shrink: 0;
+    }
+
+    .method-info h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .method-info a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s;
+      display: block;
+      word-break: break-all;
+    }
+
+    .method-info a:hover {
+      color: var(--accent-blue);
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* AI Section Styles */
+    .ai-section {
+      padding: 120px 40px;
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(180deg, transparent 0%, rgba(139, 92, 246, 0.03) 50%, transparent 100%);
+    }
+
+    .ai-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .ai-content {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ai-content::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(60px);
+      animation: pulse-glow 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+
+    .ai-header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ai-icon-large {
+      font-size: 100px;
+      margin-bottom: 20px;
+      animation: float-ai 4s ease-in-out infinite;
+      display: inline-block;
+      filter: drop-shadow(0 10px 30px rgba(139, 92, 246, 0.5));
+    }
+
+    @keyframes float-ai {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-15px) rotate(-5deg); }
+      75% { transform: translateY(-10px) rotate(5deg); }
+    }
+
+    .ai-subtitle {
+      font-size: 20px;
+      color: var(--text-secondary);
+      font-weight: 500;
+      margin-top: 10px;
+    }
+
+    .ai-intro {
+      font-size: 18px;
+      line-height: 1.9;
+      color: var(--text-secondary);
+      max-width: 900px;
+      margin: 0 auto 60px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ai-intro strong {
+      color: var(--accent-purple);
+      font-weight: 700;
+    }
+
+    /* LLM Providers */
+    .llm-providers {
+      margin-bottom: 70px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .providers-title {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 35px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .providers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .provider-card {
+      background: var(--bg-elevated);
+      border: 2px solid var(--border);
+      border-radius: 24px;
+      padding: 35px;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      animation: slideInUp 0.6s ease-out;
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .provider-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      transition: transform 0.5s;
+      transform: scaleX(0);
+    }
+
+    .deepseek-card::before { background: linear-gradient(90deg, #3b82f6, #06b6d4); }
+    .ollama-card::before { background: linear-gradient(90deg, #10b981, #34d399); }
+    .gemini-card::before { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+    .openai-card::before { background: linear-gradient(90deg, #ec4899, #f472b6); }
+
+    .provider-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .provider-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: var(--accent-purple);
+      box-shadow: 0 25px 70px rgba(139, 92, 246, 0.4);
+    }
+
+    .provider-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .provider-icon {
+      font-size: 40px;
+      animation: bounce-icon 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce-icon {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .provider-card h4 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .provider-card p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .provider-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .mini-badge {
+      padding: 4px 10px;
+      background: rgba(139, 92, 246, 0.15);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent-purple);
+      transition: all 0.3s;
+    }
+
+    .mini-badge:hover {
+      background: rgba(139, 92, 246, 0.3);
+      transform: translateY(-2px);
+    }
+
+    /* Capabilities */
+    .ai-capabilities {
+      margin-bottom: 70px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .capabilities-title {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 35px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .ai-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .animated-card {
+      animation: fadeInScale 0.6s ease-out;
+      animation-fill-mode: backwards;
+    }
+
+    .animated-card:nth-child(1) { animation-delay: 0.1s; }
+    .animated-card:nth-child(2) { animation-delay: 0.2s; }
+    .animated-card:nth-child(3) { animation-delay: 0.3s; }
+    .animated-card:nth-child(4) { animation-delay: 0.4s; }
+    .animated-card:nth-child(5) { animation-delay: 0.5s; }
+    .animated-card:nth-child(6) { animation-delay: 0.6s; }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .ai-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ai-card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .ai-card:hover::after {
+      opacity: 1;
+    }
+
+    .ai-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent-purple);
+      box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+    }
+
+    .ai-card-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      display: inline-block;
+      animation: rotate-icon 3s ease-in-out infinite;
+    }
+
+    @keyframes rotate-icon {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(10deg); }
+    }
+
+    .ai-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+      position: relative;
+      z-index: 1;
+    }
+
+    .ai-card p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-size: 14px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(139, 92, 246, 0.2);
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink));
+      border-radius: 10px;
+      animation: fillProgress 2s ease-out;
+      box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+    }
+
+    @keyframes fillProgress {
+      from { width: 0; }
+    }
+
+    /* Tech Stack */
+    .ai-tech-stack {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ai-tech-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: var(--accent-purple);
+      text-align: center;
+    }
+
+    .ai-tech-categories {
+      display: grid;
+      gap: 30px;
+    }
+
+    .tech-category {
+      animation: slideInLeft 0.6s ease-out;
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .category-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .ai-tech-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tech-ai {
+      color: var(--accent-purple);
+      border-color: rgba(139, 92, 246, 0.3);
+      transition: all 0.3s;
+    }
+
+    .tech-ai:hover {
+      background: rgba(139, 92, 246, 0.2);
+      border-color: var(--accent-purple);
+      transform: translateY(-3px);
+    }
+
+    .glow-tag {
+      animation: glow-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes glow-pulse {
+      0%, 100% { box-shadow: 0 0 5px rgba(139, 92, 246, 0.3); }
+      50% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.6); }
+    }
+
+    /* Real World Applications */
+    .ai-applications {
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .applications-title {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 35px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .applications-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .application-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 25px;
+      align-items: start;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      transition: all 0.4s;
+      animation: slideInRight 0.6s ease-out;
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .application-item:hover {
+      transform: translateX(10px);
+      border-color: var(--accent-green);
+      box-shadow: 0 10px 40px rgba(16, 185, 129, 0.2);
+    }
+
+    .app-number {
+      font-size: 48px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+    }
+
+    .app-content h4 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+
+    .app-content p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    /* Philosophy Quote */
+    .ai-quote {
+      position: relative;
+      padding: 50px;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.15));
+      border-radius: 24px;
+      border: 2px solid rgba(139, 92, 246, 0.3);
+      z-index: 1;
+      box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
+    }
+
+    .quote-icon {
+      position: absolute;
+      top: 30px;
+      left: 40px;
+      font-size: 100px;
+      color: var(--accent-purple);
+      opacity: 0.15;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .ai-quote p {
+      position: relative;
+      z-index: 1;
+      font-size: 20px;
+      line-height: 1.9;
+      color: var(--text-primary);
+      font-style: italic;
+      margin: 0 0 20px 0;
+    }
+
+    .quote-author {
+      text-align: right;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent-purple);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      position: relative;
+      z-index: 1;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .social-links a {
+      width: 50px;
+      height: 50px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 20px;
+      transition: all 0.3s;
+    }
+
+    .social-links a:hover {
+      background: var(--accent-blue);
+      border-color: var(--accent-blue);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .stack-container {
+        height: auto;
+      }
+
+      .stack-layer {
+        position: relative !important;
+        top: auto !important;
+        margin-bottom: 20px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        padding: 0 20px;
+      }
+
+      .nav-links {
+        gap: 15px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 120px 20px 60px;
+      }
+
+      .hero-profile {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile-info h1 {
+        font-size: 32px;
+      }
+
+      .contact-container {
+        padding: 60px 30px;
+      }
+
+      .contact-methods {
+        grid-template-columns: 1fr;
+      }
+
+      .ai-content {
+        padding: 40px 30px;
+      }
+
+      .providers-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ai-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .application-item {
+        grid-template-columns: 60px 1fr;
+        gap: 20px;
+      }
+
+      .app-number {
+        font-size: 36px;
+      }
+
+      .ai-quote {
+        padding: 40px 25px;
+      }
+
+      .quote-icon {
+        font-size: 60px;
+        top: 20px;
+        left: 20px;
+      }
+
+      .ai-quote p {
+        font-size: 16px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .delay-2 { animation-delay: 0.2s; opacity: 0; }
+    .delay-3 { animation-delay: 0.3s; opacity: 0; }
+    .delay-4 { animation-delay: 0.4s; opacity: 0; }
+
+    /* Skills Graph Section */
+    .skills-graph {
+      padding: 80px 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .skills-graph-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    #graph {
+      width: 100%;
+      height: 600px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--bg-card);
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <!-- Animated Background -->
+  <div class="bg-gradient">
+    <div class="gradient-blob blob-1"></div>
+    <div class="gradient-blob blob-2"></div>
+    <div class="gradient-blob blob-3"></div>
+  </div>
 
-  <header class="topbar">
-    <div class="wrapper">
-      <button class="theme-toggle" aria-label="Cambiar tema">
-        <svg aria-hidden="true" width="24" height="24"><use href="#icon-sun"/></svg>
-        <svg aria-hidden="true" width="24" height="24"><use href="#icon-moon"/></svg>
-      </button>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">JC</div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#ia">IA & LLMs</a></li>
+        <li><a href="#conferencias">Conferencias</a></li>
+        <li><a href="mailto:jorge.centeno@floppyfilms.com">Contacto</a></li>
+      </ul>
     </div>
-  </header>
+  </nav>
 
-  <main id="main" class="wrapper flow">
-    <section class="hero">
-      <picture>
-        <img src="images/jac2025.jpg" width="240" height="240" alt="Jorge Centeno" class="avatar">
-      </picture>
-      <h1>Jorge Centeno</h1>
-      <p class="tagline">Desarrollador de Software <span aria-hidden="true">·</span> Kotlin, Swift & Django</p>
-      <div class="cluster">
-        <a class="btn" href="docs/Resumen JAC -Mayo-2025-Esp.pdf" download>Descargar CV</a>
-        <a class="btn btn--ghost" href="mailto:jorge@jac.dev">Contactar</a>
-      </div>
-    </section>
-
-    <section id="sobre-mi" aria-labelledby="sobre-mi-title">
-      <h2 id="sobre-mi-title">Sobre Mí</h2>
-      <p>Soy un desarrollador de software apasionado por crear aplicaciones móviles y soluciones de backend eficientes. Con experiencia en Kotlin, Swift y Django, disfruto construyendo productos sólidos y escalables. Me encanta aprender nuevas tecnologías y enfrentar desafíos técnicos. Además, tengo experiencia trabajando con Modelos de Lenguaje Grandes (LLM) e Inteligencia Artificial (IA).</p>
-    </section>
-
-    <section id="proyectos" aria-labelledby="proyectos-title">
-      <h2 id="proyectos-title">Proyectos destacados</h2>
-
-      <div class="project-category">
-          <h3>Proyectos en Swift (iOS)</h3>
-          <div class="project-card">
-              <h4>iOsSig - Cliente Móvil para ERP</h4>
-              <p>
-                  Aplicación nativa para iOS construida enteramente con SwiftUI, que funciona como un cliente móvil para el sistema ERP empresarial "SIG". La app empodera a los empleados de las empresas suscritas, permitiéndoles gestionar 
-        operaciones clave como ventas, inventario y clientes directamente desde su iPhone o iPad.
-              </p>
-              <strong>Funcionalidades Clave:</strong>
-              <ul>
-                  <li>Visualización de dashboards de ventas e inventario en tiempo real.</li>
-                  <li>Gestión de pedidos y consulta de la base de datos de clientes.</li>
-                  <li>Escáner de códigos de barras (UPC/EAN) integrado con AVFoundation para búsqueda de productos.</li>
-                  <li>Sistema de configuración dinámico basado en roles de usuario para personalizar la experiencia.</li>
-              </ul>
-              <p>
-                  <strong>Tecnologías Utilizadas:</strong> SwiftUI, Combine, Arquitectura MVVM.
-              </p>
-              <a href="https://github.com/jacenteno/iOsSig" target="_blank" class="button">Ver en GitHub</a>
+  <!-- Hero Section -->
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-profile">
+          <div class="profile-image-container">
+            <img src="images/jac2025.jpg" alt="Jorge Centeno" class="profile-image">
+            <div class="status-ring"></div>
+            <div class="status-dot"></div>
           </div>
-                </div>
-
-      <div class="project-category">
-        <h3>Proyectos en Django</h3>
-        <div class="project-card" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; border: 1px solid #e1e4e8; border-radius: 6px; padding: 24px; max-width: 800px; margin: 20px auto; background-color: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-            <h2 style="border-bottom: 2px solid #0366d6; padding-bottom: 8px; margin-top: 0; color: #0366d6;">Proyecto: DigiPromo - Plataforma de Gestión de Promociones</h2>
-            <p style="font-size: 16px; color: #586069; line-height: 1.6;">
-                <strong>DigiPromo</strong> es una solución web integral desarrollada en Django para la creación, gestión y aplicación de promociones y ofertas. La plataforma está diseñada para optimizar campañas de precios tanto en puntos de venta (POS) físicos como en plataformas de e-commerce, a través de un panel de administración intuitivo y una potente API RESTful.
-            </p>
-            <h3 style="color: #0366d6; border-bottom: 1px solid #e1e4e8; padding-bottom: 4px;">Arquitectura y Componentes Clave</h3>
-            <ul style="line-height: 1.7; color: #24292e;">
-                <li>
-                    <strong>Panel de Administración:</strong> Centro de control para la gestión de promociones, construido con Django Admin y personalizado con el moderno tema <strong>Unfold</strong> para una experiencia de usuario superior.
-                </li>
-                <li>
-                    <strong>API RESTful:</strong> Núcleo del sistema para integraciones. Desarrollada con <strong>Django REST Framework (DRF)</strong>, proporciona endpoints seguros y documentados con <strong>Swagger (drf-yasg)</strong> para la consulta y aplicación de promociones en tiempo real.
-                </li>
-                <li>
-                    <strong>Frontend para Clientes:</strong> Interfaz web para la visualización de ofertas, construida con plantillas de Django y estilizada con <strong>Tailwind CSS</strong> para un diseño moderno y responsivo.
-                </li>
-            </ul>
-            <h3 style="color: #0366d6; border-bottom: 1px solid #e1e4e8; padding-bottom: 4px;">Características Técnicas Destacadas</h3>
-            <ul style="line-height: 1.7; color: #24292e;">
-                <li>
-                    <strong>Flujo de API Optimizado para POS:</strong> Diseño de un flujo de comunicación eficiente que minimiza las llamadas de red, permitiendo a los sistemas POS cachear las promociones del día para una validación local y ultrarrápida durante el escaneo de productos.
-                </li>
-                <li>
-                    <strong>Seguridad Robusta:</strong> Autenticación de API basada en tokens con <strong>Simple JWT</strong>. Implementación de medidas de seguridad como <strong>Throttling (limitación de tasa)</strong> para proteger los endpoints contra abusos.
-                </li>
-                <li>
-                    <strong>Tipos de Promoción Flexibles:</strong> El sistema soporta lógicas de negocio complejas, como ofertas "Lleve X, Pague Y" y promociones de "Precio Fijo", con una arquitectura de modelos extensible.
-                </li>
-            </ul>
-            <h3 style="color: #0366d6; border-bottom: 1px solid #e1e4e8; padding-bottom: 4px;">Stack Tecnológico</h3>
-            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px;">
-                <span style="background-color: #f1f8ff; color: #0366d6; padding: 5px 12px; border-radius: 15px; font-size: 14px;">Python</span>
-                <span style="background-color: #f1f8ff; color: #0366d6; padding: 5px 12px; border-radius: 15px; font-size: 14px;">Django</span>
-                <span style="background-color: #f1f8ff; color: #0366d6; padding: 5px 12px; border-radius: 15px; font-size: 14px;">Django REST Framework</span>
-                <span style="background-color: #f1f8ff; color: #0366d6; padding: 5px 12px; border-radius: 15px; font-size: 14px;">PostgreSQL</span>
-                <span style="background-color: #f1f8ff; color: #0366d6; padding: 5px 12px; border-radius: 15px; font-size: 14px;">Tailwind CSS</span>
-                <span style="background-color: #f1f8ff; color: #0366d6; padding: 5px 12px; border-radius: 15px; font-size: 14px;">JWT</span>
-                <span style="background-color: #f1f8ff; color: #0366d6; padding: 5px 12px; border-radius: 15px; font-size: 14px;">Swagger (drf-yasg)</span>
-            </div>
+          <div class="profile-info">
+            <h1 class="fade-in-up delay-1">Jorge Centeno</h1>
+            <p class="role-badge">Full-Stack y Desarrollador de IA</p>
+          </div>
+        </div>
+        
+        <h2 class="hero-headline fade-in-up delay-2">
+          Construyendo
+          <span class="gradient-text">Ecosistemas Digitales</span>
+          Completos
+        </h2>
+        <p class="subtitle fade-in-up delay-2">
+          <span class="highlight">Desarrollo Móvil Nativo · Backends Escalables · Integración de IA/LLM</span>
+        </p>
+        <p class="fade-in-up delay-3">
+          Especializado en arquitecturas end-to-end: desde aplicaciones iOS nativas en Swift hasta backends robustos con Django, pasando por Android con Kotlin. Integro LLMs (DeepSeek, Ollama, Gemini) para crear experiencias inteligentes. Transformo ideas en productos completos y escalables potenciados por IA.
+        </p>
+        <div class="cta-group fade-in-up delay-4">
+          <a href="docs/Resumen JAC -Mayo-2025-Esp.pdf" class="btn btn-primary" download>
+            📥 Descargar CV
+          </a>
+          <a href="https://wa.me/50766194728" class="btn btn-secondary" target="_blank" rel="noopener">
+            💬 Hablemos
+          </a>
         </div>
       </div>
-      
-            <article class="proyecto-item">
-                <h3>Plataforma de Gestión Comercial (SIG)</h3>
-                <p>
-                    Sistema integral que centraliza la gestión comercial y la relación con clientes. La plataforma incluye módulos clave como un motor de <strong>Promociones
-          </strong>, un sistema de <strong>Lealtad</strong> por puntos, y un <strong>procesador de datos asíncrono</strong> (con Celery) para integrar ventas de sistemas
-          externos.
-                </p>
-                <p>
-                    Toda la lógica de negocio se expone a través de una <strong>API RESTful</strong> robusta, que da servicio a múltiples clientes: una app móvil (React
-          Native/Kotlin), un kiosko de autoservicio y herramientas de análisis de datos.
-                </p>
-      
-                <h4>Tecnologías Destacadas:</h4>
-                <ul>
-                    <li><strong>Backend:</strong> Python, Django, Celery, Redis</li>
-                    <li><strong>API:</strong> Django REST Framework (DRF)</li>
-                    <li><strong>Frontend & Móvil:</strong> React Native, Kotlin (Android), JavaScript</li>
-                    <li><strong>Base de Datos:</strong> PostgreSQL (con vistas y queries complejas)</li>
-                </ul>
-            </article>
-      
-            <article class="card">        <div class="card__content">
-          <h3>iOsSig</h3>
-          <p>App iOS para firma electrónica con SwiftUI + Combine. Validación biométrica y almacenamiento seguro en Keychain.</p>
-          <a class="link-arrow" href="https://github.com/tu-usuario/iOsSig" target="_blank" rel="noopener">Ver código</a>
+
+      <div class="stack-visual">
+        <div class="stack-container">
+          <div class="stack-layer layer-mobile">
+            <div class="layer-header">
+              <div class="layer-icon">📱</div>
+              <div class="layer-title">Mobile Native</div>
+            </div>
+            <div class="layer-tech">
+              <span class="tech-tag tech-ios">Swift</span>
+              <span class="tech-tag tech-ios">SwiftUI</span>
+              <span class="tech-tag tech-android">Kotlin</span>
+              <span class="tech-tag tech-android">Jetpack Compose</span>
+              <span class="tech-tag tech-ios">Combine</span>
+              <span class="tech-tag tech-android">Coroutines</span>
+            </div>
+          </div>
+
+          <div class="stack-layer layer-backend">
+            <div class="layer-header">
+              <div class="layer-icon">⚡</div>
+              <div class="layer-title">Backend & APIs</div>
+            </div>
+            <div class="layer-tech">
+              <span class="tech-tag tech-backend">Django</span>
+              <span class="tech-tag tech-backend">Django REST Framework</span>
+              <span class="tech-tag tech-backend">Python</span>
+              <span class="tech-tag tech-backend">Celery</span>
+              <span class="tech-tag tech-backend">JWT</span>
+            </div>
+          </div>
+
+          <div class="stack-layer layer-data">
+            <div class="layer-header">
+              <div class="layer-icon">🗄️</div>
+              <div class="layer-title">Data & Infrastructure</div>
+            </div>
+            <div class="layer-tech">
+              <span class="tech-tag tech-data">PostgreSQL</span>
+              <span class="tech-tag tech-data">Docker</span>
+              <span class="tech-tag tech-data">AWS</span>
+              <span class="tech-tag tech-data">Git</span>
+            </div>
+          </div>
         </div>
-        <div class="card__tags">
-          <span class="tag">Swift</span><span class="tag">SwiftUI</span>
-        </div>
-      </article>
-
-    
-
-  
-    </section>
-  </main>
-
-  <footer class="wrapper">
-    <div class="social-links">
-      <a href="https://github.com/jacenteno" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://linkedin.com/in/jacenteno" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </div>
-    <p>© <span id="year"></span> Jorge Centeno – </p>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Plataformas Dominadas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">10+</div>
+        <div class="stat-label">Proyectos Completados</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Full-Stack Coverage</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Años de Experiencia</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="proyectos" class="projects">
+    <div class="projects-container">
+      <h2 class="section-title gradient-text">Proyectos Destacados</h2>
+
+      <div class="projects-grid">
+        <!-- iOS Project -->
+        <div class="project-card">
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-icon">📱</div>
+            </div>
+            <h3>iOsSig - ERP Mobile Client</h3>
+            <p>Aplicación nativa iOS que transforma la gestión empresarial en una experiencia móvil fluida. Conecta empleados con sistemas ERP mediante interfaces intuitivas construidas completamente en SwiftUI.</p>
+            
+            <div class="project-features">
+              <strong>Características Clave:</strong>
+              <ul>
+                <li>Dashboards interactivos en tiempo real</li>
+                <li>Escáner de códigos UPC/EAN integrado</li>
+                <li>Arquitectura MVVM + Combine para reactividad</li>
+                <li>Sistema de permisos basado en roles</li>
+              </ul>
+            </div>
+
+            <div class="project-tags">
+              <span class="tech-tag tech-ios">Swift</span>
+              <span class="tech-tag tech-ios">SwiftUI</span>
+              <span class="tech-tag tech-ios">Combine</span>
+              <span class="tech-tag tech-ios">AVFoundation</span>
+            </div>
+
+            <a href="https://github.com/jacenteno/iOsSig" class="project-link" target="_blank" rel="noopener">
+              Ver proyecto →
+            </a>
+          </div>
+        </div>
+
+        <!-- Django Project 1 -->
+        <div class="project-card">
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-icon">🎯</div>
+            </div>
+            <h3>DigiPromo - Promotion Engine</h3>
+            <p>Plataforma web integral para la gestión avanzada de promociones y campañas de precios. Optimiza estrategias comerciales tanto para puntos de venta físicos como e-commerce.</p>
+            
+            <div class="project-features">
+              <strong>Stack Completo:</strong>
+              <ul>
+                <li>Backend robusto con Django + DRF</li>
+                <li>Base de datos PostgreSQL optimizada</li>
+                <li>Autenticación y autorización con JWT</li>
+                <li>Interface moderna con Tailwind CSS</li>
+              </ul>
+            </div>
+
+            <div class="project-tags">
+              <span class="tech-tag tech-backend">Django</span>
+              <span class="tech-tag tech-backend">DRF</span>
+              <span class="tech-tag tech-data">PostgreSQL</span>
+              <span class="tech-tag tech-data">JWT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Django Project 2 -->
+        <div class="project-card">
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-icon">⚡</div>
+            </div>
+            <h3>SIG Platform - Commercial CRM</h3>
+            <p>Sistema empresarial integral que centraliza gestión comercial y CRM. Incluye módulos de promociones, programas de lealtad y procesamiento asíncrono de datos masivos.</p>
+            
+            <div class="project-features">
+              <strong>Arquitectura Completa:</strong>
+              <ul>
+                <li>Backend Django con procesamiento Celery</li>
+                <li>Apps móviles: React Native + Kotlin nativo</li>
+                <li>API REST escalable con documentación automática</li>
+                <li>Sistema de notificaciones push en tiempo real</li>
+              </ul>
+            </div>
+
+            <div class="project-tags">
+              <span class="tech-tag tech-backend">Django</span>
+              <span class="tech-tag tech-backend">Celery</span>
+              <span class="tech-tag tech-android">Kotlin</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Graph Section -->
+  <section id="skills-graph" class="skills-graph">
+    <div class="skills-graph-container">
+      <h2 class="section-title gradient-text">Red de Habilidades</h2>
+      <div id="graph"></div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <div class="contact-container">
+      <div class="contact-content">
+        <h2>¿Listo para Construir Algo Impresionante?</h2>
+        <p>Si tienes un proyecto en mente o simplemente quieres charlar sobre tecnología, no dudes en contactarme. Estoy siempre abierto a nuevas ideas y colaboraciones.</p>
+
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="method-icon">✉️</div>
+            <div class="method-info">
+              <h3>EMAIL</h3>
+              <a href="mailto:jorge.centeno@floppyfilms.com">jorge.centeno@floppyfilms.com</a>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="method-icon">💬</div>
+            <div class="method-info">
+              <h3>WHATSAPP</h3>
+              <a href="https://wa.me/50766194728" target="_blank" rel="noopener">+507 6619-4728</a>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="method-icon">💼</div>
+            <div class="method-info">
+              <h3>LINKEDIN</h3>
+              <a href="https://www.linkedin.com/in/jorge-a-centeno-a2ba5a24/" target="_blank" rel="noopener">/in/jorge-a-centeno-a2ba5a24/</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-links">
+          <!-- Add social media links or other contact buttons here if needed -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Section Styles -->
+  <section id="ia" class="ai-section">
+    <div class="ai-container">
+      <div class="ai-content">
+        <div class="ai-header">
+          <div class="ai-icon-large gradient-text">🧠</div>
+          <h2 class="section-title">IA & LLMs: Mi Enfoque</h2>
+          <p class="ai-subtitle">Integrando Inteligencia Artificial en Soluciones Reales</p>
+        </div>
+
+        <p class="ai-intro">
+          Mi pasión por la Inteligencia Artificial y los Large Language Models (LLMs) me impulsa a explorar y aplicar estas tecnologías para resolver problemas complejos y crear experiencias de usuario innovadoras. Creo firmemente que la IA es una herramienta estratégica para el futuro del desarrollo de aplicaciones, y me especializo en su integración efectiva en arquitecturas robustas.
+          <br><br>
+          <strong>Desde la investigación hasta la implementación, mi objetivo es transformar el potencial de la IA en valor tangible.</strong>
+        </p>
+
+      <!-- Conferences & Workshops -->
+      <div id="conferencias" class="ai-conferences">
+        <h3 class="conferences-title">Conferencias & Talleres</h3>
+        <div class="conference-item animated-card">
+          <div class="conference-icon gradient-text">🎙️</div>
+          <div class="conference-content">
+            <h4>Expositor en CESI 2024</h4>
+            <p>Participación como expositor en CESI 2024, en la Universidad Autónoma de Chiriquí y su sede regional CRUBA (Centro Regional Universitario de Barú), con el tema: "Conociendo las herramientas de IA generativa de Chats, Imágenes, Audio y Videos".</p>
+            <span class="conference-date">2024</span>
+          </div>
+        </div>
+
+        <div class="conference-item animated-card">
+          <div class="conference-icon gradient-text">🎤</div>
+          <div class="conference-content">
+            <h4>Expositor en el VII Congreso CESI (2025)</h4>
+            <p>Participación como expositor en el VII Congreso de Economía, Sociedad e Innovación (CESI), organizado por la Facultad de Economía de la Universidad Autónoma de Chiriquí y su sede regional CRUBA (Centro Regional Universitario de Barú). Taller impartido: "Adaptándonos a las nuevas innovaciones: La IA como tu aliada estratégica para el futuro del desarrollo de las aplicaciones", fomentando la vinculación académica y el desarrollo de una cultura de datos.</p>
+            <span class="conference-date">Octubre 2025</span>
+          </div>
+        </div>
+      </div>
+
+        <!-- LLM Providers -->
+        <div class="llm-providers">
+          <h3 class="providers-title">Modelos y Plataformas con las que Trabajo</h3>
+          <div class="providers-grid">
+            <div class="provider-card deepseek-card animated-card">
+              <div class="provider-header">
+                <div class="provider-icon">✨</div>
+                <h4>DeepSeek</h4>
+              </div>
+              <p>Explorando modelos de código abierto para soluciones personalizadas y eficientes.</p>
+              <div class="provider-badges">
+                <span class="mini-badge">Open-Source</span>
+                <span class="mini-badge">Fine-tuning</span>
+                <span class="mini-badge">Eficiencia</span>
+              </div>
+            </div>
+
+            <div class="provider-card ollama-card animated-card">
+              <div class="provider-header">
+                <div class="provider-icon">🦙</div>
+                <h4>Ollama</h4>
+              </div>
+              <p>Despliegue local de LLMs para privacidad, control y experimentación rápida.</p>
+              <div class="provider-badges">
+                <span class="mini-badge">Local Deployment</span>
+                <span class="mini-badge">Privacy</span>
+                <span class="mini-badge">Flexibilidad</span>
+              </div>
+            </div>
+
+            <div class="provider-card gemini-card animated-card">
+              <div class="provider-header">
+                <div class="provider-icon">♊</div>
+                <h4>Gemini API</h4>
+              </div>
+              <p>Aprovechando la potencia de los modelos multimodales de Google para aplicaciones avanzadas.</p>
+              <div class="provider-badges">
+                <span class="mini-badge">Multimodal</span>
+                <span class="mini-badge">Google AI</span>
+                <span class="mini-badge">Escalabilidad</span>
+              </div>
+            </div>
+
+            <div class="provider-card openai-card animated-card">
+              <div class="provider-header">
+                <div class="provider-icon">🤖</div>
+                <h4>OpenAI API</h4>
+              </div>
+              <p>Integrando modelos líderes como GPT para capacidades de lenguaje de vanguardia.</p>
+              <div class="provider-badges">
+                <span class="mini-badge">GPT Models</span>
+                <span class="mini-badge">NLP</span>
+                <span class="mini-badge">Generación de Texto</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Capabilities -->
+        <div class="ai-capabilities">
+          <h3 class="capabilities-title">Mis Capacidades en IA</h3>
+          <div class="ai-grid">
+            <div class="ai-card animated-card">
+              <div class="ai-card-icon gradient-text">🧠</div>
+              <h3>Integración de LLMs</h3>
+              <p>Implementación de modelos de lenguaje grandes en diversas aplicaciones, desde chatbots hasta análisis de texto avanzado.</p>
+              <div class="progress-bar"><div class="progress-fill" style="width: 95%;"></div></div>
+            </div>
+            <div class="ai-card animated-card">
+              <div class="ai-card-icon gradient-text">🛠️</div>
+              <h3>Desarrollo de Agentes IA</h3>
+              <p>Creación de agentes autónomos capaces de interactuar, aprender y ejecutar tareas complejas.</p>
+              <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+            </div>
+            <div class="ai-card animated-card">
+              <div class="ai-card-icon gradient-text">📊</div>
+              <h3>Análisis de Datos con IA</h3>
+              <p>Uso de técnicas de IA para extraer insights valiosos de grandes volúmenes de datos.</p>
+              <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+            </div>
+            <div class="ai-card animated-card">
+              <div class="ai-card-icon gradient-text">🚀</div>
+              <h3>Optimización de Procesos</h3>
+              <p>Aplicación de IA para automatizar y mejorar la eficiencia de flujos de trabajo empresariales.</p>
+              <div class="progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
+            </div>
+            <div class="ai-card animated-card">
+              <div class="ai-card-icon gradient-text">💡</div>
+              <h3>Consultoría y Estrategia IA</h3>
+              <p>Asesoramiento en la adopción de IA, identificación de oportunidades y desarrollo de hojas de ruta.</p>
+              <div class="progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="ai-tech-stack">
+          <div class="ai-tech-title">Mi Ecosistema de IA</div>
+          <div class="ai-tech-categories">
+            <div class="tech-category">
+              <div class="category-label">Modelos & Frameworks</div>
+              <div class="ai-tech-tags">
+                <span class="tech-tag tech-ai">LangChain</span>
+                <span class="tech-tag tech-ai">Transformers</span>
+                <span class="tech-tag tech-ai">PyTorch</span>
+                <span class="tech-tag tech-ai">Ollama</span>
+                <span class="tech-tag tech-ai glow-tag">DeepSeek</span>
+              </div>
+            </div>
+            <div class="tech-category">
+              <div class="category-label">Plataformas & APIs</div>
+              <div class="ai-tech-tags">
+                <span class="tech-tag tech-ai">Hugging Face</span>
+                <span class="tech-tag tech-ai">Gemini API</span>
+                <span class="tech-tag tech-ai">OpenAI API</span>
+              </div>
+            </div>
+            <div class="tech-category">
+              <div class="category-label">Desarrollo & Orquestación</div>
+              <div class="ai-tech-tags">
+                <span class="tech-tag tech-ai">Python</span>
+                <span class="tech-tag tech-ai">Django</span>
+                <span class="tech-tag tech-ai">Docker</span>
+                <span class="tech-tag tech-ai">Celery</span>
+                <span class="tech-tag tech-ai">LLM & AI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Real World Applications -->
+        <div class="ai-applications">
+          <h3 class="applications-title">Aplicaciones en el Mundo Real</h3>
+          <div class="applications-grid">
+            <div class="application-item animated-card">
+              <div class="app-number gradient-text">01</div>
+              <div class="app-content">
+                <h4>Asistentes Virtuales Inteligentes</h4>
+                <p>Desarrollo de chatbots y asistentes de voz que mejoran la interacción con el cliente y la eficiencia operativa.</p>
+              </div>
+            </div>
+            <div class="application-item animated-card">
+              <div class="app-number gradient-text">02</div>
+              <div class="app-content">
+                <h4>Sistemas de Recomendación Personalizados</h4>
+                <p>Creación de motores de recomendación que ofrecen experiencias de usuario únicas y aumentan la retención.</p>
+              </div>
+            </div>
+            <div class="application-item animated-card">
+              <div class="app-number gradient-text">03</div>
+              <div class="app-content">
+                <h4>Automatización Inteligente de Documentos</h4>
+                <p>Soluciones de IA para procesar, analizar y extraer información clave de documentos de forma automática.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Philosophy Quote -->
+        <div class="ai-quote">
+          <span class="quote-icon">“</span>
+          <p>La verdadera inteligencia no es solo la capacidad de adquirir conocimiento, sino de aplicarlo de manera creativa para resolver los desafíos del mañana.</p>
+          <div class="quote-author">- Jorge Centeno</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-links">
+      <a href="https://github.com/jacenteno" target="_blank" rel="noopener">
+        <img src="images/github.svg" alt="GitHub" width="24" height="24">
+      </a>
+      <a href="https://www.linkedin.com/in/jorge-a-centeno-a2ba5a24/" target="_blank" rel="noopener">
+        <img src="images/linkedin.svg" alt="LinkedIn" width="24" height="24">
+      </a>
+      <a href="https://x.com/jacenteno" target="_blank" rel="noopener">
+        <img src="images/x.svg" alt="X" width="24" height="24">
+      </a>
+    </div>
+    <p>&copy; 2025 Jorge Centeno. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- SVG sprite para iconos -->
-  <svg aria-hidden="true" style="width:0;height0;position:absolute">
-    <symbol id="icon-sun" viewBox="0 0 24 24"><path d="M12 3V4M12 20V21M5 12H4M20 12H21M18.36 5.64L17.66 6.34M6.34 17.66L5.64 18.36M18.36 18.36L17.66 17.66M6.34 6.34L5.64 5.64M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z"/></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M12 3C7.03 3 3 7.03 3 12C3 16.97 7.03 21 12 21C16.97 21 21 16.97 21 12C21 7.03 16.97 3 12 3ZM12 19C8.13 19 5 15.87 5 12C5 8.13 8.13 5 12 5C15.87 5 19 8.13 19 12C19 15.87 15.87 19 12 19Z"/></symbol>
-  </svg>
-
-  <script src="app.js" defer></script>
+  <script src="https://unpkg.com/force-graph"></script>
+  <script src="graph.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
