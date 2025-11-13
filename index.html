@@ -1741,6 +1741,20 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
 
+    .btn-demo.disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      background: var(--bg-elevated);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-demo.disabled:hover {
+      transform: none;
+      box-shadow: none;
+      opacity: 0.7;
+    }
+
     /* Activity Dashboard Styles */
     .activity-section {
       padding: 80px 40px;
@@ -3286,7 +3300,7 @@
 
             <div class="project-actions">
               <button class="btn-demo primary" onclick="openDetailedCase('iosig')">📋 Case Study Completo</button>
-              <a href="https://github.com/jacenteno/iOsSig" class="btn-demo secondary" target="_blank" rel="noopener">💻 Ver Código</a>
+              <button class="btn-demo secondary disabled" onclick="showCodeMessage()">💻 Código (Próximamente)</button>
               <button class="btn-demo accent" onclick="scheduleDemo()">📅 Agendar Demo Live</button>
             </div>
           </div>
@@ -4553,6 +4567,58 @@
       // Redirigir a Calendly con tu cuenta real
       const calendlyUrl = 'https://calendly.com/jacenteno25/demo-consultation';
       window.open(calendlyUrl, '_blank');
+    }
+
+    function showCodeMessage() {
+      // Mostrar mensaje explicando que el código no está disponible aún
+      const modal = document.createElement('div');
+      modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        padding: 20px;
+      `;
+      
+      modal.innerHTML = `
+        <div style="background: var(--bg-card); border-radius: 20px; padding: 30px; max-width: 500px; width: 90%; position: relative; text-align: center;">
+          <button onclick="this.parentElement.parentElement.remove()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: var(--text-primary); font-size: 24px; cursor: pointer;">×</button>
+          
+          <div style="font-size: 3rem; margin-bottom: 20px;">🔒</div>
+          
+          <h3 style="color: var(--text-primary); margin-bottom: 15px; font-size: 1.4rem;">Código Fuente Protegido</h3>
+          
+          <p style="color: var(--text-secondary); margin-bottom: 25px; line-height: 1.5;">
+            El código fuente de este proyecto está temporalmente restringido por políticas de confidencialidad del cliente. 
+          </p>
+          
+          <div style="background: var(--bg-elevated); padding: 20px; border-radius: 12px; margin-bottom: 25px;">
+            <h4 style="color: var(--text-primary); margin-bottom: 10px; font-size: 1rem;">💡 Alternativas Disponibles:</h4>
+            <ul style="text-align: left; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin: 0; padding-left: 20px;">
+              <li>Ver el <strong>case study completo</strong> con arquitectura detallada</li>
+              <li>Agendar una <strong>demo personalizada</strong> donde puedo mostrar el código</li>
+              <li>Revisar otros proyectos con código público disponible</li>
+            </ul>
+          </div>
+          
+          <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <button onclick="openDetailedCase('iosig')" style="background: var(--accent-blue); color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer;">
+              📋 Ver Case Study
+            </button>
+            <button onclick="scheduleDemo(); this.parentElement.parentElement.parentElement.remove();" style="background: var(--accent-green); color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer;">
+              📅 Agendar Demo
+            </button>
+          </div>
+        </div>
+      `;
+      
+      document.body.appendChild(modal);
     }
     
     // Función de envío actualizada para usar Gemini
