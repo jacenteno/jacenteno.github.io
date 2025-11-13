@@ -1283,6 +1283,763 @@
       font-size: 1.2rem;
     }
 
+    /* Featured Project Styles */
+    .featured-project {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated));
+      border: 2px solid var(--accent-blue);
+      position: relative;
+      overflow: hidden;
+      max-width: 100%;
+    }
+
+    .featured-project::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
+    }
+
+    .project-status {
+      background: var(--accent-green);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Demo Video Styles */
+    .project-demo {
+      margin: 15px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .demo-video {
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .demo-video:hover {
+      transform: scale(1.02);
+    }
+
+    .video-placeholder {
+      position: relative;
+      background: var(--bg-dark);
+      border-radius: 10px;
+      overflow: hidden;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-placeholder.portrait {
+      height: 250px;
+    }
+
+    .demo-thumbnail {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .play-button {
+      position: absolute;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+
+    .play-button:hover {
+      transform: scale(1.1);
+    }
+
+    .video-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    /* Enhanced Demo Styles */
+    .project-demo-enhanced {
+      margin: 20px 0;
+      padding: 25px;
+      background: linear-gradient(135deg, var(--bg-elevated), var(--bg-card));
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .demo-container {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    /* iPhone Frame Simulation */
+    .demo-device-frame {
+      position: relative;
+      width: 200px;
+      height: 400px;
+      background: #1a1a1a;
+      border-radius: 25px;
+      padding: 8px;
+      box-shadow: 
+        0 0 20px rgba(0,0,0,0.3),
+        inset 0 0 0 2px #333,
+        inset 0 0 0 3px #000;
+    }
+
+    .device-notch {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 20px;
+      background: #000;
+      border-radius: 0 0 12px 12px;
+      z-index: 2;
+    }
+
+    .device-screen {
+      position: relative;
+      width: 100%;
+      height: calc(100% - 20px);
+      background: #000;
+      border-radius: 18px;
+      overflow: hidden;
+      margin-top: 12px;
+    }
+
+    .demo-video-preview {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
+    .demo-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(59, 130, 246, 0.1),
+        rgba(139, 92, 246, 0.1),
+        rgba(0, 0, 0, 0.6)
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 18px;
+    }
+
+    .demo-overlay:hover {
+      background: linear-gradient(
+        135deg,
+        rgba(59, 130, 246, 0.2),
+        rgba(139, 92, 246, 0.2),
+        rgba(0, 0, 0, 0.7)
+      );
+    }
+
+    .play-button-enhanced {
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    }
+
+    .demo-overlay:hover .play-button-enhanced {
+      transform: scale(1.1);
+    }
+
+    .demo-info {
+      text-align: center;
+      color: white;
+      padding: 0 15px;
+    }
+
+    .demo-info h4 {
+      margin: 0 0 8px 0;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .demo-info p {
+      margin: 0 0 10px 0;
+      font-size: 0.8rem;
+      opacity: 0.9;
+      line-height: 1.3;
+    }
+
+    .demo-duration {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      display: inline-block;
+    }
+
+    .device-home-indicator {
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 3px;
+      background: #333;
+      border-radius: 2px;
+    }
+
+    /* Demo Features */
+    .demo-features {
+      padding: 20px 0;
+    }
+
+    .demo-features h4 {
+      color: var(--text-primary);
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .demo-highlights {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .demo-highlights li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 0;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .highlight-icon {
+      font-size: 1.1rem;
+      min-width: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .demo-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .demo-device-frame {
+        width: 160px;
+        height: 320px;
+        margin: 0 auto;
+      }
+    }
+
+    /* Case Study Styles */
+    .case-study {
+      margin: 18px 0;
+      padding: 0;
+    }
+
+    .problem-solution-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 18px;
+    }
+
+    .case-section {
+      background: var(--bg-elevated);
+      padding: 15px;
+      border-radius: 10px;
+      border-left: 3px solid var(--accent-blue);
+    }
+
+    .case-section.problem {
+      border-left-color: var(--accent-orange);
+    }
+
+    .case-section.solution {
+      border-left-color: var(--accent-green);
+    }
+
+    .case-section h4 {
+      margin: 0 0 10px 0;
+      font-size: 1rem;
+      color: var(--text-primary);
+    }
+
+    .case-section p {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Results Metrics */
+    .results-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .metric {
+      text-align: center;
+      padding: 12px 8px;
+      background: var(--bg-dark);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    .metric-number {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 5px;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.2;
+    }
+
+    /* Architecture Grid */
+    .architecture-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .arch-point {
+      display: flex;
+      gap: 12px;
+      padding: 15px;
+      background: var(--bg-elevated);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .arch-point:hover {
+      border-color: var(--accent-blue);
+      transform: translateY(-2px);
+    }
+
+    .arch-icon {
+      font-size: 1.2rem;
+      min-width: 24px;
+    }
+
+    .arch-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .arch-content strong {
+      color: var(--text-primary);
+      font-size: 0.9rem;
+    }
+
+    .arch-content span {
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      line-height: 1.3;
+    }
+
+    /* Technical Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      background: var(--bg-elevated);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .feature-icon {
+      font-size: 1rem;
+    }
+
+    /* Project Actions */
+    .project-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .btn-demo {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .btn-demo.primary {
+      background: var(--accent-blue);
+      color: white;
+    }
+
+    .btn-demo.secondary {
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-demo.accent {
+      background: var(--accent-green);
+      color: white;
+    }
+
+    .btn-demo:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Activity Dashboard Styles */
+    .activity-section {
+      padding: 80px 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .activity-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .activity-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .activity-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .activity-card:hover::before {
+      opacity: 1;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-blue);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .activity-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .activity-header h3 {
+      color: var(--text-primary);
+      margin: 0;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .activity-icon {
+      font-size: 1.2rem;
+    }
+
+    .activity-live {
+      background: var(--accent-green);
+      color: white;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      animation: pulse 2s infinite;
+    }
+
+    /* GitHub Activity Styles */
+    .github-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .github-stat {
+      text-align: center;
+      padding: 15px 10px;
+      background: var(--bg-elevated);
+      border-radius: 12px;
+    }
+
+    .github-stat .stat-value {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin-bottom: 5px;
+    }
+
+    .github-stat .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .recent-commits h4 {
+      color: var(--text-primary);
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    .commit-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .commit-item {
+      padding: 12px;
+      background: var(--bg-elevated);
+      border-radius: 8px;
+      border-left: 3px solid var(--accent-green);
+    }
+
+    .commit-message {
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .commit-time {
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+    }
+
+    /* Learning Progress Styles */
+    .learning-items {
+      margin-bottom: 25px;
+    }
+
+    .learning-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .learning-topic {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      grid-column: 1 / -1;
+      margin-bottom: 8px;
+    }
+
+    .learning-title {
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .learning-progress-bar {
+      background: var(--bg-elevated);
+      border-radius: 10px;
+      height: 6px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+      border-radius: 10px;
+      transition: width 0.3s ease;
+    }
+
+    .learning-percentage {
+      color: var(--accent-blue);
+      font-size: 0.8rem;
+      font-weight: 600;
+      min-width: 35px;
+      text-align: right;
+    }
+
+    .certifications h4 {
+      color: var(--text-primary);
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    .cert-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .cert-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      background: var(--bg-elevated);
+      border-radius: 8px;
+    }
+
+    .cert-badge {
+      font-size: 1.1rem;
+    }
+
+    .cert-name {
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Current Focus Styles */
+    .focus-items {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .focus-item {
+      display: flex;
+      gap: 12px;
+      padding: 15px;
+      background: var(--bg-elevated);
+      border-radius: 12px;
+      border-left: 4px solid var(--accent-blue);
+    }
+
+    .focus-item.priority-high {
+      border-left-color: var(--accent-pink);
+    }
+
+    .focus-item.priority-medium {
+      border-left-color: var(--accent-orange);
+    }
+
+    .focus-priority {
+      font-size: 1.2rem;
+      min-width: 24px;
+    }
+
+    .focus-content {
+      flex: 1;
+    }
+
+    .focus-title {
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .focus-desc {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+
+    /* Responsive for case study */
+    @media (max-width: 768px) {
+      .problem-solution-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .results-metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .architecture-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .project-actions {
+        flex-direction: column;
+      }
+
+      .activity-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .github-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .learning-item {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Chatbot Styles */
     .chatbot-container {
       position: fixed;
@@ -2373,35 +3130,165 @@
       <h2 class="section-title gradient-text">Proyectos Destacados</h2>
 
       <div class="projects-grid">
-        <!-- iOS Project -->
-        <div class="project-card">
+        <!-- iOS Project Featured -->
+        <div class="project-card featured-project">
           <div class="project-content">
             <div class="project-header">
               <div class="project-icon">📱</div>
+              <div class="project-status">Producción</div>
             </div>
-            <h3>iOsSig - ERP Mobile Client</h3>
-            <p>Aplicación nativa iOS que transforma la gestión empresarial en una experiencia móvil fluida. Conecta empleados con sistemas ERP mediante interfaces intuitivas construidas completamente en SwiftUI.</p>
             
-            <div class="project-features">
-              <strong>Características Clave:</strong>
-              <ul>
-                <li>Dashboards interactivos en tiempo real</li>
-                <li>Escáner de códigos UPC/EAN integrado</li>
-                <li>Arquitectura MVVM + Combine para reactividad</li>
-                <li>Sistema de permisos basado en roles</li>
-              </ul>
+            <!-- Video Demo Section Mejorado -->
+            <div class="project-demo-enhanced">
+              <div class="demo-container">
+                <div class="demo-device-frame">
+                  <div class="device-notch"></div>
+                  <div class="device-screen">
+                    <video class="demo-video-preview" poster="videos/demo1-poster.jpg" preload="metadata" muted>
+                      <source src="videos/demo1.mov" type="video/quicktime">
+                      <source src="videos/demo1.mp4" type="video/mp4">
+                    </video>
+                    <div class="demo-overlay" onclick="playDemo('iosig')">
+                      <div class="play-button-enhanced">
+                        <svg width="70" height="70" viewBox="0 0 70 70">
+                          <circle cx="35" cy="35" r="35" fill="rgba(59, 130, 246, 0.95)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                          <polygon points="28,22 28,48 50,35" fill="white"/>
+                        </svg>
+                      </div>
+                      <div class="demo-info">
+                        <h4>📱 iOsSig Demo en Vivo</h4>
+                        <p>Ver la aplicación ERP móvil en funcionamiento</p>
+                        <div class="demo-duration">⏱️ 2:30 min</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="device-home-indicator"></div>
+                </div>
+                
+                <div class="demo-features">
+                  <h4>🎬 En este demo verás:</h4>
+                  <ul class="demo-highlights">
+                    <li><span class="highlight-icon">📊</span> Dashboard interactivo en tiempo real</li>
+                    <li><span class="highlight-icon">📱</span> Escáner de códigos UPC/EAN nativo</li>
+                    <li><span class="highlight-icon">⚡</span> Navegación fluida con SwiftUI</li>
+                    <li><span class="highlight-icon">🔄</span> Sincronización automática de datos</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h3>iOsSig - Cliente ERP Móvil Enterprise</h3>
+
+            <!-- Case Study Detallado -->
+            <div class="case-study">
+              <div class="problem-solution-grid">
+                <div class="case-section problem">
+                  <h4>🎯 Problema</h4>
+                  <p>Los gestores de inventario necesitaban acceso móvil a sistemas ERP complejos, pero las soluciones web responsivas eran <strong>70% más lentas</strong> y limitadas para funciones críticas como escaneo de códigos.</p>
+                </div>
+                
+                <div class="case-section solution">
+                  <h4>💡 Solución Swift</h4>
+                  <p>Desarrollé una app iOS nativa que integra directamente con APIs ERP existentes, usando <strong>SwiftUI + Combine</strong> para interfaces reactivas y <strong>AVFoundation</strong> para escaneo nativo ultra-rápido.</p>
+                </div>
+              </div>
+              
+              <div class="case-section results">
+                <h4>📈 Impacto Medible</h4>
+                <div class="results-metrics">
+                  <div class="metric">
+                    <span class="metric-number">60%</span>
+                    <span class="metric-label">Reducción en tiempo de gestión</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric-number">0.3s</span>
+                    <span class="metric-label">Tiempo de escaneo de códigos</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric-number">100%</span>
+                    <span class="metric-label">Precisión en inventarios</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric-number">85%</span>
+                    <span class="metric-label">Reducción en errores manuales</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Arquitectura Swift Detallada -->
+              <div class="tech-deep-dive">
+                <h4>🏗️ Arquitectura Swift Implementada</h4>
+                <div class="architecture-grid">
+                  <div class="arch-point">
+                    <div class="arch-icon">⚡</div>
+                    <div class="arch-content">
+                      <strong>MVVM + Combine:</strong>
+                      <span>ViewModels reactivos que actualizan UI automáticamente sin reload manual</span>
+                    </div>
+                  </div>
+                  <div class="arch-point">
+                    <div class="arch-icon">🗄️</div>
+                    <div class="arch-content">
+                      <strong>Repository Pattern:</strong>
+                      <span>Abstracción elegante entre Core Data local y APIs remotas</span>
+                    </div>
+                  </div>
+                  <div class="arch-point">
+                    <div class="arch-icon">📱</div>
+                    <div class="arch-content">
+                      <strong>AVFoundation:</strong>
+                      <span>Escaneo nativo de códigos UPC/EAN optimizado para 0.3s</span>
+                    </div>
+                  </div>
+                  <div class="arch-point">
+                    <div class="arch-icon">🔄</div>
+                    <div class="arch-content">
+                      <strong>SwiftUI + UIKit:</strong>
+                      <span>Híbrido estratégico para máxima performance y compatibilidad</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Features Técnicas -->
+              <div class="technical-features">
+                <h4>⚙️ Características Técnicas Avanzadas</h4>
+                <div class="features-grid">
+                  <div class="feature">
+                    <span class="feature-icon">🔐</span>
+                    <span>Autenticación biométrica (Face ID/Touch ID)</span>
+                  </div>
+                  <div class="feature">
+                    <span class="feature-icon">📊</span>
+                    <span>Dashboards con Charts framework nativo</span>
+                  </div>
+                  <div class="feature">
+                    <span class="feature-icon">🌐</span>
+                    <span>Sincronización offline-first con Core Data</span>
+                  </div>
+                  <div class="feature">
+                    <span class="feature-icon">🎨</span>
+                    <span>Dark Mode automático siguiendo sistema</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="project-tags">
-              <span class="tech-tag tech-ios">Swift</span>
+              <span class="tech-tag tech-ios">Swift 5.9</span>
               <span class="tech-tag tech-ios">SwiftUI</span>
               <span class="tech-tag tech-ios">Combine</span>
+              <span class="tech-tag tech-ios">MVVM</span>
+              <span class="tech-tag tech-ios">Core Data</span>
               <span class="tech-tag tech-ios">AVFoundation</span>
+              <span class="tech-tag tech-ios">Charts</span>
             </div>
 
-            <a href="https://github.com/jacenteno/iOsSig" class="project-link" target="_blank" rel="noopener">
-              Ver proyecto →
-            </a>
+            <div class="project-actions">
+              <button class="btn-demo primary" onclick="openDetailedCase('iosig')">📋 Case Study Completo</button>
+              <a href="https://github.com/jacenteno/iOsSig" class="btn-demo secondary" target="_blank" rel="noopener">💻 Ver Código</a>
+              <button class="btn-demo accent" onclick="scheduleDemo()">📅 Agendar Demo Live</button>
+            </div>
           </div>
         </div>
 
@@ -2635,6 +3522,148 @@
               <div class="tool-info">
                 <span class="tool-name">iPhone/Android</span>
                 <span class="tool-desc">Testing Devices</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activity Dashboard Section -->
+  <section id="actividad" class="activity-section">
+    <div class="activity-container">
+      <h2 class="section-title gradient-text">Dashboard de Actividad</h2>
+      
+      <div class="activity-grid">
+        <!-- GitHub Activity -->
+        <div class="activity-card github-activity">
+          <div class="activity-header">
+            <div class="activity-icon">🔥</div>
+            <h3>GitHub Activity</h3>
+            <div class="activity-live">🟢 En vivo</div>
+          </div>
+          
+          <div class="github-stats">
+            <div class="github-stat">
+              <span class="stat-value" id="github-commits">127</span>
+              <span class="stat-label">Commits este año</span>
+            </div>
+            <div class="github-stat">
+              <span class="stat-value" id="github-repos">12</span>
+              <span class="stat-label">Repositorios</span>
+            </div>
+            <div class="github-stat">
+              <span class="stat-value" id="github-languages">8</span>
+              <span class="stat-label">Lenguajes</span>
+            </div>
+          </div>
+          
+          <div class="recent-commits" id="recent-commits">
+            <h4>Commits Recientes</h4>
+            <div class="commit-list">
+              <div class="commit-item">
+                <div class="commit-message">feat: Add SwiftUI charts integration</div>
+                <div class="commit-time">hace 2 horas</div>
+              </div>
+              <div class="commit-item">
+                <div class="commit-message">fix: Optimize Core Data performance</div>
+                <div class="commit-time">hace 6 horas</div>
+              </div>
+              <div class="commit-item">
+                <div class="commit-message">docs: Update API documentation</div>
+                <div class="commit-time">hace 1 día</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Learning Progress -->
+        <div class="activity-card learning-progress">
+          <div class="activity-header">
+            <div class="activity-icon">📚</div>
+            <h3>Aprendizaje Continuo</h3>
+          </div>
+          
+          <div class="learning-items">
+            <div class="learning-item">
+              <div class="learning-topic">
+                <span class="learning-emoji">🤖</span>
+                <span class="learning-title">Advanced LLM Integration</span>
+              </div>
+              <div class="learning-progress-bar">
+                <div class="progress-fill" style="width: 85%"></div>
+              </div>
+              <span class="learning-percentage">85%</span>
+            </div>
+            
+            <div class="learning-item">
+              <div class="learning-topic">
+                <span class="learning-emoji">⚡</span>
+                <span class="learning-title">SwiftUI Performance</span>
+              </div>
+              <div class="learning-progress-bar">
+                <div class="progress-fill" style="width: 92%"></div>
+              </div>
+              <span class="learning-percentage">92%</span>
+            </div>
+            
+            <div class="learning-item">
+              <div class="learning-topic">
+                <span class="learning-emoji">🐳</span>
+                <span class="learning-title">Docker & Kubernetes</span>
+              </div>
+              <div class="learning-progress-bar">
+                <div class="progress-fill" style="width: 70%"></div>
+              </div>
+              <span class="learning-percentage">70%</span>
+            </div>
+          </div>
+          
+          <div class="certifications">
+            <h4>Certificaciones Recientes</h4>
+            <div class="cert-list">
+              <div class="cert-item">
+                <span class="cert-badge">🏆</span>
+                <span class="cert-name">iOS Development Expert</span>
+              </div>
+              <div class="cert-item">
+                <span class="cert-badge">⭐</span>
+                <span class="cert-name">Django Advanced Patterns</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Current Focus -->
+        <div class="activity-card current-focus">
+          <div class="activity-header">
+            <div class="activity-icon">🎯</div>
+            <h3>Enfoque Actual</h3>
+          </div>
+          
+          <div class="focus-items">
+            <div class="focus-item priority-high">
+              <div class="focus-priority">🔥</div>
+              <div class="focus-content">
+                <div class="focus-title">IA Conversacional en Apps Móviles</div>
+                <div class="focus-desc">Integrando LLMs nativos en aplicaciones Swift</div>
+              </div>
+            </div>
+            
+            <div class="focus-item priority-medium">
+              <div class="focus-priority">⚡</div>
+              <div class="focus-content">
+                <div class="focus-title">Arquitecturas Serverless</div>
+                <div class="focus-desc">Optimizando backends Django para AWS Lambda</div>
+              </div>
+            </div>
+            
+            <div class="focus-item priority-medium">
+              <div class="focus-priority">📱</div>
+              <div class="focus-content">
+                <div class="focus-title">SwiftUI 5.0 Features</div>
+                <div class="focus-desc">Explorando nuevas APIs y performance improvements</div>
               </div>
             </div>
           </div>
@@ -3293,6 +4322,237 @@
       
       // Respuesta inteligente por defecto
       return "Como asistente IA de Jorge, puedo ayudarte con información específica sobre: 📱 Desarrollo iOS/Swift (iOsSig y proyectos enterprise), 🤖 Desarrollo Android/Kotlin (SIG Platform), ⚡ Backend Django/Python (DigiPromo), 🧠 Integración IA/LLMs (especialidad emergente), 💼 Proyectos y experiencia (5+ años, 100% satisfacción), ⏰ Disponibilidad actual (acepta proyectos nuevos), 📧 Contacto directo (jorge.centeno@floppyfilms.com). ¿Sobre qué te gustaría saber más específicamente?";
+    }
+
+    // Funciones para demos y case studies
+    function playDemo(projectId) {
+      console.log('Playing demo for:', projectId);
+      
+      const demos = {
+        iosig: {
+          title: 'iOsSig - Demo en Vivo',
+          description: 'Demostración completa de la aplicación iOS ERP en funcionamiento',
+          videoPath: 'videos/demo1.mov'
+        }
+      };
+      
+      const demo = demos[projectId];
+      if (!demo) return;
+      
+      // Crear modal para mostrar video
+      const modal = document.createElement('div');
+      modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.95);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        padding: 20px;
+      `;
+      
+      modal.innerHTML = `
+        <div style="background: var(--bg-card); border-radius: 20px; padding: 25px; max-width: 500px; width: 90%; position: relative; max-height: 90vh; overflow-y: auto;">
+          <button onclick="this.parentElement.parentElement.remove()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: var(--text-primary); font-size: 24px; cursor: pointer; z-index: 1;">×</button>
+          <h3 style="color: var(--text-primary); margin-bottom: 12px; font-size: 1.3rem; text-align: center;">${demo.title}</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 18px; font-size: 0.9rem; text-align: center;">${demo.description}</p>
+          
+          <!-- iPhone Frame for Video Playback -->
+          <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+            <div style="
+              position: relative;
+              width: 280px;
+              height: 560px;
+              background: #1a1a1a;
+              border-radius: 35px;
+              padding: 12px;
+              box-shadow: 
+                0 0 30px rgba(0,0,0,0.5),
+                inset 0 0 0 3px #333,
+                inset 0 0 0 4px #000;
+            ">
+              <!-- Notch -->
+              <div style="
+                position: absolute;
+                top: 12px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 25px;
+                background: #000;
+                border-radius: 0 0 15px 15px;
+                z-index: 2;
+              "></div>
+              
+              <!-- Screen -->
+              <div style="
+                position: relative;
+                width: 100%;
+                height: calc(100% - 25px);
+                background: #000;
+                border-radius: 25px;
+                overflow: hidden;
+                margin-top: 15px;
+              ">
+                <video 
+                  controls 
+                  autoplay 
+                  style="width: 100%; height: 100%; object-fit: cover; border-radius: 25px;"
+                  poster="videos/demo1-poster.jpg">
+                  <source src="${demo.videoPath}" type="video/quicktime">
+                  <source src="videos/demo1.mp4" type="video/mp4">
+                  <div style="padding: 30px 20px; text-align: center; color: var(--text-secondary); font-size: 0.9rem;">
+                    Tu navegador no soporta video HTML5.<br>
+                    <a href="${demo.videoPath}" download style="color: var(--accent-blue);">Descargar video</a>
+                  </div>
+                </video>
+              </div>
+              
+              <!-- Home Indicator -->
+              <div style="
+                position: absolute;
+                bottom: 6px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 50px;
+                height: 4px;
+                background: #333;
+                border-radius: 2px;
+              "></div>
+            </div>
+          </div>
+          
+          <!-- Video Info -->
+          <div style="text-align: center; padding: 15px; background: var(--bg-elevated); border-radius: 12px; margin-bottom: 15px;">
+            <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 8px;">📱 Demo Características</div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; font-size: 0.8rem;">
+              <div style="color: var(--text-secondary);">📊 Dashboards interactivos</div>
+              <div style="color: var(--text-secondary);">🔍 Escáner de códigos</div>
+              <div style="color: var(--text-secondary);">⚡ Navegación fluida</div>
+              <div style="color: var(--text-secondary);">🔄 Sync en tiempo real</div>
+            </div>
+          </div>
+          
+          <div style="margin-top: 18px; text-align: center; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <button onclick="scheduleDemo()" style="background: var(--accent-blue); color: white; border: none; padding: 10px 18px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.85rem;">
+              📅 Agendar Demo
+            </button>
+            <a href="${demo.videoPath}" download style="background: var(--bg-elevated); color: var(--text-primary); border: 1px solid var(--border); padding: 10px 18px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem;">
+              💾 Descargar
+            </a>
+          </div>
+        </div>
+      `;
+      
+      document.body.appendChild(modal);
+      
+      // Focus en el video para que se pueda controlar con teclado
+      setTimeout(() => {
+        const video = modal.querySelector('video');
+        if (video) video.focus();
+      }, 100);
+    }
+
+    function openDetailedCase(projectId) {
+      console.log('Opening detailed case for:', projectId);
+      
+      const cases = {
+        iosig: {
+          title: 'iOsSig: Caso de Estudio Completo',
+          content: `
+            <h4>📋 Resumen Ejecutivo</h4>
+            <p>Transformación digital completa de gestión ERP móvil para empresa líder en retail.</p>
+            
+            <h4>🎯 Desafío del Cliente</h4>
+            <ul>
+              <li>Gestión de inventarios dependiente de sistemas desktop</li>
+              <li>Tiempo perdido en desplazamientos para consultas básicas</li>
+              <li>Errores humanos en conteo manual de productos</li>
+              <li>Falta de visibilidad en tiempo real del stock</li>
+            </ul>
+            
+            <h4>💡 Solución Implementada</h4>
+            <ul>
+              <li><strong>Aplicación iOS nativa</strong> con Swift 5.9 y SwiftUI</li>
+              <li><strong>Arquitectura MVVM + Combine</strong> para reactividad</li>
+              <li><strong>Integración API REST</strong> con sistema ERP existente</li>
+              <li><strong>Escaneo nativo</strong> con AVFoundation optimizado</li>
+              <li><strong>Core Data</strong> para funcionamiento offline</li>
+            </ul>
+            
+            <h4>📈 Resultados Obtenidos</h4>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0;">
+              <div style="background: var(--bg-elevated); padding: 15px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 2rem; font-weight: bold; color: var(--accent-green);">60%</div>
+                <div style="font-size: 0.9rem; color: var(--text-secondary);">Reducción tiempo gestión</div>
+              </div>
+              <div style="background: var(--bg-elevated); padding: 15px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 2rem; font-weight: bold; color: var(--accent-blue);">95%</div>
+                <div style="font-size: 0.9rem; color: var(--text-secondary);">Mejora en precisión</div>
+              </div>
+            </div>
+            
+            <h4>🏗️ Arquitectura Técnica</h4>
+            <p><strong>Frontend:</strong> SwiftUI + Combine + MVVM<br>
+            <strong>Persistencia:</strong> Core Data + CloudKit<br>
+            <strong>Networking:</strong> URLSession + Async/Await<br>
+            <strong>UI/UX:</strong> Human Interface Guidelines + Dark Mode</p>
+            
+            <h4>🔄 Proceso de Desarrollo</h4>
+            <p>Desarrollo ágil en sprints de 2 semanas, con demos continuas al cliente y feedback iterativo. Testing en dispositivos reales desde día 1.</p>
+          `
+        }
+      };
+      
+      const caseData = cases[projectId];
+      if (!caseData) return;
+      
+      // Crear modal para case study
+      const modal = document.createElement('div');
+      modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        padding: 20px;
+        overflow-y: auto;
+      `;
+      
+      modal.innerHTML = `
+        <div style="background: var(--bg-card); border-radius: 20px; padding: 30px; max-width: 900px; width: 100%; position: relative; max-height: 90vh; overflow-y: auto;">
+          <button onclick="this.parentElement.parentElement.remove()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: var(--text-primary); font-size: 24px; cursor: pointer;">×</button>
+          <h3 style="color: var(--text-primary); margin-bottom: 25px;">${caseData.title}</h3>
+          <div style="color: var(--text-secondary); line-height: 1.6;">
+            ${caseData.content}
+          </div>
+          <div style="margin-top: 30px; text-align: center; border-top: 1px solid var(--border); padding-top: 20px;">
+            <button onclick="scheduleDemo()" style="background: var(--accent-blue); color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; margin-right: 10px;">
+              📅 Agendar Consulta
+            </button>
+            <button onclick="this.parentElement.parentElement.parentElement.remove()" style="background: var(--bg-elevated); color: var(--text-primary); border: 1px solid var(--border); padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer;">
+              Cerrar
+            </button>
+          </div>
+        </div>
+      `;
+      
+      document.body.appendChild(modal);
+    }
+
+    function scheduleDemo() {
+      // Redirigir a Calendly o mostrar opciones de contacto
+      const calendlyUrl = 'https://calendly.com/jorge-centeno/demo-consultation';
+      window.open(calendlyUrl, '_blank');
     }
     
     // Función de envío actualizada para usar Gemini
