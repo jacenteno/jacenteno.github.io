@@ -396,6 +396,7 @@
         // Survey Modal
         function openSurveyModal() {
             surveyModal.classList.add('active');
+            window.location.hash = 'survey'; // Update URL to allow sharing
 
             // Populate Hidden Context Variables
             document.getElementById('inputPlatform').value = navigator.platform;
@@ -408,6 +409,8 @@
 
         function closeSurveyModal() {
             surveyModal.classList.remove('active');
+            // Remove hash from URL without refreshing or jumping
+            history.replaceState(null, null, ' ');
         }
 
         async function submitSurvey(e) {
