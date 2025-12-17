@@ -604,63 +604,125 @@ h1 {
     font-size: 1.1rem;
 }
 
+/* Improved Survey CTA Button */
 .btn-survey {
-    background: transparent;
-    border: 2px solid var(--primary-light);
-    color: var(--primary-light);
-    padding: 12px 30px;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 600;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border: none;
+    color: white;
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .btn-survey:hover {
-    background: var(--primary-light);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(46, 125, 50, 0.6);
 }
 
-/* Survey Options in Modal */
-.survey-options {
+/* Survey Modal Improvements */
+.modal-content {
+    background: #1e293b;
+    padding: 0;
+    /* Reset padding for header/body split */
+    border-radius: 24px;
+    width: 95%;
+    max-width: 600px;
+    /* Wider for 10 questions */
+    position: relative;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    max-height: 90vh;
+    /* Prevent overflowing screen */
 }
 
-.survey-option {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--glass-border);
-    padding: 15px;
-    border-radius: 12px;
+.modal-header {
+    padding: 30px 30px 20px;
+    border-bottom: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.modal-body {
+    padding: 30px;
+    overflow-y: auto;
+    /* Scrollable content */
+}
+
+/* Rating Question Styles */
+.question-group {
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.question-label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Star Rating System */
+.rating-container {
+    display: flex;
+    flex-direction: row-reverse;
+    /* Allows simpler CSS selector logic */
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.rating-container input {
+    display: none;
+}
+
+.rating-container label {
     cursor: pointer;
-    transition: all 0.2s;
-    text-align: left;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: center;
+    color: var(--glass-border);
+    font-size: 1.5rem;
+    transition: color 0.2s;
 }
 
-.survey-option:hover {
-    border-color: var(--primary-light);
-    background: rgba(76, 175, 80, 0.1);
+/* Color stars when hovered or checked */
+.rating-container input:checked~label,
+.rating-container label:hover,
+.rating-container label:hover~label {
+    color: #FFD700;
+    /* Gold */
 }
 
-.survey-option i {
-    font-size: 1.2rem;
+.rating-container label:active {
+    transform: scale(0.9);
+}
+
+/* Labels under stars (1-5) */
+.rating-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    padding: 0 5px;
+}
+
+.rating-labels span {
+    font-size: 0.7rem;
     color: var(--text-muted);
-}
-
-.survey-option.selected {
-    border-color: var(--primary-light);
-    background: rgba(76, 175, 80, 0.2);
-}
-
-.survey-option.selected i {
-    color: var(--primary-light);
 }

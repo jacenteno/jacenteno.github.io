@@ -196,60 +196,185 @@
     <div class="modal-overlay" id="surveyModal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeSurveyModal()"><i class="fas fa-times"></i></button>
+
             <div class="modal-header">
-                <h2>Experiencia de Usuario</h2>
-                <p>Ayúdanos a mejorar valorando tu experiencia con la versión actual.</p>
+                <h2>Experiencia Completa</h2>
+                <p>Valora del 1 (Bajo) al 5 (Excelente) cada aspecto de CoffeeFarm.</p>
             </div>
-            <!-- 
-                IMPORTANTE: Para recibir los correos, debes registrarte en https://formspree.io/
-                y crear un nuevo formulario. Reemplaza "TU_ID_DE_FORMSPREE" en la URL de abajo
-                con el ID que te den (ej. https://formspree.io/f/xbjnqgqz).
-            -->
-            <form id="surveyForm" action="https://formspree.io/f/xldqwevv" method="POST" onsubmit="submitSurvey(event)">
-                <input type="hidden" name="_subject" value="Feedback UX (CoffeeFarm)">
 
-                <!-- Variables de Contexto (Automáticas) -->
-                <input type="hidden" name="platform" id="inputPlatform">
-                <input type="hidden" name="userAgent" id="inputUserAgent">
-                <input type="hidden" name="screenResolution" id="inputScreenResolution">
-                <input type="hidden" name="language" id="inputLanguage">
-                <input type="hidden" name="timezone" id="inputTimezone">
-                <input type="hidden" name="timestamp" id="inputTimestamp">
+            <div class="modal-body">
+                <form id="surveyForm" action="https://formspree.io/f/xldqwevv" method="POST"
+                    onsubmit="submitSurvey(event)">
+                    <input type="hidden" name="_subject" value="Evaluación Detallada (CoffeeFarm)">
 
-                <div class="survey-options">
-                    <p style="margin-bottom: 10px; color: var(--text-muted); font-size: 0.9rem;">¿Qué aspecto valoras
-                        más de la App?</p>
-                    <label class="survey-option" onclick="selectOption(this)">
-                        <input type="radio" name="ux_highlight" value="usability" style="display:none;">
-                        <i class="fas fa-hand-pointer"></i> Facilidad de Uso
-                    </label>
-                    <label class="survey-option" onclick="selectOption(this)">
-                        <input type="radio" name="ux_highlight" value="design" style="display:none;">
-                        <i class="fas fa-palette"></i> Diseño e Interfaz
-                    </label>
-                    <label class="survey-option" onclick="selectOption(this)">
-                        <input type="radio" name="ux_highlight" value="performance" style="display:none;">
-                        <i class="fas fa-tachometer-alt"></i> Velocidad / Rendimiento
-                    </label>
-                    <label class="survey-option" onclick="selectOption(this)">
-                        <input type="radio" name="ux_highlight" value="offline" style="display:none;">
-                        <i class="fas fa-wifi-slash"></i> Funcionalidad Offline
-                    </label>
-                </div>
+                    <!-- Context Variables -->
+                    <input type="hidden" name="platform" id="inputPlatform">
+                    <input type="hidden" name="userAgent" id="inputUserAgent">
+                    <input type="hidden" name="screenResolution" id="inputScreenResolution">
+                    <input type="hidden" name="language" id="inputLanguage">
+                    <input type="hidden" name="timezone" id="inputTimezone">
+                    <input type="hidden" name="timestamp" id="inputTimestamp">
 
-                <div class="form-group" style="margin-top: 20px;">
-                    <label for="comments" style="font-size: 0.9rem; margin-bottom: 8px; display:block;">Comentarios
-                        (Opcional)</label>
-                    <textarea name="comments" id="comments" rows="2" placeholder="¿Algo que debamos mejorar?"
-                        style="width: 100%; padding: 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); border-radius: 12px; color: var(--text-main); font-family: inherit; resize: none;"></textarea>
-                </div>
+                    <!-- Questions Loop -->
+                    <div id="questions-container">
+                        <!-- Questions will be here, but for clarity I'll write them out -->
 
-                <div class="form-group" style="margin-top: 10px;">
-                    <button type="submit" class="btn-submit">
-                        <i class="fas fa-paper-plane"></i> Enviar Feedback
-                    </button>
-                </div>
-            </form>
+                        <!-- 1. Installation -->
+                        <div class="question-group">
+                            <span class="question-label">1. Facilidad de Instalación (APK)</span>
+                            <div class="rating-container">
+                                <input type="radio" name="q_install" value="5" id="install-5"><label
+                                    for="install-5">★</label>
+                                <input type="radio" name="q_install" value="4" id="install-4"><label
+                                    for="install-4">★</label>
+                                <input type="radio" name="q_install" value="3" id="install-3"><label
+                                    for="install-3">★</label>
+                                <input type="radio" name="q_install" value="2" id="install-2"><label
+                                    for="install-2">★</label>
+                                <input type="radio" name="q_install" value="1" id="install-1"><label
+                                    for="install-1">★</label>
+                            </div>
+                        </div>
+
+                        <!-- 2. UI Design -->
+                        <div class="question-group">
+                            <span class="question-label">2. Diseño Visual e Interfaz</span>
+                            <div class="rating-container">
+                                <input type="radio" name="q_design" value="5" id="design-5"><label
+                                    for="design-5">★</label>
+                                <input type="radio" name="q_design" value="4" id="design-4"><label
+                                    for="design-4">★</label>
+                                <input type="radio" name="q_design" value="3" id="design-3"><label
+                                    for="design-3">★</label>
+                                <input type="radio" name="q_design" value="2" id="design-2"><label
+                                    for="design-2">★</label>
+                                <input type="radio" name="q_design" value="1" id="design-1"><label
+                                    for="design-1">★</label>
+                            </div>
+                        </div>
+
+                        <!-- 3. Navigation -->
+                        <div class="question-group">
+                            <span class="question-label">3. Facilidad de Navegación</span>
+                            <div class="rating-container">
+                                <input type="radio" name="q_nav" value="5" id="nav-5"><label for="nav-5">★</label>
+                                <input type="radio" name="q_nav" value="4" id="nav-4"><label for="nav-4">★</label>
+                                <input type="radio" name="q_nav" value="3" id="nav-3"><label for="nav-3">★</label>
+                                <input type="radio" name="q_nav" value="2" id="nav-2"><label for="nav-2">★</label>
+                                <input type="radio" name="q_nav" value="1" id="nav-1"><label for="nav-1">★</label>
+                            </div>
+                        </div>
+
+                        <!-- 4. Performance -->
+                        <div class="question-group">
+                            <span class="question-label">4. Velocidad y Rendimiento</span>
+                            <div class="rating-container">
+                                <input type="radio" name="q_perf" value="5" id="perf-5"><label for="perf-5">★</label>
+                                <input type="radio" name="q_perf" value="4" id="perf-4"><label for="perf-4">★</label>
+                                <input type="radio" name="q_perf" value="3" id="perf-3"><label for="perf-3">★</label>
+                                <input type="radio" name="q_perf" value="2" id="perf-2"><label for="perf-2">★</label>
+                                <input type="radio" name="q_perf" value="1" id="perf-1"><label for="perf-1">★</label>
+                            </div>
+                        </div>
+
+                        <!-- 5. Offline Mode -->
+                        <div class="question-group">
+                            <span class="question-label">5. Funcionamiento Modo Offline</span>
+                            <div class="rating-container">
+                                <input type="radio" name="q_offline" value="5" id="offline-5"><label
+                                    for="offline-5">★</label>
+                                <input type="radio" name="q_offline" value="4" id="offline-4"><label
+                                    for="offline-4">★</label>
+                                <input type="radio" name="q_offline" value="3" id="offline-3"><label
+                                    for="offline-3">★</label>
+                                <input type="radio" name="q_offline" value="2" id="offline-2"><label
+                                    for="offline-2">★</label>
+                                <input type="radio" name="q_offline" value="1" id="offline-1"><label
+                                    for="offline-1">★</label>
+                            </div>
+                        </div>
+
+                        <!-- 6. GPS/Maps -->
+                        <div class="question-group">
+                            <span class="question-label">6. Precisión GPS y Mapas</span>
+                            <div class="rating-container">
+                                <input type="radio" name="q_gps" value="5" id="gps-5"><label for="gps-5">★</label>
+                                <input type="radio" name="q_gps" value="4" id="gps-4"><label for="gps-4">★</label>
+                                <input type="radio" name="q_gps" value="3" id="gps-3"><label for="gps-3">★</label>
+                                <input type="radio" name="q_gps" value="2" id="gps-2"><label for="gps-2">★</label>
+                                <input type="radio" name="q_gps" value="1" id="gps-1"><label for="gps-1">★</label>
+                            </div>
+                        </div>
+
+                        <!-- 7. Media Capture -->
+                        <div class="question-group">
+                            <span class="question-label">7. Captura de Fotos/Evidencia</span>
+                            <div class="rating-container">
+                                <input type="radio" name="q_media" value="5" id="media-5"><label for="media-5">★</label>
+                                <input type="radio" name="q_media" value="4" id="media-4"><label for="media-4">★</label>
+                                <input type="radio" name="q_media" value="3" id="media-3"><label for="media-3">★</label>
+                                <input type="radio" name="q_media" value="2" id="media-2"><label for="media-2">★</label>
+                                <input type="radio" name="q_media" value="1" id="media-1"><label for="media-1">★</label>
+                            </div>
+                        </div>
+
+                        <!-- 8. Farm Management -->
+                        <div class="question-group">
+                            <span class="question-label">8. Gestión de Fincas/Zonas</span>
+                            <div class="rating-container">
+                                <input type="radio" name="q_farm" value="5" id="farm-5"><label for="farm-5">★</label>
+                                <input type="radio" name="q_farm" value="4" id="farm-4"><label for="farm-4">★</label>
+                                <input type="radio" name="q_farm" value="3" id="farm-3"><label for="farm-3">★</label>
+                                <input type="radio" name="q_farm" value="2" id="farm-2"><label for="farm-2">★</label>
+                                <input type="radio" name="q_farm" value="1" id="farm-1"><label for="farm-1">★</label>
+                            </div>
+                        </div>
+
+                        <!-- 9. Analytics/Dashboard -->
+                        <div class="question-group">
+                            <span class="question-label">9. Utilidad de Estadísticas</span>
+                            <div class="rating-container">
+                                <input type="radio" name="q_stats" value="5" id="stats-5"><label for="stats-5">★</label>
+                                <input type="radio" name="q_stats" value="4" id="stats-4"><label for="stats-4">★</label>
+                                <input type="radio" name="q_stats" value="3" id="stats-3"><label for="stats-3">★</label>
+                                <input type="radio" name="q_stats" value="2" id="stats-2"><label for="stats-2">★</label>
+                                <input type="radio" name="q_stats" value="1" id="stats-1"><label for="stats-1">★</label>
+                            </div>
+                        </div>
+
+                        <!-- 10. Overall -->
+                        <div class="question-group">
+                            <span class="question-label">10. Satisfacción General</span>
+                            <div class="rating-container">
+                                <input type="radio" name="q_overall" value="5" id="overall-5"><label
+                                    for="overall-5">★</label>
+                                <input type="radio" name="q_overall" value="4" id="overall-4"><label
+                                    for="overall-4">★</label>
+                                <input type="radio" name="q_overall" value="3" id="overall-3"><label
+                                    for="overall-3">★</label>
+                                <input type="radio" name="q_overall" value="2" id="overall-2"><label
+                                    for="overall-2">★</label>
+                                <input type="radio" name="q_overall" value="1" id="overall-1"><label
+                                    for="overall-1">★</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label for="comments" style="font-size: 0.9rem; margin-bottom: 8px; display:block;">Comentarios
+                            Adicionales</label>
+                        <textarea name="comments" id="comments" rows="3"
+                            placeholder="Detalles, sugerencias o reporte de errores..."
+                            style="width: 100%; padding: 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); border-radius: 12px; color: var(--text-main); font-family: inherit; resize: none;"></textarea>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 10px;">
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i> Enviar Evaluación
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -285,22 +410,15 @@
             surveyModal.classList.remove('active');
         }
 
-        function selectOption(element) {
-            // Visual selection
-            document.querySelectorAll('.survey-option').forEach(el => el.classList.remove('selected'));
-            element.classList.add('selected');
-            // Check the radio input
-            const input = element.querySelector('input');
-            if (input) input.checked = true;
-        }
-
         async function submitSurvey(e) {
             e.preventDefault();
             const form = e.target;
-            const selected = form.querySelector('input[name="ux_highlight"]:checked');
 
-            if (!selected) {
-                alert('Por favor selecciona un aspecto a valorar');
+            // Validation: Check if at least ONE rating has been selected.
+            // In a real scenario, you might want to validate all of them.
+            const ratings = form.querySelectorAll('input[type="radio"]:checked');
+            if (ratings.length === 0) {
+                alert('Por favor califica al menos un aspecto antes de enviar.');
                 return;
             }
 
