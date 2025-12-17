@@ -546,6 +546,14 @@
 
         // Initialize Stats
         fetchGitHubStats();
+
+        // Check URL Hash to open Survey automatically
+        // Link example: https://jacenteno.github.io/coffeefarm/#survey
+        window.addEventListener('load', () => {
+            if (window.location.hash === '#survey') {
+                openSurveyModal();
+            }
+        });
     </script>
 </body>
 
