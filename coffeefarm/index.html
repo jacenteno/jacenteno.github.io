@@ -25,6 +25,7 @@
             </a>
             <div class="nav-links">
                 <a href="#features">Características</a>
+                <a href="#impact">Impacto</a>
                 <a href="#install">Instalación</a>
                 <button onclick="openDownloadModal()" class="btn-nav" style="cursor: pointer;">Descargar</button>
             </div>
@@ -96,6 +97,37 @@
         </div>
     </section>
 
+    <section id="impact" class="impact-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <!-- ID added for dynamic update -->
+                    <span class="stat-number" id="download-count">...</span>
+                    <span class="stat-label">Descargas Totales</span>
+                </div>
+                <div class="stat-card">
+                    <!-- Calculated based on downloads (e.g., ~3 hectares per user) -->
+                    <span class="stat-number" id="hectares-est">...</span>
+                    <span class="stat-label">Hectáreas Estimadas</span>
+                </div>
+                <div class="stat-card">
+                    <!-- Real GitHub Stars -->
+                    <span class="stat-number" id="github-stars">...</span>
+                    <span class="stat-label">Estrellas en GitHub</span>
+                </div>
+            </div>
+
+            <div class="survey-cta">
+                <h3>Tu Opinión Importa</h3>
+                <p>Ayúdanos a construir el futuro de la agricultura digital. Responde nuestra encuesta rápida de 1
+                    minuto.</p>
+                <button onclick="openSurveyModal()" class="btn-survey">
+                    <i class="fas fa-poll"></i> Participar en Encuesta
+                </button>
+            </div>
+        </div>
+    </section>
+
     <section id="install" class="install-guide">
         <div class="container">
             <h2>Cómo instalar CoffeeFarm</h2>
@@ -160,11 +192,55 @@
         </div>
     </div>
 
+    <!-- Survey Modal -->
+    <div class="modal-overlay" id="surveyModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeSurveyModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h2>Encuesta Rápida</h2>
+                <p>¿Qué función te gustaría ver en la próxima versión?</p>
+            </div>
+            <!-- 
+                IMPORTANTE: Para recibir los correos, debes registrarte en https://formspree.io/
+                y crear un nuevo formulario. Reemplaza "TU_ID_DE_FORMSPREE" en la URL de abajo
+                con el ID que te den (ej. https://formspree.io/f/xbjnqgqz).
+            -->
+            <form id="surveyForm" action="https://formspree.io/f/xldqwevv" method="POST" onsubmit="submitSurvey(event)">
+                <input type="hidden" name="_subject" value="Nueva Respuesta de Encuesta (CoffeeFarm)">
+                <div class="survey-options">
+                    <label class="survey-option" onclick="selectOption(this)">
+                        <input type="radio" name="feature" value="marketplace" style="display:none;">
+                        <i class="fas fa-store"></i> Marketplace de Café
+                    </label>
+                    <label class="survey-option" onclick="selectOption(this)">
+                        <input type="radio" name="feature" value="weather" style="display:none;">
+                        <i class="fas fa-cloud-sun"></i> Alertas Climáticas
+                    </label>
+                    <label class="survey-option" onclick="selectOption(this)">
+                        <input type="radio" name="feature" value="pest_control" style="display:none;">
+                        <i class="fas fa-bug"></i> Control de Plagas IA
+                    </label>
+                    <label class="survey-option" onclick="selectOption(this)">
+                        <input type="radio" name="feature" value="export" style="display:none;">
+                        <i class="fas fa-file-export"></i> Reportes de Exportación
+                    </label>
+                </div>
+                <div class="form-group" style="margin-top: 20px;">
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-paper-plane"></i> Enviar Respuesta
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script>
         const apkUrl = "https://github.com/jacenteno/jacenteno.github.io/releases/download/v1.0.20250828/coffeeFarm.apk";
         const modal = document.getElementById('downloadModal');
+        const surveyModal = document.getElementById('surveyModal'); // New
         const form = document.getElementById('downloadForm');
 
+        // Download Modal
         function openDownloadModal() {
             modal.classList.add('active');
         }
@@ -173,12 +249,85 @@
             modal.classList.remove('active');
         }
 
-        // Close modal when clicking outside
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
+        // Survey Modal
+        function openSurveyModal() {
+            surveyModal.classList.add('active');
+        }
+
+        function closeSurveyModal() {
+            surveyModal.classList.remove('active');
+        }
+
+        function selectOption(element) {
+            // Visual selection
+            document.querySelectorAll('.survey-option').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+            // Check the radio input
+            const input = element.querySelector('input');
+            if (input) input.checked = true;
+        }
+
+        async function submitSurvey(e) {
+            e.preventDefault();
+            const form = e.target;
+            const selected = form.querySelector('input[name="feature"]:checked');
+
+            if (!selected) {
+                alert('Por favor selecciona una opción');
+                return;
+            }
+
+            const button = form.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+
+            // Visual Loading
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            button.disabled = true;
+
+            try {
+                // AJAX submission to Formspree
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    button.innerHTML = '<i class="fas fa-check"></i> ¡Gracias!';
+                    button.style.background = 'var(--accent)';
+
+                    setTimeout(() => {
+                        closeSurveyModal();
+                        button.innerHTML = originalText;
+                        button.style.background = '';
+                        button.disabled = false;
+                        form.reset();
+                        document.querySelectorAll('.survey-option').forEach(el => el.classList.remove('selected'));
+                    }, 2000);
+                } else {
+                    alert('Hubo un problema al enviar tu respuesta.');
+                    button.innerHTML = originalText;
+                    button.disabled = false;
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Hubo un error de conexión.');
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function (event) {
+            if (event.target == modal) {
                 closeDownloadModal();
             }
-        });
+            if (event.target == surveyModal) {
+                closeSurveyModal();
+            }
+        }
 
         form.addEventListener('submit', function (e) {
             // Si NO has configurado Formspree, descomenta la siguiente línea para evitar el error 404
@@ -195,6 +344,63 @@
             // La solución simple es dejar que Formspree maneje el submit y configurar en Formspree
             // la "Redirect URL" para que apunte de nuevo a esta página o al APK directo.
         });
+
+        // --- FETCH REAL GITHUB STATS ---
+        async function fetchGitHubStats() {
+            const repoOwner = 'jacenteno';
+            const repoName = 'jacenteno.github.io';
+
+            // 1. Fetch Downloads (Iterate through all releases)
+            try {
+                const releasesResponse = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/releases`);
+                if (releasesResponse.ok) {
+                    const releases = await releasesResponse.json();
+                    let totalDownloads = 0;
+
+                    releases.forEach(release => {
+                        if (release.assets) {
+                            release.assets.forEach(asset => {
+                                totalDownloads += asset.download_count;
+                            });
+                        }
+                    });
+
+                    // Update DOM
+                    // If downloads are 0 (fresh repo), show at least a baseline or the real 0
+                    const displayDownloads = totalDownloads > 0 ? totalDownloads : 0;
+                    document.getElementById('download-count').innerText = displayDownloads.toLocaleString() + "+"; // e.g. "50+"
+
+                    // 2. Calculate Estimated Hectares (Heuristic: 3 hectares per download)
+                    const estimatedHectares = displayDownloads * 3;
+                    document.getElementById('hectares-est').innerText = estimatedHectares.toLocaleString();
+
+                } else {
+                    console.error("Failed to fetch releases");
+                    document.getElementById('download-count').innerText = "-";
+                    document.getElementById('hectares-est').innerText = "-";
+                }
+            } catch (error) {
+                console.error("Error fetching downloads:", error);
+                document.getElementById('download-count').innerText = "N/A";
+            }
+
+            // 3. Fetch Stars
+            try {
+                const repoResponse = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}`);
+                if (repoResponse.ok) {
+                    const repoData = await repoResponse.json();
+                    const stars = repoData.stargazers_count;
+                    document.getElementById('github-stars').innerText = stars;
+                } else {
+                    document.getElementById('github-stars').innerText = "-";
+                }
+            } catch (error) {
+                console.error("Error fetching stars:", error);
+            }
+        }
+
+        // Initialize Stats
+        fetchGitHubStats();
     </script>
 </body>
 

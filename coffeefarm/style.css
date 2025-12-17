@@ -131,6 +131,7 @@ h1 {
     line-height: 1.1;
     margin-bottom: 20px;
     background: linear-gradient(to right, #fff, #a5d6a7);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -532,4 +533,134 @@ h1 {
         flex-direction: column;
         align-items: center;
     }
+}
+
+/* Impact Section */
+.impact-section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.stat-card {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px 20px;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--primary);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-light);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.survey-cta {
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.2), rgba(15, 23, 42, 0.6));
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 40px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
+}
+
+.survey-cta h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+.survey-cta p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.btn-survey {
+    background: transparent;
+    border: 2px solid var(--primary-light);
+    color: var(--primary-light);
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-survey:hover {
+    background: var(--primary-light);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+/* Survey Options in Modal */
+.survey-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.survey-option {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    padding: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.survey-option:hover {
+    border-color: var(--primary-light);
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.survey-option i {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
+.survey-option.selected {
+    border-color: var(--primary-light);
+    background: rgba(76, 175, 80, 0.2);
+}
+
+.survey-option.selected i {
+    color: var(--primary-light);
 }
