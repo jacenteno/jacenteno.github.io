@@ -121,6 +121,12 @@
             Profundización técnica sobre los métodos, algoritmos y arquitectura de CoffeeFarm.
             Suplemento digital para la "Revista de I+D Tecnológico".
         </p>
+        <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center;">
+            <a href="assets/Ficha_Tecnica_CoffeeFarm.pdf" download class="paper-badge"
+                style="background: rgba(255, 255, 255, 0.1); border: 1px solid var(--glass-border); color: var(--text-main); text-decoration: none; cursor: pointer;">
+                <i class="fas fa-file-pdf" style="color: #FF5252;"></i> Descargar Ficha Técnica
+            </a>
+        </div>
     </header>
 
     <section id="arch" class="container">
@@ -146,12 +152,13 @@
                 <p>Inyección de dependencias con <strong>Hilt</strong> para facilitar el testing y la modularidad.</p>
             </div>
         </div>
-        <!-- Placeholder for Diagram -->
-        <div
-            style="text-align: center; padding: 40px; background: rgba(255,255,255,0.02); border-radius: 20px; border: 1px dashed var(--glass-border);">
-            <i class="fas fa-project-diagram"
-                style="font-size: 3rem; color: var(--text-muted); margin-bottom: 20px;"></i>
-            <p>Diagrama de Flujo de Datos (ViewModel -> UseCase -> Repository -> Local/Remote)</p>
+        <!-- Infographic Architecture -->
+        <div style="text-align: center; margin: 40px 0;">
+            <img src="assets/infographic_architecture.jpg" alt="Arquitectura Técnica CoffeeFarm - Infografía"
+                class="arch-diagram" style="box-shadow: 0 0 40px rgba(76, 175, 80, 0.2);">
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 15px;">
+                Fig 1. Diagrama de componentes de la arquitectura Offline-First.
+            </p>
         </div>
     </section>
 
