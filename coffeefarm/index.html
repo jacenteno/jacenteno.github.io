@@ -197,8 +197,8 @@
         <div class="modal-content">
             <button class="close-modal" onclick="closeSurveyModal()"><i class="fas fa-times"></i></button>
             <div class="modal-header">
-                <h2>Encuesta Rápida</h2>
-                <p>¿Qué función te gustaría ver en la próxima versión?</p>
+                <h2>Experiencia de Usuario</h2>
+                <p>Ayúdanos a mejorar valorando tu experiencia con la versión actual.</p>
             </div>
             <!-- 
                 IMPORTANTE: Para recibir los correos, debes registrarte en https://formspree.io/
@@ -206,28 +206,47 @@
                 con el ID que te den (ej. https://formspree.io/f/xbjnqgqz).
             -->
             <form id="surveyForm" action="https://formspree.io/f/xldqwevv" method="POST" onsubmit="submitSurvey(event)">
-                <input type="hidden" name="_subject" value="Nueva Respuesta de Encuesta (CoffeeFarm)">
+                <input type="hidden" name="_subject" value="Feedback UX (CoffeeFarm)">
+
+                <!-- Variables de Contexto (Automáticas) -->
+                <input type="hidden" name="platform" id="inputPlatform">
+                <input type="hidden" name="userAgent" id="inputUserAgent">
+                <input type="hidden" name="screenResolution" id="inputScreenResolution">
+                <input type="hidden" name="language" id="inputLanguage">
+                <input type="hidden" name="timezone" id="inputTimezone">
+                <input type="hidden" name="timestamp" id="inputTimestamp">
+
                 <div class="survey-options">
+                    <p style="margin-bottom: 10px; color: var(--text-muted); font-size: 0.9rem;">¿Qué aspecto valoras
+                        más de la App?</p>
                     <label class="survey-option" onclick="selectOption(this)">
-                        <input type="radio" name="feature" value="marketplace" style="display:none;">
-                        <i class="fas fa-store"></i> Marketplace de Café
+                        <input type="radio" name="ux_highlight" value="usability" style="display:none;">
+                        <i class="fas fa-hand-pointer"></i> Facilidad de Uso
                     </label>
                     <label class="survey-option" onclick="selectOption(this)">
-                        <input type="radio" name="feature" value="weather" style="display:none;">
-                        <i class="fas fa-cloud-sun"></i> Alertas Climáticas
+                        <input type="radio" name="ux_highlight" value="design" style="display:none;">
+                        <i class="fas fa-palette"></i> Diseño e Interfaz
                     </label>
                     <label class="survey-option" onclick="selectOption(this)">
-                        <input type="radio" name="feature" value="pest_control" style="display:none;">
-                        <i class="fas fa-bug"></i> Control de Plagas IA
+                        <input type="radio" name="ux_highlight" value="performance" style="display:none;">
+                        <i class="fas fa-tachometer-alt"></i> Velocidad / Rendimiento
                     </label>
                     <label class="survey-option" onclick="selectOption(this)">
-                        <input type="radio" name="feature" value="export" style="display:none;">
-                        <i class="fas fa-file-export"></i> Reportes de Exportación
+                        <input type="radio" name="ux_highlight" value="offline" style="display:none;">
+                        <i class="fas fa-wifi-slash"></i> Funcionalidad Offline
                     </label>
                 </div>
+
                 <div class="form-group" style="margin-top: 20px;">
+                    <label for="comments" style="font-size: 0.9rem; margin-bottom: 8px; display:block;">Comentarios
+                        (Opcional)</label>
+                    <textarea name="comments" id="comments" rows="2" placeholder="¿Algo que debamos mejorar?"
+                        style="width: 100%; padding: 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); border-radius: 12px; color: var(--text-main); font-family: inherit; resize: none;"></textarea>
+                </div>
+
+                <div class="form-group" style="margin-top: 10px;">
                     <button type="submit" class="btn-submit">
-                        <i class="fas fa-paper-plane"></i> Enviar Respuesta
+                        <i class="fas fa-paper-plane"></i> Enviar Feedback
                     </button>
                 </div>
             </form>
@@ -252,6 +271,14 @@
         // Survey Modal
         function openSurveyModal() {
             surveyModal.classList.add('active');
+
+            // Populate Hidden Context Variables
+            document.getElementById('inputPlatform').value = navigator.platform;
+            document.getElementById('inputUserAgent').value = navigator.userAgent;
+            document.getElementById('inputScreenResolution').value = window.screen.width + "x" + window.screen.height;
+            document.getElementById('inputLanguage').value = navigator.language;
+            document.getElementById('inputTimezone').value = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            document.getElementById('inputTimestamp').value = new Date().toISOString();
         }
 
         function closeSurveyModal() {
@@ -270,10 +297,10 @@
         async function submitSurvey(e) {
             e.preventDefault();
             const form = e.target;
-            const selected = form.querySelector('input[name="feature"]:checked');
+            const selected = form.querySelector('input[name="ux_highlight"]:checked');
 
             if (!selected) {
-                alert('Por favor selecciona una opción');
+                alert('Por favor selecciona un aspecto a valorar');
                 return;
             }
 
