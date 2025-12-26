@@ -1,13 +1,15 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <title>Jorge Centeno · Full-Stack Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Full-Stack Engineer especializado en arquitecturas móviles nativas y backends escalables. Swift · Kotlin · Django">
+  <meta name="description"
+    content="Full-Stack Engineer especializado en arquitecturas móviles nativas y backends escalables. Swift · Kotlin · Django">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-    
+
     * {
       margin: 0;
       padding: 0;
@@ -104,9 +106,19 @@
     }
 
     @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(50px, -50px) scale(1.1); }
-      66% { transform: translate(-50px, 50px) scale(0.9); }
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      33% {
+        transform: translate(50px, -50px) scale(1.1);
+      }
+
+      66% {
+        transform: translate(-50px, 50px) scale(0.9);
+      }
     }
 
     /* Navigation */
@@ -303,9 +315,11 @@
       0% {
         box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
       }
+
       50% {
         box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
       }
+
       100% {
         box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
       }
@@ -346,8 +360,15 @@
     }
 
     @keyframes gradient-shift {
-      0%, 100% { filter: hue-rotate(0deg); }
-      50% { filter: hue-rotate(30deg); }
+
+      0%,
+      100% {
+        filter: hue-rotate(0deg);
+      }
+
+      50% {
+        filter: hue-rotate(30deg);
+      }
     }
 
     .hero-text .subtitle {
@@ -502,10 +523,21 @@
       transform: translateY(-2px);
     }
 
-    .tech-ios { color: #3b82f6; }
-    .tech-android { color: #10b981; }
-    .tech-backend { color: #8b5cf6; }
-    .tech-data { color: #f59e0b; }
+    .tech-ios {
+      color: #3b82f6;
+    }
+
+    .tech-android {
+      color: #10b981;
+    }
+
+    .tech-backend {
+      color: #8b5cf6;
+    }
+
+    .tech-data {
+      color: #f59e0b;
+    }
 
     /* Stats Section */
     .stats {
@@ -753,8 +785,13 @@
     }
 
     @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .contact-content {
@@ -880,11 +917,11 @@
       .nav-links {
         display: none;
       }
-      
+
       .mobile-menu-toggle {
         display: flex;
       }
-      
+
       .nav-container {
         padding: 0 20px;
       }
@@ -1085,10 +1122,21 @@
       animation: fadeInUp 0.6s ease-out forwards;
     }
 
-    .timeline-item:nth-child(1) { animation-delay: 0.2s; }
-    .timeline-item:nth-child(2) { animation-delay: 0.4s; }
-    .timeline-item:nth-child(3) { animation-delay: 0.6s; }
-    .timeline-item:nth-child(4) { animation-delay: 0.8s; }
+    .timeline-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .timeline-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .timeline-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .timeline-item:nth-child(4) {
+      animation-delay: 0.8s;
+    }
 
     @keyframes fadeInUp {
       to {
@@ -1312,8 +1360,15 @@
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.7;
+      }
     }
 
     .status-text {
@@ -1322,26 +1377,31 @@
       font-size: 1.1rem;
     }
 
-    .timezone-info, .response-time {
+    .timezone-info,
+    .response-time {
       display: flex;
       align-items: center;
       gap: 12px;
     }
 
-    .timezone-icon, .response-icon {
+    .timezone-icon,
+    .response-icon {
       font-size: 1.2rem;
     }
 
-    .timezone-details, .response-details {
+    .timezone-details,
+    .response-details {
       display: flex;
       gap: 8px;
     }
 
-    .timezone-label, .response-label {
+    .timezone-label,
+    .response-label {
       color: var(--text-secondary);
     }
 
-    .timezone-value, .response-value {
+    .timezone-value,
+    .response-value {
       color: var(--text-primary);
       font-weight: 600;
     }
@@ -1467,7 +1527,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
       color: white;
       padding: 20px;
       text-align: center;
@@ -1498,8 +1558,8 @@
       background: #1a1a1a;
       border-radius: 25px;
       padding: 8px;
-      box-shadow: 
-        0 0 20px rgba(0,0,0,0.3),
+      box-shadow:
+        0 0 20px rgba(0, 0, 0, 0.3),
         inset 0 0 0 2px #333,
         inset 0 0 0 3px #000;
     }
@@ -1539,12 +1599,10 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(59, 130, 246, 0.1),
-        rgba(139, 92, 246, 0.1),
-        rgba(0, 0, 0, 0.6)
-      );
+      background: linear-gradient(135deg,
+          rgba(59, 130, 246, 0.1),
+          rgba(139, 92, 246, 0.1),
+          rgba(0, 0, 0, 0.6));
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -1555,18 +1613,16 @@
     }
 
     .demo-overlay:hover {
-      background: linear-gradient(
-        135deg,
-        rgba(59, 130, 246, 0.2),
-        rgba(139, 92, 246, 0.2),
-        rgba(0, 0, 0, 0.7)
-      );
+      background: linear-gradient(135deg,
+          rgba(59, 130, 246, 0.2),
+          rgba(139, 92, 246, 0.2),
+          rgba(0, 0, 0, 0.7));
     }
 
     .play-button-enhanced {
       margin-bottom: 15px;
       transition: all 0.3s ease;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
     }
 
     .demo-overlay:hover .play-button-enhanced {
@@ -1837,7 +1893,7 @@
 
     .btn-demo:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
     .btn-demo.disabled {
@@ -2127,15 +2183,15 @@
       .problem-solution-grid {
         grid-template-columns: 1fr;
       }
-      
+
       .results-metrics {
         grid-template-columns: repeat(2, 1fr);
       }
-      
+
       .architecture-grid {
         grid-template-columns: 1fr;
       }
-      
+
       .project-actions {
         flex-direction: column;
       }
@@ -2327,12 +2383,25 @@
       animation: typing 1.4s infinite;
     }
 
-    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
-    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    .typing-dot:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .typing-dot:nth-child(3) {
+      animation-delay: 0.4s;
+    }
 
     @keyframes typing {
-      0%, 60%, 100% { opacity: 0.3; }
-      30% { opacity: 1; }
+
+      0%,
+      60%,
+      100% {
+        opacity: 0.3;
+      }
+
+      30% {
+        opacity: 1;
+      }
     }
 
     /* Estilos del Formulario de Contacto */
@@ -2575,7 +2644,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
       color: white;
       padding: 15px;
       font-size: 0.9rem;
@@ -2962,8 +3031,17 @@
     }
 
     @keyframes pulse-glow {
-      0%, 100% { transform: scale(1); opacity: 0.5; }
-      50% { transform: scale(1.1); opacity: 0.8; }
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
     }
 
     .ai-header {
@@ -2982,9 +3060,19 @@
     }
 
     @keyframes float-ai {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      25% { transform: translateY(-15px) rotate(-5deg); }
-      75% { transform: translateY(-10px) rotate(5deg); }
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      25% {
+        transform: translateY(-15px) rotate(-5deg);
+      }
+
+      75% {
+        transform: translateY(-10px) rotate(5deg);
+      }
     }
 
     .ai-subtitle {
@@ -3049,6 +3137,7 @@
         opacity: 0;
         transform: translateY(30px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -3066,10 +3155,21 @@
       transform: scaleX(0);
     }
 
-    .deepseek-card::before { background: linear-gradient(90deg, #3b82f6, #06b6d4); }
-    .ollama-card::before { background: linear-gradient(90deg, #10b981, #34d399); }
-    .gemini-card::before { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
-    .openai-card::before { background: linear-gradient(90deg, #ec4899, #f472b6); }
+    .deepseek-card::before {
+      background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    }
+
+    .ollama-card::before {
+      background: linear-gradient(90deg, #10b981, #34d399);
+    }
+
+    .gemini-card::before {
+      background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+    }
+
+    .openai-card::before {
+      background: linear-gradient(90deg, #ec4899, #f472b6);
+    }
 
     .provider-card:hover::before {
       transform: scaleX(1);
@@ -3094,8 +3194,15 @@
     }
 
     @keyframes bounce-icon {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
     }
 
     .provider-card h4 {
@@ -3164,18 +3271,36 @@
       animation-fill-mode: backwards;
     }
 
-    .animated-card:nth-child(1) { animation-delay: 0.1s; }
-    .animated-card:nth-child(2) { animation-delay: 0.2s; }
-    .animated-card:nth-child(3) { animation-delay: 0.3s; }
-    .animated-card:nth-child(4) { animation-delay: 0.4s; }
-    .animated-card:nth-child(5) { animation-delay: 0.5s; }
-    .animated-card:nth-child(6) { animation-delay: 0.6s; }
+    .animated-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .animated-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .animated-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .animated-card:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .animated-card:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+
+    .animated-card:nth-child(6) {
+      animation-delay: 0.6s;
+    }
 
     @keyframes fadeInScale {
       from {
         opacity: 0;
         transform: scale(0.9);
       }
+
       to {
         opacity: 1;
         transform: scale(1);
@@ -3222,8 +3347,15 @@
     }
 
     @keyframes rotate-icon {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(10deg); }
+
+      0%,
+      100% {
+        transform: rotate(0deg);
+      }
+
+      50% {
+        transform: rotate(10deg);
+      }
     }
 
     .ai-card h3 {
@@ -3263,7 +3395,9 @@
     }
 
     @keyframes fillProgress {
-      from { width: 0; }
+      from {
+        width: 0;
+      }
     }
 
     /* Tech Stack */
@@ -3299,6 +3433,7 @@
         opacity: 0;
         transform: translateX(-30px);
       }
+
       to {
         opacity: 1;
         transform: translateX(0);
@@ -3337,8 +3472,15 @@
     }
 
     @keyframes glow-pulse {
-      0%, 100% { box-shadow: 0 0 5px rgba(139, 92, 246, 0.3); }
-      50% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.6); }
+
+      0%,
+      100% {
+        box-shadow: 0 0 5px rgba(139, 92, 246, 0.3);
+      }
+
+      50% {
+        box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+      }
     }
 
     /* Real World Applications */
@@ -3381,6 +3523,7 @@
         opacity: 0;
         transform: translateX(30px);
       }
+
       to {
         opacity: 1;
         transform: translateX(0);
@@ -3594,6 +3737,7 @@
         opacity: 0;
         transform: translateY(30px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -3604,10 +3748,25 @@
       animation: fadeInUp 0.8s ease-out forwards;
     }
 
-    .delay-1 { animation-delay: 0.1s; opacity: 0; }
-    .delay-2 { animation-delay: 0.2s; opacity: 0; }
-    .delay-3 { animation-delay: 0.3s; opacity: 0; }
-    .delay-4 { animation-delay: 0.4s; opacity: 0; }
+    .delay-1 {
+      animation-delay: 0.1s;
+      opacity: 0;
+    }
+
+    .delay-2 {
+      animation-delay: 0.2s;
+      opacity: 0;
+    }
+
+    .delay-3 {
+      animation-delay: 0.3s;
+      opacity: 0;
+    }
+
+    .delay-4 {
+      animation-delay: 0.4s;
+      opacity: 0;
+    }
 
     /* Skills Graph Section */
     .skills-graph {
@@ -3630,6 +3789,7 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Animated Background -->
   <div class="bg-gradient">
@@ -3651,7 +3811,7 @@
         <li><a href="#ia">IA & LLMs</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
-      
+
       <div class="nav-actions">
         <button class="lang-toggle" title="Change Language / Cambiar Idioma" onclick="toggleLanguage()">
           <span id="lang-flag">🇺🇸</span>
@@ -3669,22 +3829,22 @@
           <span></span>
         </button>
       </div>
-      
+
       <!-- SVG Icons -->
       <svg style="display: none;">
         <symbol id="icon-sun" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="5"/>
-          <line x1="12" y1="1" x2="12" y2="3"/>
-          <line x1="12" y1="21" x2="12" y2="23"/>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-          <line x1="1" y1="12" x2="3" y2="12"/>
-          <line x1="21" y1="12" x2="23" y2="12"/>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
         </symbol>
         <symbol id="icon-moon" viewBox="0 0 24 24">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
         </symbol>
       </svg>
     </div>
@@ -3705,7 +3865,7 @@
             <p class="role-badge">Full-Stack y Desarrollador de IA</p>
           </div>
         </div>
-        
+
         <h2 class="hero-headline fade-in-up delay-2">
           Construyendo
           <span class="gradient-text">Ecosistemas Digitales</span>
@@ -3715,7 +3875,9 @@
           <span class="highlight">Desarrollo Móvil Nativo · Backends Escalables · Integración de IA/LLM</span>
         </p>
         <p class="fade-in-up delay-3">
-          Especializado en arquitecturas end-to-end: desde aplicaciones iOS nativas en Swift hasta backends robustos con Django, pasando por Android con Kotlin. Integro LLMs (DeepSeek, Ollama, Gemini) para crear experiencias inteligentes. Transformo ideas en productos completos y escalables potenciados por IA.
+          Especializado en arquitecturas end-to-end: desde aplicaciones iOS nativas en Swift hasta backends robustos con
+          Django, pasando por Android con Kotlin. Integro LLMs (DeepSeek, Ollama, Gemini) para crear experiencias
+          inteligentes. Transformo ideas en productos completos y escalables potenciados por IA.
         </p>
         <div class="cta-group fade-in-up delay-4">
           <a href="docs/Resumen JAC -Mayo-2025-Esp.pdf" class="btn btn-primary" download>
@@ -3838,7 +4000,7 @@
               <div class="project-icon">📱</div>
               <div class="project-status">Producción</div>
             </div>
-            
+
             <!-- Video Demo Section Mejorado -->
             <div class="project-demo-enhanced">
               <div class="demo-container">
@@ -3852,8 +4014,9 @@
                     <div class="demo-overlay" onclick="playDemo('iosig')">
                       <div class="play-button-enhanced">
                         <svg width="70" height="70" viewBox="0 0 70 70">
-                          <circle cx="35" cy="35" r="35" fill="rgba(59, 130, 246, 0.95)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-                          <polygon points="28,22 28,48 50,35" fill="white"/>
+                          <circle cx="35" cy="35" r="35" fill="rgba(59, 130, 246, 0.95)" stroke="rgba(255,255,255,0.2)"
+                            stroke-width="1" />
+                          <polygon points="28,22 28,48 50,35" fill="white" />
                         </svg>
                       </div>
                       <div class="demo-info">
@@ -3865,7 +4028,7 @@
                   </div>
                   <div class="device-home-indicator"></div>
                 </div>
-                
+
                 <div class="demo-features">
                   <h4>🎬 En este demo verás:</h4>
                   <ul class="demo-highlights">
@@ -3885,15 +4048,19 @@
               <div class="problem-solution-grid">
                 <div class="case-section problem">
                   <h4>🎯 Problema</h4>
-                  <p>Los gestores de inventario necesitaban acceso móvil a sistemas ERP complejos, pero las soluciones web responsivas eran <strong>70% más lentas</strong> y limitadas para funciones críticas como escaneo de códigos.</p>
+                  <p>Los gestores de inventario necesitaban acceso móvil a sistemas ERP complejos, pero las soluciones
+                    web responsivas eran <strong>70% más lentas</strong> y limitadas para funciones críticas como
+                    escaneo de códigos.</p>
                 </div>
-                
+
                 <div class="case-section solution">
                   <h4>💡 Solución Swift</h4>
-                  <p>Desarrollé una app iOS nativa que integra directamente con APIs ERP existentes, usando <strong>SwiftUI + Combine</strong> para interfaces reactivas y <strong>AVFoundation</strong> para escaneo nativo ultra-rápido.</p>
+                  <p>Desarrollé una app iOS nativa que integra directamente con APIs ERP existentes, usando
+                    <strong>SwiftUI + Combine</strong> para interfaces reactivas y <strong>AVFoundation</strong> para
+                    escaneo nativo ultra-rápido.</p>
                 </div>
               </div>
-              
+
               <div class="case-section results">
                 <h4>📈 Impacto Medible</h4>
                 <div class="results-metrics">
@@ -3915,7 +4082,7 @@
                   </div>
                 </div>
               </div>
-              
+
               <!-- Arquitectura Swift Detallada -->
               <div class="tech-deep-dive">
                 <h4>🏗️ Arquitectura Swift Implementada</h4>
@@ -3950,7 +4117,7 @@
                   </div>
                 </div>
               </div>
-              
+
               <!-- Features Técnicas -->
               <div class="technical-features">
                 <h4>⚙️ Características Técnicas Avanzadas</h4>
@@ -4024,6 +4191,41 @@
           </div>
         </div>
 
+        <!-- RestoPro Project -->
+        <div class="project-card">
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-icon">🍽️</div>
+              <div class="project-status" style="background: var(--accent-orange);">En Desarrollo</div>
+            </div>
+            <h3>RestoPro - Premium Dining System</h3>
+            <p>Sistema moderno de gestión de restaurantes con enfoque en experiencia de usuario. Incorpora mapas de
+              mesas interactivos con actualizaciones en tiempo real y gestión eficiente de órdenes.</p>
+
+            <div class="project-demo" style="margin: 20px 0;">
+              <img src="images/restopro-map.png" alt="RestoPro Map Interface"
+                style="width: 100%; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            </div>
+
+            <div class="project-features">
+              <strong>Características Clave:</strong>
+              <ul>
+                <li>Mapa de mesas interactivo con HTMX</li>
+                <li>Diseño UI/UX Premium con Tailwind CSS</li>
+                <li>Sistema de "Order Preview" al pasar el mouse</li>
+                <li>Backend robusto en Django</li>
+              </ul>
+            </div>
+
+            <div class="project-tags">
+              <span class="tech-tag tech-backend">Django</span>
+              <span class="tech-tag tech-backend">Python</span>
+              <span class="tech-tag tech-data">HTMX</span>
+              <span class="tech-tag tech-data">Tailwind CSS</span>
+            </div>
+          </div>
+        </div>
+
         <!-- Django Project 1 -->
         <div class="project-card">
           <div class="project-content">
@@ -4031,8 +4233,9 @@
               <div class="project-icon">🎯</div>
             </div>
             <h3>DigiPromo - Promotion Engine</h3>
-            <p>Plataforma web integral para la gestión avanzada de promociones y campañas de precios. Optimiza estrategias comerciales tanto para puntos de venta físicos como e-commerce.</p>
-            
+            <p>Plataforma web integral para la gestión avanzada de promociones y campañas de precios. Optimiza
+              estrategias comerciales tanto para puntos de venta físicos como e-commerce.</p>
+
             <div class="project-features">
               <strong>Stack Completo:</strong>
               <ul>
@@ -4059,8 +4262,9 @@
               <div class="project-icon">⚡</div>
             </div>
             <h3>SIG Platform - Commercial CRM</h3>
-            <p>Sistema empresarial integral que centraliza gestión comercial y CRM. Incluye módulos de promociones, programas de lealtad y procesamiento asíncrono de datos masivos.</p>
-            
+            <p>Sistema empresarial integral que centraliza gestión comercial y CRM. Incluye módulos de promociones,
+              programas de lealtad y procesamiento asíncrono de datos masivos.</p>
+
             <div class="project-features">
               <strong>Arquitectura Completa:</strong>
               <ul>
@@ -4086,7 +4290,7 @@
   <section id="experiencia" class="experience-section">
     <div class="experience-container">
       <h2 class="section-title gradient-text">Experiencia Profesional</h2>
-      
+
       <div class="timeline">
         <div class="timeline-item" data-aos="fade-up">
           <div class="timeline-date">2024 - Presente</div>
@@ -4167,7 +4371,7 @@
   <section id="herramientas" class="tools-section">
     <div class="tools-container">
       <h2 class="section-title gradient-text">Mi Setup de Desarrollo</h2>
-      
+
       <div class="tools-grid">
         <div class="tool-category" data-aos="fade-up">
           <div class="category-header">
@@ -4267,7 +4471,7 @@
   <section id="actividad" class="activity-section">
     <div class="activity-container">
       <h2 class="section-title gradient-text">Dashboard de Actividad</h2>
-      
+
       <div class="activity-grid">
         <!-- GitHub Activity -->
         <div class="activity-card github-activity">
@@ -4276,7 +4480,7 @@
             <h3>GitHub Activity</h3>
             <div class="activity-live">🟢 En vivo</div>
           </div>
-          
+
           <div class="github-stats">
             <div class="github-stat">
               <span class="stat-value" id="github-commits">127</span>
@@ -4291,7 +4495,7 @@
               <span class="stat-label">Lenguajes</span>
             </div>
           </div>
-          
+
           <div class="recent-commits" id="recent-commits">
             <h4>Commits Recientes</h4>
             <div class="commit-list">
@@ -4317,7 +4521,7 @@
             <div class="activity-icon">📚</div>
             <h3>Aprendizaje Continuo</h3>
           </div>
-          
+
           <div class="learning-items">
             <div class="learning-item">
               <div class="learning-topic">
@@ -4329,7 +4533,7 @@
               </div>
               <span class="learning-percentage">85%</span>
             </div>
-            
+
             <div class="learning-item">
               <div class="learning-topic">
                 <span class="learning-emoji">⚡</span>
@@ -4340,7 +4544,7 @@
               </div>
               <span class="learning-percentage">92%</span>
             </div>
-            
+
             <div class="learning-item">
               <div class="learning-topic">
                 <span class="learning-emoji">🐳</span>
@@ -4352,7 +4556,7 @@
               <span class="learning-percentage">70%</span>
             </div>
           </div>
-          
+
           <div class="certifications">
             <h4>Certificaciones Recientes</h4>
             <div class="cert-list">
@@ -4374,7 +4578,7 @@
             <div class="activity-icon">🎯</div>
             <h3>Enfoque Actual</h3>
           </div>
-          
+
           <div class="focus-items">
             <div class="focus-item priority-high">
               <div class="focus-priority">🔥</div>
@@ -4383,7 +4587,7 @@
                 <div class="focus-desc">Integrando LLMs nativos en aplicaciones Swift</div>
               </div>
             </div>
-            
+
             <div class="focus-item priority-medium">
               <div class="focus-priority">⚡</div>
               <div class="focus-content">
@@ -4391,7 +4595,7 @@
                 <div class="focus-desc">Optimizando backends Django para AWS Lambda</div>
               </div>
             </div>
-            
+
             <div class="focus-item priority-medium">
               <div class="focus-priority">📱</div>
               <div class="focus-content">
@@ -4409,14 +4613,14 @@
   <section id="disponibilidad" class="availability-section">
     <div class="availability-container">
       <h2 class="section-title gradient-text">Disponibilidad</h2>
-      
+
       <div class="availability-content">
         <div class="status-card">
           <div class="status-indicator">
             <div class="status-dot available"></div>
             <span class="status-text">Disponible para nuevos proyectos</span>
           </div>
-          
+
           <div class="timezone-info">
             <div class="timezone-icon">🌍</div>
             <div class="timezone-details">
@@ -4424,12 +4628,13 @@
               <span class="timezone-value">EST (UTC-5)</span>
             </div>
           </div>
-          
+
           <div class="response-time">
             <div class="response-icon">⚡</div>
             <div class="response-details">
               <span class="response-label">Tiempo de respuesta:</span>
-              <span class="response-value">< 2 horas</span>
+              <span class="response-value">
+                < 2 horas</span>
             </div>
           </div>
         </div>
@@ -4465,31 +4670,32 @@
       <div class="contact-content">
         <!-- Formulario de Contacto Profesional -->
         <div class="contact-form-container">
-          <h2 style="text-align: center; margin-bottom: 30px; color: var(--text-primary);">📧 Cuéntame sobre tu proyecto</h2>
-          
+          <h2 style="text-align: center; margin-bottom: 30px; color: var(--text-primary);">📧 Cuéntame sobre tu proyecto
+          </h2>
+
           <form class="contact-form" id="contactForm">
             <div class="form-grid">
               <div class="form-group">
                 <label for="name">Nombre Completo *</label>
                 <input type="text" id="name" name="name" required placeholder="Tu nombre">
               </div>
-              
+
               <div class="form-group">
                 <label for="company">Empresa</label>
                 <input type="text" id="company" name="company" placeholder="Nombre de tu empresa (opcional)">
               </div>
-              
+
               <div class="form-group">
                 <label for="email">Email *</label>
                 <input type="email" id="email" name="email" required placeholder="tu.email@empresa.com">
               </div>
-              
+
               <div class="form-group">
                 <label for="phone">Teléfono</label>
                 <input type="tel" id="phone" name="phone" placeholder="+507 0000-0000 (opcional)">
               </div>
             </div>
-            
+
             <div class="form-group full-width">
               <label for="projectType">Tipo de Proyecto *</label>
               <select id="projectType" name="projectType" required>
@@ -4503,7 +4709,7 @@
                 <option value="other">🔧 Otro (especificar en mensaje)</option>
               </select>
             </div>
-            
+
             <div class="form-group full-width">
               <label for="budget">Presupuesto Estimado</label>
               <select id="budget" name="budget">
@@ -4516,7 +4722,7 @@
                 <option value="discuss">Prefiero discutirlo</option>
               </select>
             </div>
-            
+
             <div class="form-group full-width">
               <label for="timeline">Timeline Deseado</label>
               <select id="timeline" name="timeline">
@@ -4528,12 +4734,14 @@
                 <option value="flexible">🤝 Flexible</option>
               </select>
             </div>
-            
+
             <div class="form-group full-width">
               <label for="message">Cuéntame sobre tu proyecto *</label>
-              <textarea id="message" name="message" required placeholder="Describe tu proyecto, objetivos, funcionalidades deseadas, desafíos específicos, o cualquier pregunta que tengas. Mientras más detalles, mejor podré ayudarte." rows="6"></textarea>
+              <textarea id="message" name="message" required
+                placeholder="Describe tu proyecto, objetivos, funcionalidades deseadas, desafíos específicos, o cualquier pregunta que tengas. Mientras más detalles, mejor podré ayudarte."
+                rows="6"></textarea>
             </div>
-            
+
             <div class="form-actions">
               <button type="submit" class="form-submit" id="submitBtn">
                 <span class="btn-text">📨 Enviar Consulta</span>
@@ -4551,7 +4759,7 @@
           <div class="contact-divider">
             <span>o contáctame directamente</span>
           </div>
-          
+
           <div class="contact-methods-simple">
             <div class="contact-method-alt">
               <div class="method-icon-alt">📧</div>
@@ -4560,7 +4768,7 @@
                 <a href="mailto:jorge.centeno@floppyfilms.com">jorge.centeno@floppyfilms.com</a>
               </div>
             </div>
-            
+
             <div class="contact-method-alt">
               <div class="method-icon-alt">📱</div>
               <div class="method-info-alt">
@@ -4569,10 +4777,10 @@
               </div>
             </div>
           </div>
-          
+
         </div>
 
-        
+
 
       </div>
     </div>
@@ -4589,32 +4797,42 @@
         </div>
 
         <p class="ai-intro">
-          Mi pasión por la Inteligencia Artificial y los Large Language Models (LLMs) me impulsa a explorar y aplicar estas tecnologías para resolver problemas complejos y crear experiencias de usuario innovadoras. Creo firmemente que la IA es una herramienta estratégica para el futuro del desarrollo de aplicaciones, y me especializo en su integración efectiva en arquitecturas robustas.
+          Mi pasión por la Inteligencia Artificial y los Large Language Models (LLMs) me impulsa a explorar y aplicar
+          estas tecnologías para resolver problemas complejos y crear experiencias de usuario innovadoras. Creo
+          firmemente que la IA es una herramienta estratégica para el futuro del desarrollo de aplicaciones, y me
+          especializo en su integración efectiva en arquitecturas robustas.
           <br><br>
-          <strong>Desde la investigación hasta la implementación, mi objetivo es transformar el potencial de la IA en valor tangible.</strong>
+          <strong>Desde la investigación hasta la implementación, mi objetivo es transformar el potencial de la IA en
+            valor tangible.</strong>
         </p>
 
-      <!-- Conferences & Workshops -->
-      <div id="conferencias" class="ai-conferences">
-        <h3 class="conferences-title">Conferencias & Talleres</h3>
-        <div class="conference-item animated-card">
-          <div class="conference-icon gradient-text">🎙️</div>
-          <div class="conference-content">
-            <h4>Expositor en CESI 2024</h4>
-            <p>Participación como expositor en CESI 2024, en la Universidad Autónoma de Chiriquí y su sede regional CRUBA (Centro Regional Universitario de Barú), con el tema: "Conociendo las herramientas de IA generativa de Chats, Imágenes, Audio y Videos".</p>
-            <span class="conference-date">2024</span>
+        <!-- Conferences & Workshops -->
+        <div id="conferencias" class="ai-conferences">
+          <h3 class="conferences-title">Conferencias & Talleres</h3>
+          <div class="conference-item animated-card">
+            <div class="conference-icon gradient-text">🎙️</div>
+            <div class="conference-content">
+              <h4>Expositor en CESI 2024</h4>
+              <p>Participación como expositor en CESI 2024, en la Universidad Autónoma de Chiriquí y su sede regional
+                CRUBA (Centro Regional Universitario de Barú), con el tema: "Conociendo las herramientas de IA
+                generativa de Chats, Imágenes, Audio y Videos".</p>
+              <span class="conference-date">2024</span>
+            </div>
           </div>
-        </div>
 
-        <div class="conference-item animated-card">
-          <div class="conference-icon gradient-text">🎤</div>
-          <div class="conference-content">
-            <h4>Expositor en el VII Congreso CESI (2025)</h4>
-            <p>Participación como expositor en el VII Congreso de Economía, Sociedad e Innovación (CESI), organizado por la Facultad de Economía de la Universidad Autónoma de Chiriquí y su sede regional CRUBA (Centro Regional Universitario de Barú). Taller impartido: "Adaptándonos a las nuevas innovaciones: La IA como tu aliada estratégica para el futuro del desarrollo de las aplicaciones", fomentando la vinculación académica y el desarrollo de una cultura de datos.</p>
-            <span class="conference-date">Octubre 2025</span>
+          <div class="conference-item animated-card">
+            <div class="conference-icon gradient-text">🎤</div>
+            <div class="conference-content">
+              <h4>Expositor en el VII Congreso CESI (2025)</h4>
+              <p>Participación como expositor en el VII Congreso de Economía, Sociedad e Innovación (CESI), organizado
+                por la Facultad de Economía de la Universidad Autónoma de Chiriquí y su sede regional CRUBA (Centro
+                Regional Universitario de Barú). Taller impartido: "Adaptándonos a las nuevas innovaciones: La IA como
+                tu aliada estratégica para el futuro del desarrollo de las aplicaciones", fomentando la vinculación
+                académica y el desarrollo de una cultura de datos.</p>
+              <span class="conference-date">Octubre 2025</span>
+            </div>
           </div>
         </div>
-      </div>
 
         <!-- LLM Providers -->
         <div class="llm-providers">
@@ -4681,32 +4899,43 @@
             <div class="ai-card animated-card">
               <div class="ai-card-icon gradient-text">🧠</div>
               <h3>Integración de LLMs</h3>
-              <p>Implementación de modelos de lenguaje grandes en diversas aplicaciones, desde chatbots hasta análisis de texto avanzado.</p>
-              <div class="progress-bar"><div class="progress-fill" style="width: 95%;"></div></div>
+              <p>Implementación de modelos de lenguaje grandes en diversas aplicaciones, desde chatbots hasta análisis
+                de texto avanzado.</p>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 95%;"></div>
+              </div>
             </div>
             <div class="ai-card animated-card">
               <div class="ai-card-icon gradient-text">🛠️</div>
               <h3>Desarrollo de Agentes IA</h3>
               <p>Creación de agentes autónomos capaces de interactuar, aprender y ejecutar tareas complejas.</p>
-              <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 90%;"></div>
+              </div>
             </div>
             <div class="ai-card animated-card">
               <div class="ai-card-icon gradient-text">📊</div>
               <h3>Análisis de Datos con IA</h3>
               <p>Uso de técnicas de IA para extraer insights valiosos de grandes volúmenes de datos.</p>
-              <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 85%;"></div>
+              </div>
             </div>
             <div class="ai-card animated-card">
               <div class="ai-card-icon gradient-text">🚀</div>
               <h3>Optimización de Procesos</h3>
               <p>Aplicación de IA para automatizar y mejorar la eficiencia de flujos de trabajo empresariales.</p>
-              <div class="progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 88%;"></div>
+              </div>
             </div>
             <div class="ai-card animated-card">
               <div class="ai-card-icon gradient-text">💡</div>
               <h3>Consultoría y Estrategia IA</h3>
               <p>Asesoramiento en la adopción de IA, identificación de oportunidades y desarrollo de hojas de ruta.</p>
-              <div class="progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 80%;"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -4754,21 +4983,24 @@
               <div class="app-number gradient-text">01</div>
               <div class="app-content">
                 <h4>Asistentes Virtuales Inteligentes</h4>
-                <p>Desarrollo de chatbots y asistentes de voz que mejoran la interacción con el cliente y la eficiencia operativa.</p>
+                <p>Desarrollo de chatbots y asistentes de voz que mejoran la interacción con el cliente y la eficiencia
+                  operativa.</p>
               </div>
             </div>
             <div class="application-item animated-card">
               <div class="app-number gradient-text">02</div>
               <div class="app-content">
                 <h4>Sistemas de Recomendación Personalizados</h4>
-                <p>Creación de motores de recomendación que ofrecen experiencias de usuario únicas y aumentan la retención.</p>
+                <p>Creación de motores de recomendación que ofrecen experiencias de usuario únicas y aumentan la
+                  retención.</p>
               </div>
             </div>
             <div class="application-item animated-card">
               <div class="app-number gradient-text">03</div>
               <div class="app-content">
                 <h4>Automatización Inteligente de Documentos</h4>
-                <p>Soluciones de IA para procesar, analizar y extraer información clave de documentos de forma automática.</p>
+                <p>Soluciones de IA para procesar, analizar y extraer información clave de documentos de forma
+                  automática.</p>
               </div>
             </div>
           </div>
@@ -4777,7 +5009,8 @@
         <!-- Philosophy Quote -->
         <div class="ai-quote">
           <span class="quote-icon">“</span>
-          <p>La verdadera inteligencia no es solo la capacidad de adquirir conocimiento, sino de aplicarlo de manera creativa para resolver los desafíos del mañana.</p>
+          <p>La verdadera inteligencia no es solo la capacidad de adquirir conocimiento, sino de aplicarlo de manera
+            creativa para resolver los desafíos del mañana.</p>
           <div class="quote-author">- Jorge Centeno</div>
         </div>
       </div>
@@ -4802,64 +5035,75 @@
 
   <!-- AI Assistant Chatbot -->
   <div style="position:fixed; bottom:20px; right:20px; z-index:9999;">
-    <button id="chat-btn" style="background:#3b82f6; border:none; border-radius:25px; padding:15px 20px; color:white; cursor:pointer; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,0.3);">
+    <button id="chat-btn"
+      style="background:#3b82f6; border:none; border-radius:25px; padding:15px 20px; color:white; cursor:pointer; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,0.3);">
       💬 Pregúntame algo
     </button>
-    
-    <div id="chat-window" style="display:none; position:absolute; bottom:60px; right:0; width:350px; height:500px; background:var(--bg-card); border:1px solid var(--border); border-radius:20px; box-shadow:0 10px 40px rgba(0,0,0,0.5); overflow:hidden;">
-      <div style="background:#3b82f6; padding:15px; color:white; display:flex; justify-content:space-between; align-items:center;">
+
+    <div id="chat-window"
+      style="display:none; position:absolute; bottom:60px; right:0; width:350px; height:500px; background:var(--bg-card); border:1px solid var(--border); border-radius:20px; box-shadow:0 10px 40px rgba(0,0,0,0.5); overflow:hidden;">
+      <div
+        style="background:#3b82f6; padding:15px; color:white; display:flex; justify-content:space-between; align-items:center;">
         <span style="font-weight:bold;">🤖 Asistente IA - Jorge</span>
         <div style="display:flex; gap:10px; align-items:center;">
-          <button id="chat-clear-btn" style="background:rgba(255,255,255,0.2); border:none; color:white; padding:5px 10px; border-radius:8px; cursor:pointer; font-size:12px;" title="Limpiar conversación">🗑️ Limpiar</button>
-          <button id="chat-close-btn" style="background:none; border:none; color:white; font-size:20px; cursor:pointer;" title="Cerrar chat">×</button>
+          <button id="chat-clear-btn"
+            style="background:rgba(255,255,255,0.2); border:none; color:white; padding:5px 10px; border-radius:8px; cursor:pointer; font-size:12px;"
+            title="Limpiar conversación">🗑️ Limpiar</button>
+          <button id="chat-close-btn" style="background:none; border:none; color:white; font-size:20px; cursor:pointer;"
+            title="Cerrar chat">×</button>
         </div>
       </div>
-      
+
       <div id="chat-msgs" style="height:380px; padding:15px; overflow-y:auto; background:var(--bg-card);">
-        <div style="background:var(--bg-elevated); padding:10px; border-radius:15px; margin-bottom:10px; color:var(--text-primary); font-size:14px;">
+        <div
+          style="background:var(--bg-elevated); padding:10px; border-radius:15px; margin-bottom:10px; color:var(--text-primary); font-size:14px;">
           ¡Hola! Soy el asistente de Jorge. Pregúntame sobre Swift, Django, IA, disponibilidad o proyectos.
         </div>
       </div>
-      
+
       <div style="padding:15px; border-top:1px solid var(--border); display:flex; gap:10px;">
-        <input type="text" id="chat-text" placeholder="Escribe o habla..." style="flex:1; padding:10px; border:1px solid var(--border); border-radius:20px; background:var(--bg-elevated); color:var(--text-primary); outline:none;">
-        <button id="mic-btn" style="background:#10b981; border:none; border-radius:50%; width:45px; height:45px; color:white; cursor:pointer; font-size:16px;" title="Grabar audio">🎤</button>
-        <button id="chat-send-btn" style="background:#3b82f6; border:none; border-radius:20px; padding:10px 15px; color:white; cursor:pointer; font-weight:bold;">Enviar</button>
+        <input type="text" id="chat-text" placeholder="Escribe o habla..."
+          style="flex:1; padding:10px; border:1px solid var(--border); border-radius:20px; background:var(--bg-elevated); color:var(--text-primary); outline:none;">
+        <button id="mic-btn"
+          style="background:#10b981; border:none; border-radius:50%; width:45px; height:45px; color:white; cursor:pointer; font-size:16px;"
+          title="Grabar audio">🎤</button>
+        <button id="chat-send-btn"
+          style="background:#3b82f6; border:none; border-radius:20px; padding:10px 15px; color:white; cursor:pointer; font-weight:bold;">Enviar</button>
       </div>
     </div>
   </div>
 
   <script>
     // Chatbot ULTRA SIMPLE que SÍ funciona
-    document.getElementById('chat-btn').onclick = function() {
+    document.getElementById('chat-btn').onclick = function () {
       document.getElementById('chat-window').style.display = 'block';
     };
-    
-    document.getElementById('chat-close-btn').onclick = function() {
+
+    document.getElementById('chat-close-btn').onclick = function () {
       document.getElementById('chat-window').style.display = 'none';
     };
-    
-    document.getElementById('chat-clear-btn').onclick = function() {
+
+    document.getElementById('chat-clear-btn').onclick = function () {
       const msgs = document.getElementById('chat-msgs');
       msgs.innerHTML = '<div style="background:var(--bg-elevated); padding:10px; border-radius:15px; margin-bottom:10px; color:var(--text-primary); font-size:14px;">¡Hola! Soy el asistente de Jorge. Pregúntame sobre Swift, Django, IA, disponibilidad o proyectos.</div>';
     };
-    
+
     function addMsg(text, isUser) {
       const msgs = document.getElementById('chat-msgs');
       const div = document.createElement('div');
       div.style.cssText = 'margin-bottom:10px; padding:10px; border-radius:15px; font-size:14px; max-width:80%;';
-      
+
       if (isUser) {
         div.style.cssText += 'background:#3b82f6; color:white; margin-left:auto; text-align:right;';
       } else {
         div.style.cssText += 'background:var(--bg-elevated); color:var(--text-primary);';
       }
-      
+
       div.textContent = text;
       msgs.appendChild(div);
       msgs.scrollTop = msgs.scrollHeight;
     }
-    
+
     function getResp(msg) {
       const m = msg.toLowerCase();
       if (m.includes('swift') || m.includes('ios')) return "Jorge es experto en Swift y SwiftUI. Desarrolló iOsSig, un ERP móvil con MVVM y Combine.";
@@ -4871,15 +5115,15 @@
       if (m.includes('hola')) return "¡Hola! Pregunta sobre Swift, Kotlin, Django, IA, experiencia o disponibilidad.";
       return "Ayudo con: 📱 iOS/Android | ⚡ Backend/APIs | 🧠 IA/LLMs | 💼 Proyectos | ⏰ Disponibilidad";
     }
-    
+
     async function sendMsg() {
       const input = document.getElementById('chat-text');
       const msg = input.value.trim();
       if (!msg) return;
-      
+
       addMsg(msg, true);
       input.value = '';
-      
+
       // Mostrar indicador de "escribiendo"
       const msgs = document.getElementById('chat-msgs');
       const thinkingDiv = document.createElement('div');
@@ -4887,7 +5131,7 @@
       thinkingDiv.textContent = '🤔 Gemini está pensando...';
       msgs.appendChild(thinkingDiv);
       msgs.scrollTop = msgs.scrollHeight;
-      
+
       try {
         const response = await getGeminiResponse(msg);
         thinkingDiv.remove();
@@ -4897,26 +5141,26 @@
         addMsg('❌ Error: ' + error.message, false);
       }
     }
-    
+
     document.getElementById('chat-send-btn').onclick = sendMsg;
-    document.getElementById('chat-text').onkeypress = function(e) {
+    document.getElementById('chat-text').onkeypress = function (e) {
       if (e.key === 'Enter') sendMsg();
     };
-    
+
     // Variables para grabación de audio
     let isRecording = false;
     let mediaRecorder = null;
     let audioChunks = [];
-    
+
     // Función para el micrófono - VERSION SIMPLE
-    document.getElementById('mic-btn').onclick = function() {
+    document.getElementById('mic-btn').onclick = function () {
       if (!isRecording) {
         startSimpleRecognition();
       } else {
         stopSimpleRecognition();
       }
     };
-    
+
     // NUEVA FUNCIÓN ULTRA SIMPLE
     function startSimpleRecognition() {
       // Verificar soporte del navegador
@@ -4924,27 +5168,27 @@
         addMsg('❌ Usa Chrome o Edge para reconocimiento de voz.', false);
         return;
       }
-      
+
       const recognition = new webkitSpeechRecognition();
       window.activeRecognition = recognition;
-      
+
       // Configuración básica
       recognition.lang = 'es-ES';
       recognition.continuous = false;
       recognition.interimResults = false;
-      
+
       // Cambiar botón
       isRecording = true;
       const micBtn = document.getElementById('mic-btn');
       micBtn.style.background = '#ef4444';
       micBtn.innerHTML = '⏹️';
       micBtn.title = 'Detener';
-      
+
       // Eventos
       recognition.onstart = () => {
         addMsg('🎤 Habla ahora...', false);
       };
-      
+
       recognition.onresult = (event) => {
         const text = event.results[0][0].transcript;
         document.getElementById('chat-text').value = text;
@@ -4952,7 +5196,7 @@
         stopSimpleRecognition();
         setTimeout(() => sendMsg(), 500);
       };
-      
+
       recognition.onerror = (event) => {
         console.log('Error:', event.error);
         if (event.error === 'no-speech') {
@@ -4964,11 +5208,11 @@
         }
         stopSimpleRecognition();
       };
-      
+
       recognition.onend = () => {
         stopSimpleRecognition();
       };
-      
+
       // Iniciar
       try {
         recognition.start();
@@ -4977,16 +5221,16 @@
         stopSimpleRecognition();
       }
     }
-    
+
     function stopSimpleRecognition() {
       isRecording = false;
-      
+
       // Restaurar botón
       const micBtn = document.getElementById('mic-btn');
       micBtn.style.background = '#10b981';
       micBtn.innerHTML = '🎤';
       micBtn.title = 'Grabar audio';
-      
+
       // Detener reconocimiento si está activo
       if (window.activeRecognition) {
         try {
@@ -4997,156 +5241,156 @@
         window.activeRecognition = null;
       }
     }
-    
-    
+
+
     // CHATBOT SÚPER INTELIGENTE LOCAL - Mejor que APIs que fallan
     async function getGeminiResponse(message) {
       console.log('🧠 Procesando con IA Local:', message);
-      
+
       // Simulamos "pensamiento" como una IA real
       await new Promise(resolve => setTimeout(resolve, 500 + Math.random() * 1000));
-      
+
       const msg = message.toLowerCase();
       const responses = {
-        
+
         // Saludos y presentación
         greeting: [
           "¡Hola! Soy el asistente IA de Jorge Centeno. Jorge es un desarrollador Full-Stack especializado en crear ecosistemas digitales completos, desde apps móviles nativas hasta backends escalables con IA integrada. ¿En qué puedo ayudarte?",
           "¡Buen día! Jorge es un experto en desarrollo móvil nativo y backend escalable. Con 5+ años de experiencia, ha creado proyectos como iOsSig (iOS), SIG Platform (Android/Django) y DigiPromo. ¿Te interesa alguna tecnología específica?",
           "¡Hola! Jorge Centeno es tu desarrollador ideal para proyectos que requieren calidad empresarial. Especialista en Swift, Kotlin, Django e IA/LLMs. Actualmente disponible para nuevos proyectos. ¿Qué necesitas desarrollar?"
         ],
-        
+
         // Swift/iOS
         ios: [
           "Jorge es un experto en Swift y SwiftUI con amplia experiencia en arquitecturas nativas. Su proyecto estrella es iOsSig, un cliente ERP móvil que implementa MVVM + Combine para máxima reactividad. Incluye funcionalidades avanzadas como escáner de códigos UPC/EAN, dashboards interactivos y sistema de permisos granular. Jorge domina desde UIKit clásico hasta las últimas innovaciones de SwiftUI, siempre siguiendo patrones de Clean Architecture.",
           "En iOS, Jorge ha desarrollado aplicaciones empresariales robustas como iOsSig. Este proyecto demuestra su maestría en Swift moderno, usando SwiftUI para interfaces fluidas, Combine para programación reactiva y AVFoundation para funcionalidades de cámara. Su enfoque en MVVM garantiza código mantenible y testeable, mientras que su experiencia con Core Data y networking asegura apps escalables."
         ],
-        
+
         // Kotlin/Android
         android: [
           "Jorge domina Kotlin y Jetpack Compose para desarrollo Android nativo de última generación. Su proyecto SIG Platform es un CRM comercial completo que demuestra su experiencia en arquitecturas modernas Android. Utiliza Kotlin Coroutines para operaciones asíncronas, Jetpack Compose para UI declarativa, y ha implementado sistemas complejos como notificaciones push en tiempo real y sincronización de datos offline.",
           "En el ecosistema Android, Jorge ha creado SIG Platform, una aplicación empresarial que maneja gestión comercial y CRM. Su experiencia incluye Kotlin avanzado, arquitectura MVVM, Room para persistencia, Retrofit para networking, y WorkManager para tareas en background. Jorge sabe optimizar apps Android para performance y batería."
         ],
-        
+
         // Django/Backend
         backend: [
           "Jorge es un experto en Django y Django REST Framework, creando backends escalables que soportan aplicaciones móviles y web. Su proyecto DigiPromo es una plataforma completa de gestión de promociones que maneja PostgreSQL optimizado, autenticación JWT, y APIs RESTful documentadas. Utiliza Celery para procesamiento asíncrono y Docker para deployment, asegurando arquitecturas que escalan desde startup hasta enterprise.",
           "En backend, Jorge ha desarrollado DigiPromo y SIG Platform, demostrando su maestría en Django. Sus sistemas incluyen APIs REST complejas, autenticación robusta, optimización de queries SQL, caching con Redis, y monitoreo de performance. Jorge diseña arquitecturas que manejan miles de usuarios simultáneos manteniendo respuesta < 100ms."
         ],
-        
+
         // IA/LLMs
         ai: [
           "Jorge está en la vanguardia de la integración de IA/LLMs en aplicaciones reales. Trabaja con LangChain para orquestación de LLMs, Ollama para modelos locales, DeepSeek para eficiencia, y APIs como Gemini para capacidades avanzadas. Su enfoque único combina IA con desarrollo móvil nativo, creando apps inteligentes que procesan lenguaje natural offline y online. Jorge entiende tanto la implementación técnica como la UX de IA.",
           "La especialidad emergente de Jorge es IA/LLMs aplicada. Ha integrado modelos como DeepSeek y Ollama en aplicaciones móviles, creando experiencias inteligentes que van más allá de simples chatbots. Su trabajo incluye procesamiento de texto on-device, análisis de sentiment, generación de contenido contextual, y sistemas de recomendación. Jorge combina IA cutting-edge con arquitecturas móviles robustas."
         ],
-        
+
         // Disponibilidad y contacto
         availability: [
           "Jorge está actualmente disponible para nuevos proyectos. Trabaja en timezone EST (UTC-5) con tiempo de respuesta promedio menor a 2 horas. Su enfoque es calidad sobre cantidad - mantiene 100% de satisfacción del cliente trabajando en proyectos selectos. Acepta desarrollos de apps nativas iOS/Android, backends escalables, integración de IA, y consultoría técnica. Para proyectos enterprise, ofrece arquitectura completa end-to-end.",
           "¡Perfecto timing! Jorge acepta proyectos nuevos. Su disponibilidad incluye desarrollo completo de apps móviles (3-6 meses), backends escalables (1-3 meses), integración de IA (2-8 semanas), y consultoría técnica (flexible). Trabaja timezone EST, respuesta <2h, y mantiene comunicación constante. Su enfoque: convertir tu idea en un producto digital robusto que escale."
         ],
-        
+
         // Proyectos y portfolio
         projects: [
           "Jorge ha completado proyectos impactantes: iOsSig (iOS ERP que revolucionó la gestión móvil empresarial), DigiPromo (plataforma web que optimizó campañas de promociones para retail), y SIG Platform (CRM que integró procesos comerciales complejos). Cada proyecto demuestra full-stack expertise: desde UI/UX nativa hasta arquitecturas backend que manejan millones de transacciones. Todos sus clientes reportan 100% satisfacción.",
           "El portfolio de Jorge incluye: iOsSig - app iOS empresarial con Swift/SwiftUI que digitalizó procesos ERP; DigiPromo - plataforma Django/PostgreSQL para gestión avanzada de promociones; SIG Platform - sistema integral Android/Django con procesamiento asíncrono. Cada proyecto resuelve problemas reales de negocio con tecnología de punta, desde MVP hasta scale-up enterprise."
         ],
-        
+
         // Tecnologías y herramientas
         tools: [
           "Jorge utiliza un stack profesional optimizado: desarrollo iOS en Xcode con Swift/SwiftUI, Android en Android Studio con Kotlin/Jetpack Compose, backend en VS Code con Django/Python. Su flujo incluye Postman para testing de APIs, Docker para containerización, Figma para colaboración de diseño, y Git/GitHub Actions para CI/CD. Trabaja en MacBook Pro M3 con setup dual-monitor 4K para máxima productividad.",
           "El setup de Jorge está optimizado para eficiencia: IDE específico por plataforma (Xcode, Android Studio, VS Code), testing automatizado con Pytest/XCTest, deployment con Docker y AWS, y diseño colaborativo en Figma. Su hardware incluye MacBook Pro M3, monitores 4K, y dispositivos físicos para testing real iOS/Android. Jorge prioriza herramientas que maximicen calidad y velocidad de desarrollo."
         ],
-        
+
         // Experiencia y timeline
         experience: [
           "Jorge tiene 5+ años evolucionando en el desarrollo: comenzó en 2019-2020 con fundamentos Python y desarrollo web, avanzó 2020-2022 a Full-Stack multi-plataforma dominando Django y React, se especializó 2022-2024 como Senior Mobile Developer en iOS/Android nativo, y desde 2024 es Freelance especialista en IA/LLMs. Esta progresión le da perspectiva única: entiende desde legacy hasta cutting-edge.",
           "La experiencia de Jorge span desde Junior Developer aprendiendo Python/Django, hasta Senior Mobile dominando Swift/Kotlin, hasta su rol actual como especialista Full-Stack + IA. Ha trabajado en startups ágiles y proyectos enterprise, dándole versatilidad única. Su evolución incluye backend escalable, mobile nativo, y ahora IA aplicada - una combinación rara en el mercado."
         ],
-        
+
         // Contacto específico
         contact: [
           "Puedes contactar a Jorge directamente: Email profesional jorge.centeno@floppyfilms.com para propuestas detalladas, WhatsApp +507 6619-4728 para conversaciones rápidas, o usar el botón 'Agendar Reunión' en esta página para coordinar una videollamada. Jorge responde emails en <2h y está disponible para calls en timezone EST. Prefiere discutir proyectos por videollamada para entender mejor tu visión.",
           "Contacto directo con Jorge: jorge.centeno@floppyfilms.com para propuestas formales (adjunta brief de proyecto), WhatsApp +507 6619-4728 para preguntas rápidas, LinkedIn para networking profesional. Jorge agenda calls gratuitas de 30min para evaluar fit del proyecto. Su estilo: escuchar primero, proponer después. Timezone EST, respuesta guaranteed <2h en días laborables."
         ]
       };
-      
+
       // Lógica inteligente de respuesta
       if (msg.includes('hola') || msg.includes('hello') || msg.includes('hi') || msg.includes('buenos') || msg.includes('buenas')) {
         const response = responses.greeting[Math.floor(Math.random() * responses.greeting.length)];
         saveToGoogleSheets(message, response, 'greeting');
         return response;
       }
-      
+
       if (msg.includes('swift') || msg.includes('ios') || msg.includes('iphone') || msg.includes('apple')) {
         const response = responses.ios[Math.floor(Math.random() * responses.ios.length)];
         saveToGoogleSheets(message, response, 'ios_swift');
         return response;
       }
-      
+
       if (msg.includes('kotlin') || msg.includes('android') || msg.includes('jetpack')) {
         const response = responses.android[Math.floor(Math.random() * responses.android.length)];
         saveToGoogleSheets(message, response, 'android_kotlin');
         return response;
       }
-      
+
       if (msg.includes('django') || msg.includes('python') || msg.includes('backend') || msg.includes('api')) {
         const response = responses.backend[Math.floor(Math.random() * responses.backend.length)];
         saveToGoogleSheets(message, response, 'backend_django');
         return response;
       }
-      
+
       if (msg.includes('ia') || msg.includes('ai') || msg.includes('llm') || msg.includes('gemini') || msg.includes('inteligencia') || msg.includes('deepseek')) {
         const response = responses.ai[Math.floor(Math.random() * responses.ai.length)];
         saveToGoogleSheets(message, response, 'ai_llms');
         return response;
       }
-      
+
       if (msg.includes('disponible') || msg.includes('tiempo') || msg.includes('horario') || msg.includes('proyecto')) {
         const response = responses.availability[Math.floor(Math.random() * responses.availability.length)];
         saveToGoogleSheets(message, response, 'availability');
         return response;
       }
-      
+
       if (msg.includes('proyecto') || msg.includes('portfolio') || msg.includes('trabajo') || msg.includes('experiencia')) {
         const response = responses.projects[Math.floor(Math.random() * responses.projects.length)];
         saveToGoogleSheets(message, response, 'projects');
         return response;
       }
-      
+
       if (msg.includes('herramientas') || msg.includes('setup') || msg.includes('stack') || msg.includes('tecnolog')) {
         const response = responses.tools[Math.floor(Math.random() * responses.tools.length)];
         saveToGoogleSheets(message, response, 'tools');
         return response;
       }
-      
+
       if (msg.includes('años') || msg.includes('experiencia') || msg.includes('carrera') || msg.includes('timeline')) {
         const response = responses.experience[Math.floor(Math.random() * responses.experience.length)];
         saveToGoogleSheets(message, response, 'experience');
         return response;
       }
-      
+
       if (msg.includes('contacto') || msg.includes('email') || msg.includes('whatsapp') || msg.includes('llamar')) {
         const response = responses.contact[Math.floor(Math.random() * responses.contact.length)];
         saveToGoogleSheets(message, response, 'contact');
         return response;
       }
-      
+
       // Respuesta inteligente por defecto
       const defaultResponse = "Como asistente IA de Jorge, puedo ayudarte con información específica sobre: 📱 Desarrollo iOS/Swift (iOsSig y proyectos enterprise), 🤖 Desarrollo Android/Kotlin (SIG Platform), ⚡ Backend Django/Python (DigiPromo), 🧠 Integración IA/LLMs (especialidad emergente), 💼 Proyectos y experiencia (5+ años, 100% satisfacción), ⏰ Disponibilidad actual (acepta proyectos nuevos), 📧 Contacto directo (jorge.centeno@floppyfilms.com). ¿Sobre qué te gustaría saber más específicamente?";
-      
+
       // Guardar interacción en Google Sheets
       console.log('🔍 Guardando respuesta por defecto:', message);
       saveToGoogleSheets(message, defaultResponse, 'default_response');
-      
+
       return defaultResponse;
     }
-    
+
     // Función para guardar consultas en Google Sheets
     async function saveToGoogleSheets(question, answer, category) {
       // URL de Google Apps Script - ACTUALIZAR ESTA URL DESPUÉS DE CREAR EL SCRIPT
       const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/exec';
-      
+
       const data = {
         timestamp: new Date().toLocaleString('es-ES'),
         question: question,
@@ -5155,7 +5399,7 @@
         userAgent: navigator.userAgent.substring(0, 100),
         page: window.location.href
       };
-      
+
       try {
         const response = await fetch(SHEET_URL, {
           method: 'POST',
@@ -5165,33 +5409,33 @@
           },
           body: JSON.stringify(data)
         });
-        
+
         console.log('📊 Datos guardados en Google Sheets:', data);
-        
+
       } catch (error) {
         console.warn('⚠️ Error guardando en Google Sheets:', error);
         // Fallback: guardar localmente
         saveToLocalStorage(data);
       }
     }
-    
+
     // Fallback: guardar en localStorage
     function saveToLocalStorage(data) {
       try {
         console.log('🔍 Intentando guardar localmente:', data);
         const chatLog = JSON.parse(localStorage.getItem('chatbotLog') || '[]');
         console.log('🔍 Log actual tiene:', chatLog.length, 'entradas');
-        
+
         chatLog.push(data);
-        
+
         // Mantener solo los últimos 100 registros
         if (chatLog.length > 100) {
           chatLog.splice(0, chatLog.length - 100);
         }
-        
+
         localStorage.setItem('chatbotLog', JSON.stringify(chatLog));
         console.log('💾 Datos guardados localmente. Total ahora:', chatLog.length);
-        
+
       } catch (error) {
         console.warn('⚠️ Error guardando localmente:', error);
       }
@@ -5203,17 +5447,17 @@
     function showTestimonial(index) {
       const testimonials = document.querySelectorAll('.testimonial-card');
       const dots = document.querySelectorAll('.testimonials-dots .dot');
-      
+
       testimonials.forEach(testimonial => testimonial.classList.remove('active'));
       dots.forEach(dot => dot.classList.remove('active'));
-      
+
       if (testimonials[index - 1]) {
         testimonials[index - 1].classList.add('active');
       }
       if (dots[index - 1]) {
         dots[index - 1].classList.add('active');
       }
-      
+
       currentTestimonialIndex = index;
     }
 
@@ -5247,9 +5491,9 @@
     function openLightbox(project, index) {
       const data = galleryData[project];
       if (!data || !data[index]) return;
-      
+
       const item = data[index];
-      
+
       const lightbox = document.createElement('div');
       lightbox.className = 'lightbox-overlay';
       lightbox.innerHTML = `
@@ -5267,11 +5511,11 @@
           </div>
         </div>
       `;
-      
+
       document.body.appendChild(lightbox);
-      
+
       // Close on background click
-      lightbox.addEventListener('click', function(e) {
+      lightbox.addEventListener('click', function (e) {
         if (e.target === lightbox) {
           closeLightbox();
         }
@@ -5288,11 +5532,11 @@
     function navigateLightbox(project, newIndex) {
       const data = galleryData[project];
       if (!data) return;
-      
+
       // Handle wraparound
       if (newIndex < 0) newIndex = data.length - 1;
       if (newIndex >= data.length) newIndex = 0;
-      
+
       closeLightbox();
       setTimeout(() => openLightbox(project, newIndex), 100);
     }
@@ -5302,10 +5546,10 @@
 
     function toggleLanguage() {
       currentLanguage = currentLanguage === 'es' ? 'en' : 'es';
-      
+
       const langFlag = document.getElementById('lang-flag');
       const langText = document.getElementById('lang-text');
-      
+
       if (currentLanguage === 'en') {
         langFlag.textContent = '🇪🇸';
         langText.textContent = 'ES';
@@ -5315,7 +5559,7 @@
         langText.textContent = 'EN';
         translateToSpanish();
       }
-      
+
       // Save preference
       localStorage.setItem('preferredLanguage', currentLanguage);
     }
@@ -5329,73 +5573,73 @@
           link.textContent = navTranslations[index];
         }
       });
-      
+
       // Hero Section
       const heroTitle = document.querySelector('.hero-headline');
       if (heroTitle) {
         heroTitle.innerHTML = 'Full-Stack Engineer<br><span class="highlight">iOS • Android • AI</span>';
       }
-      
+
       const heroSubtitle = document.querySelector('.hero-subtitle');
       if (heroSubtitle) {
         heroSubtitle.textContent = 'Native mobile architectures and scalable backends with integrated AI. From concept to production with enterprise quality.';
       }
-      
+
       // Section Titles
       const sectionTitles = document.querySelectorAll('.section-title');
       const titleTranslations = [
         'Featured Projects',
-        'Professional Experience', 
+        'Professional Experience',
         'Development Setup',
         'Activity Dashboard',
         'What My Clients Say',
         'Availability'
       ];
-      
+
       sectionTitles.forEach((title, index) => {
         if (titleTranslations[index]) {
           title.textContent = titleTranslations[index];
         }
       });
-      
+
       // Project Content
       const projectTitle = document.querySelector('.featured-project h3');
       if (projectTitle) {
         projectTitle.textContent = 'iOsSig - Enterprise Mobile ERP Client';
       }
-      
+
       // Case Study Sections
       const problemTitle = document.querySelector('.case-section.problem h4');
       if (problemTitle) {
         problemTitle.textContent = '🎯 Problem';
       }
-      
+
       const problemText = document.querySelector('.case-section.problem p');
       if (problemText) {
         problemText.innerHTML = 'Inventory managers needed mobile access to complex ERP systems, but responsive web solutions were <strong>70% slower</strong> and limited for critical functions like code scanning.';
       }
-      
+
       const solutionTitle = document.querySelector('.case-section.solution h4');
       if (solutionTitle) {
         solutionTitle.textContent = '💡 Swift Solution';
       }
-      
+
       const solutionText = document.querySelector('.case-section.solution p');
       if (solutionText) {
         solutionText.innerHTML = 'I developed a native iOS app that integrates directly with existing ERP APIs, using <strong>SwiftUI + Combine</strong> for reactive interfaces and <strong>AVFoundation</strong> for ultra-fast native scanning.';
       }
-      
+
       // Metrics
       const resultsTitle = document.querySelector('.case-section.results h4');
       if (resultsTitle) {
         resultsTitle.textContent = '📈 Measurable Impact';
       }
-      
+
       const metricLabels = document.querySelectorAll('.metric-label');
       const metricTranslations = [
         'Reduction in management time',
         'Code scanning time',
-        'Inventory accuracy', 
+        'Inventory accuracy',
         'Reduction in manual errors'
       ];
       metricLabels.forEach((label, index) => {
@@ -5403,19 +5647,19 @@
           label.textContent = metricTranslations[index];
         }
       });
-      
+
       // Architecture Section
       const archTitle = document.querySelector('.tech-deep-dive h4');
       if (archTitle) {
         archTitle.textContent = '🏗️ Swift Architecture Implemented';
       }
-      
+
       // Experience Timeline
       const timelineItems = document.querySelectorAll('.timeline-company');
       const companyTranslations = [
         'Freelance Developer',
         'Enterprise Projects',
-        'Multi-platform Development', 
+        'Multi-platform Development',
         'Development Beginnings'
       ];
       timelineItems.forEach((item, index) => {
@@ -5423,7 +5667,7 @@
           item.textContent = companyTranslations[index];
         }
       });
-      
+
       const timelinePositions = document.querySelectorAll('.timeline-position');
       const positionTranslations = [
         'Full-Stack & AI Developer',
@@ -5436,7 +5680,7 @@
           position.textContent = positionTranslations[index];
         }
       });
-      
+
       // Tools Section
       const toolCategories = document.querySelectorAll('.category-header h3');
       const toolCategoryTranslations = ['Development', 'Tools', 'Hardware'];
@@ -5445,40 +5689,40 @@
           category.textContent = toolCategoryTranslations[index];
         }
       });
-      
+
       // Availability Section
       const statusText = document.querySelector('.status-text');
       if (statusText) {
         statusText.textContent = 'Available for new projects';
       }
-      
+
       const timezoneLabel = document.querySelector('.timezone-label');
       if (timezoneLabel) {
         timezoneLabel.textContent = 'Timezone:';
       }
-      
+
       const responseLabel = document.querySelector('.response-label');
       if (responseLabel) {
         responseLabel.textContent = 'Response time:';
       }
-      
+
       // Project Types
       const projectTypesTitle = document.querySelector('.project-types h3');
       if (projectTypesTitle) {
         projectTypesTitle.textContent = 'Types of Projects I Accept';
       }
-      
+
       // Contact Form
       const contactFormTitle = document.querySelector('.contact-form-container h2');
       if (contactFormTitle) {
         contactFormTitle.textContent = '📧 Tell me about your project';
       }
-      
+
       // Form Labels
       const formLabels = document.querySelectorAll('.form-group label');
       const labelTranslations = [
-        'Full Name *', 'Company', 'Email *', 'Phone', 
-        'Project Type *', 'Estimated Budget', 'Desired Timeline', 
+        'Full Name *', 'Company', 'Email *', 'Phone',
+        'Project Type *', 'Estimated Budget', 'Desired Timeline',
         'Tell me about your project *'
       ];
       formLabels.forEach((label, index) => {
@@ -5486,13 +5730,13 @@
           label.textContent = labelTranslations[index];
         }
       });
-      
+
       // Contact Divider
       const contactDivider = document.querySelector('.contact-divider span');
       if (contactDivider) {
         contactDivider.textContent = 'or contact me directly';
       }
-      
+
       // Timeline descriptions - detailed translations
       const timelineDescs = document.querySelectorAll('.timeline-description');
       const descTranslations = [
@@ -5506,12 +5750,12 @@
           desc.textContent = descTranslations[index];
         }
       });
-      
+
       // Technical features
       const featureSpans = document.querySelectorAll('.feature span');
       const featureTranslations = [
         'Biometric authentication (Face ID/Touch ID)',
-        'Interactive dashboards with native Charts framework', 
+        'Interactive dashboards with native Charts framework',
         'Offline-first sync with Core Data',
         'Automatic Dark Mode following system'
       ];
@@ -5520,36 +5764,36 @@
           span.textContent = featureTranslations[index];
         }
       });
-      
+
       // Demo overlay
       const demoOverlay = document.querySelector('.demo-info h4');
       if (demoOverlay) {
         demoOverlay.textContent = '📱 iOsSig Live Demo';
       }
-      
+
       const demoDesc = document.querySelector('.demo-info p');
       if (demoDesc) {
         demoDesc.textContent = 'See the mobile ERP application in action';
       }
-      
+
       // Gallery titles
       const galleryTitle = document.querySelector('.project-gallery h4');
       if (galleryTitle) {
         galleryTitle.textContent = '📱 Application Screenshots';
       }
-      
+
       // Chatbot button
       const chatbotBtn = document.querySelector('.chatbot-toggle span');
       if (chatbotBtn) {
         chatbotBtn.textContent = 'Ask me something';
       }
-      
+
       // Update chatbot initial message
       const chatMessage = document.querySelector('.message.bot-message .message-content');
       if (chatMessage) {
         chatMessage.textContent = 'Hello! I\'m Jorge\'s AI assistant. I can answer questions about his technologies, experience and availability. How can I help you?';
       }
-      
+
       console.log('🌍 Switched to English');
     }
 
@@ -5562,73 +5806,73 @@
           link.textContent = navTranslations[index];
         }
       });
-      
+
       // Hero Section
       const heroTitle = document.querySelector('.hero-headline');
       if (heroTitle) {
         heroTitle.innerHTML = 'Full-Stack Engineer<br><span class="highlight">iOS • Android • IA</span>';
       }
-      
+
       const heroSubtitle = document.querySelector('.hero-subtitle');
       if (heroSubtitle) {
         heroSubtitle.textContent = 'Arquitecturas móviles nativas y backends escalables con IA integrada. Desde la idea hasta producción con calidad enterprise.';
       }
-      
+
       // Section Titles
       const sectionTitles = document.querySelectorAll('.section-title');
       const titleTranslations = [
         'Proyectos Destacados',
-        'Experiencia Profesional', 
+        'Experiencia Profesional',
         'Mi Setup de Desarrollo',
         'Dashboard de Actividad',
         'Lo que Dicen mis Clientes',
         'Disponibilidad'
       ];
-      
+
       sectionTitles.forEach((title, index) => {
         if (titleTranslations[index]) {
           title.textContent = titleTranslations[index];
         }
       });
-      
+
       // Project Content
       const projectTitle = document.querySelector('.featured-project h3');
       if (projectTitle) {
         projectTitle.textContent = 'iOsSig - Cliente ERP Móvil Enterprise';
       }
-      
+
       // Case Study Sections
       const problemTitle = document.querySelector('.case-section.problem h4');
       if (problemTitle) {
         problemTitle.textContent = '🎯 Problema';
       }
-      
+
       const problemText = document.querySelector('.case-section.problem p');
       if (problemText) {
         problemText.innerHTML = 'Los gestores de inventario necesitaban acceso móvil a sistemas ERP complejos, pero las soluciones web responsivas eran <strong>70% más lentas</strong> y limitadas para funciones críticas como escaneo de códigos.';
       }
-      
+
       const solutionTitle = document.querySelector('.case-section.solution h4');
       if (solutionTitle) {
         solutionTitle.textContent = '💡 Solución Swift';
       }
-      
+
       const solutionText = document.querySelector('.case-section.solution p');
       if (solutionText) {
         solutionText.innerHTML = 'Desarrollé una app iOS nativa que integra directamente con APIs ERP existentes, usando <strong>SwiftUI + Combine</strong> para interfaces reactivas y <strong>AVFoundation</strong> para escaneo nativo ultra-rápido.';
       }
-      
+
       // Metrics
       const resultsTitle = document.querySelector('.case-section.results h4');
       if (resultsTitle) {
         resultsTitle.textContent = '📈 Impacto Medible';
       }
-      
+
       const metricLabels = document.querySelectorAll('.metric-label');
       const metricTranslations = [
         'Reducción en tiempo de gestión',
         'Tiempo de escaneo de códigos',
-        'Precisión en inventarios', 
+        'Precisión en inventarios',
         'Reducción en errores manuales'
       ];
       metricLabels.forEach((label, index) => {
@@ -5636,19 +5880,19 @@
           label.textContent = metricTranslations[index];
         }
       });
-      
+
       // Architecture Section
       const archTitle = document.querySelector('.tech-deep-dive h4');
       if (archTitle) {
         archTitle.textContent = '🏗️ Arquitectura Swift Implementada';
       }
-      
+
       // Experience Timeline
       const timelineItems = document.querySelectorAll('.timeline-company');
       const companyTranslations = [
         'Desarrollador Freelance',
         'Proyectos Enterprise',
-        'Desarrollo Multi-plataforma', 
+        'Desarrollo Multi-plataforma',
         'Inicios en Desarrollo'
       ];
       timelineItems.forEach((item, index) => {
@@ -5656,7 +5900,7 @@
           item.textContent = companyTranslations[index];
         }
       });
-      
+
       const timelinePositions = document.querySelectorAll('.timeline-position');
       const positionTranslations = [
         'Full-Stack & AI Developer',
@@ -5669,7 +5913,7 @@
           position.textContent = positionTranslations[index];
         }
       });
-      
+
       // Tools Section
       const toolCategories = document.querySelectorAll('.category-header h3');
       const toolCategoryTranslations = ['Desarrollo', 'Herramientas', 'Hardware'];
@@ -5678,40 +5922,40 @@
           category.textContent = toolCategoryTranslations[index];
         }
       });
-      
+
       // Availability Section
       const statusText = document.querySelector('.status-text');
       if (statusText) {
         statusText.textContent = 'Disponible para nuevos proyectos';
       }
-      
+
       const timezoneLabel = document.querySelector('.timezone-label');
       if (timezoneLabel) {
         timezoneLabel.textContent = 'Timezone:';
       }
-      
+
       const responseLabel = document.querySelector('.response-label');
       if (responseLabel) {
         responseLabel.textContent = 'Tiempo de respuesta:';
       }
-      
+
       // Project Types
       const projectTypesTitle = document.querySelector('.project-types h3');
       if (projectTypesTitle) {
         projectTypesTitle.textContent = 'Tipos de Proyectos que Acepto';
       }
-      
+
       // Contact Form
       const contactFormTitle = document.querySelector('.contact-form-container h2');
       if (contactFormTitle) {
         contactFormTitle.textContent = '📧 Cuéntame sobre tu proyecto';
       }
-      
+
       // Form Labels
       const formLabels = document.querySelectorAll('.form-group label');
       const labelTranslations = [
-        'Nombre Completo *', 'Empresa', 'Email *', 'Teléfono', 
-        'Tipo de Proyecto *', 'Presupuesto Estimado', 'Timeline Deseado', 
+        'Nombre Completo *', 'Empresa', 'Email *', 'Teléfono',
+        'Tipo de Proyecto *', 'Presupuesto Estimado', 'Timeline Deseado',
         'Cuéntame sobre tu proyecto *'
       ];
       formLabels.forEach((label, index) => {
@@ -5719,13 +5963,13 @@
           label.textContent = labelTranslations[index];
         }
       });
-      
+
       // Contact Divider
       const contactDivider = document.querySelector('.contact-divider span');
       if (contactDivider) {
         contactDivider.textContent = 'o contáctame directamente';
       }
-      
+
       // Timeline descriptions - restore Spanish
       const timelineDescs = document.querySelectorAll('.timeline-description');
       const descTranslations = [
@@ -5739,12 +5983,12 @@
           desc.textContent = descTranslations[index];
         }
       });
-      
+
       // Technical features - restore Spanish
       const featureSpans = document.querySelectorAll('.feature span');
       const featureTranslations = [
         'Autenticación biométrica (Face ID/Touch ID)',
-        'Dashboards con Charts framework nativo', 
+        'Dashboards con Charts framework nativo',
         'Sincronización offline-first con Core Data',
         'Dark Mode automático siguiendo sistema'
       ];
@@ -5753,56 +5997,56 @@
           span.textContent = featureTranslations[index];
         }
       });
-      
+
       // Demo overlay
       const demoOverlay = document.querySelector('.demo-info h4');
       if (demoOverlay) {
         demoOverlay.textContent = '📱 iOsSig Demo en Vivo';
       }
-      
+
       const demoDesc = document.querySelector('.demo-info p');
       if (demoDesc) {
         demoDesc.textContent = 'Ver la aplicación ERP móvil en funcionamiento';
       }
-      
+
       // Gallery titles
       const galleryTitle = document.querySelector('.project-gallery h4');
       if (galleryTitle) {
         galleryTitle.textContent = '📱 Screenshots de la Aplicación';
       }
-      
+
       // Chatbot button
       const chatbotBtn = document.querySelector('.chatbot-toggle span');
       if (chatbotBtn) {
         chatbotBtn.textContent = 'Pregúntame algo';
       }
-      
+
       // Restore chatbot initial message
       const chatMessage = document.querySelector('.message.bot-message .message-content');
       if (chatMessage) {
         chatMessage.textContent = '¡Hola! Soy el asistente IA de Jorge. Puedo responder preguntas sobre sus tecnologías, experiencia y disponibilidad. ¿En qué te puedo ayudar?';
       }
-      
+
       console.log('🌍 Switched to Spanish');
     }
 
     // Initialize language on load
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const savedLanguage = localStorage.getItem('preferredLanguage');
       if (savedLanguage === 'en') {
         toggleLanguage();
       }
     });
-    
+
     // Función para exportar datos locales (botón de backup)
     function exportChatLog() {
       const chatLog = JSON.parse(localStorage.getItem('chatbotLog') || '[]');
-      
+
       if (chatLog.length === 0) {
         alert('No hay datos para exportar');
         return;
       }
-      
+
       // Crear CSV
       const headers = ['Fecha/Hora', 'Pregunta', 'Respuesta', 'Categoría', 'Navegador', 'Página'];
       const csvContent = [
@@ -5816,7 +6060,7 @@
           `"${row.page}"`
         ].join(','))
       ].join('\n');
-      
+
       // Descargar archivo
       const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
       const link = document.createElement('a');
@@ -5828,12 +6072,12 @@
       link.click();
       document.body.removeChild(link);
     }
-    
+
 
     // Funciones para demos y case studies
     function playDemo(projectId) {
       console.log('Playing demo for:', projectId);
-      
+
       const demos = {
         iosig: {
           title: 'iOsSig - Demo en Vivo',
@@ -5841,10 +6085,10 @@
           videoPath: 'videos/demo1.mov'
         }
       };
-      
+
       const demo = demos[projectId];
       if (!demo) return;
-      
+
       // Crear modal para mostrar video
       const modal = document.createElement('div');
       modal.style.cssText = `
@@ -5860,7 +6104,7 @@
         z-index: 10000;
         padding: 20px;
       `;
-      
+
       modal.innerHTML = `
         <div style="background: var(--bg-card); border-radius: 20px; padding: 25px; max-width: 500px; width: 90%; position: relative; max-height: 90vh; overflow-y: auto;">
           <button onclick="this.parentElement.parentElement.remove()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: var(--text-primary); font-size: 24px; cursor: pointer; z-index: 1;">×</button>
@@ -5953,9 +6197,9 @@
           </div>
         </div>
       `;
-      
+
       document.body.appendChild(modal);
-      
+
       // Focus en el video para que se pueda controlar con teclado
       setTimeout(() => {
         const video = modal.querySelector('video');
@@ -5965,7 +6209,7 @@
 
     function openDetailedCase(projectId) {
       console.log('Opening detailed case for:', projectId);
-      
+
       const cases = {
         iosig: {
           title: 'iOsSig: Caso de Estudio Completo',
@@ -6013,10 +6257,10 @@
           `
         }
       };
-      
+
       const caseData = cases[projectId];
       if (!caseData) return;
-      
+
       // Crear modal para case study
       const modal = document.createElement('div');
       modal.style.cssText = `
@@ -6033,7 +6277,7 @@
         padding: 20px;
         overflow-y: auto;
       `;
-      
+
       modal.innerHTML = `
         <div style="background: var(--bg-card); border-radius: 20px; padding: 30px; max-width: 900px; width: 100%; position: relative; max-height: 90vh; overflow-y: auto;">
           <button onclick="this.parentElement.parentElement.remove()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: var(--text-primary); font-size: 24px; cursor: pointer;">×</button>
@@ -6051,7 +6295,7 @@
           </div>
         </div>
       `;
-      
+
       document.body.appendChild(modal);
     }
 
@@ -6077,7 +6321,7 @@
         z-index: 10000;
         padding: 20px;
       `;
-      
+
       modal.innerHTML = `
         <div style="background: var(--bg-card); border-radius: 20px; padding: 30px; max-width: 500px; width: 90%; position: relative; text-align: center;">
           <button onclick="this.parentElement.parentElement.remove()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: var(--text-primary); font-size: 24px; cursor: pointer;">×</button>
@@ -6109,30 +6353,30 @@
           </div>
         </div>
       `;
-      
+
       document.body.appendChild(modal);
     }
 
     // Funcionalidad del formulario de contacto
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const contactForm = document.getElementById('contactForm');
       if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
           e.preventDefault();
-          
+
           const submitBtn = document.getElementById('submitBtn');
           const btnText = submitBtn.querySelector('.btn-text');
           const btnLoader = submitBtn.querySelector('.btn-loader');
-          
+
           // Mostrar loading
           btnText.style.display = 'none';
           btnLoader.style.display = 'inline';
           submitBtn.disabled = true;
-          
+
           // Recopilar datos del formulario
           const formData = new FormData(e.target);
           const data = Object.fromEntries(formData);
-          
+
           // Simular envío
           setTimeout(() => {
             // Crear email con los datos
@@ -6159,38 +6403,38 @@ ${data.message}
 ---
 Enviado desde tu portafolio web
             `);
-            
+
             // Abrir cliente de email
             window.location.href = `mailto:jorge.centeno@floppyfilms.com?subject=${subject}&body=${body}`;
-            
+
             // Restaurar botón
             btnText.style.display = 'inline';
             btnLoader.style.display = 'none';
             submitBtn.disabled = false;
-            
+
             // Mostrar mensaje de éxito
             alert('✅ Formulario procesado. Se abrirá tu cliente de email para enviar la consulta.');
-            
+
             // Limpiar formulario
             e.target.reset();
-            
+
           }, 1500);
         });
       }
     });
-    
+
     // Función de envío actualizada para usar Gemini
     async function sendMsgWithGemini() {
       const input = document.getElementById('chat-text');
       const msg = input.value.trim();
       if (!msg) return;
-      
+
       addMsg(msg, true);
       input.value = '';
-      
+
       // Mostrar indicador de "escribiendo"
       const thinkingMsg = addMsg('🤔 Pensando...', false);
-      
+
       try {
         const response = await getGeminiResponse(msg);
         // Remover mensaje de "pensando"
@@ -6204,4 +6448,5 @@ Enviado desde tu portafolio web
   </script>
   <script src="app.js"></script>
 </body>
+
 </html>
