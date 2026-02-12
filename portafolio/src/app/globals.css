@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@import "tailwindcss";
+
+:root {
+  --background-light: #F5F5F7; /* Very light gray background */
+  --background-card: #FFFFFF; /* White for cards */
+  --text-primary: #1D1D1F;    /* Dark gray for primary text */
+  --text-secondary: #6E6E73;  /* Medium gray for secondary text */
+  --accent-blue: #007AFF;     /* Apple Blue */
+  --accent-green: #34C759;    /* Apple Green */
+  --accent-red: #FF3B30;      /* Apple Red */
+  --border-color: #E0E0E0;    /* Light gray border */
+  --card-hover: #F0F0F5;      /* Slightly darker light gray for hover */
+}
+
+body {
+  background-color: var(--background-light);
+  color: var(--text-primary);
+}
