@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PriceCheck - Verificador de Precios Kiosko</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="background-gradient"></div>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-barcode" style="color: var(--primary-light);"></i>
+                Price<span class="highlight">Check</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Características</a>
+                <a href="#security">Seguridad</a>
+                <a href="technical.html" style="color: var(--accent);">Arquitectura Técnica</a>
+                <a href="../index.html" class="btn-nav">Volver al Portfolio</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="badge">Enterprise Ready v1.0</span>
+                <h1>Verificador de Precios Unbreakable</h1>
+                <p>Transforma cualquier tablet Android en un kiosco de información seguro, con publicidad dinámica y sincronización en tiempo real.</p>
+                <div class="cta-group">
+                    <a href="../downloads/pricecheck-latest.apk" class="btn-download">
+                        <i class="fab fa-android"></i>
+                        <div class="btn-text">
+                            <span>Descargar</span>
+                            <strong>Android (APK)</strong>
+                        </div>
+                    </a>
+                    <p class="file-info">v1.0.4 • Debug Build • 25 MB</p>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="phone-mockup">
+                    <!-- Placeholder image - User should put kiosk_ads.png here -->
+                    <img src="../images/pricecheck/kiosk_ads.png" alt="PriceCheck Kiosk Mode"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="floating-card card-1">
+                    <i class="fas fa-lock"></i>
+                    <span>Kiosk Mode</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-sync"></i>
+                    <span>Real-time API</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Solución Líder para Retail</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fas fa-tv"></i></div>
+                    <h3>Publicidad Dinámica</h3>
+                    <p>Carrusel multimedia con ExoPlayer que reproduce ofertas mientras el dispositivo está en espera.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Seguridad de Grado IT</h3>
+                    <p>Acceso restringido por password con temporizador de seguridad de 30 segundos y bloqueo de sistema.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fas fa-bolt"></i></div>
+                    <h3>Consulta Ultra-Rápida</h3>
+                    <p>Integración con Retrofit y optimización de UI para mostrar precios en milisegundos tras el escaneo.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fas fa-palette"></i></div>
+                    <h3>Personalización de Branding</h3>
+                    <p>Temas dinámicos (Rojo/Blanco, Oscuro) y carga de logo de tienda desde el panel de configuración.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 PriceCheck. Desarrollado por <a href="../index.html" target="_blank">Jorge A. Centeno</a>.</p>
+        </div>
+    </footer>
+</body>
+</html>

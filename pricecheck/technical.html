@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PriceCheck - Arquitectura y Seguridad Kiosko</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Fira+Code&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .tech-hero { padding-top: 120px; padding-bottom: 60px; text-align: center; }
+        .section-title { font-size: 2rem; margin-bottom: 40px; color: var(--primary-light); border-left: 4px solid var(--accent); padding-left: 20px; }
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 80px; }
+        .tech-card { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); padding: 30px; border-radius: 20px; }
+        .code-block { background: #0a0a0a; padding: 15px; border-radius: 10px; font-family: 'Fira Code', monospace; font-size: 0.85rem; color: #EF5350; overflow-x: auto; border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+
+<body>
+    <div class="background-gradient"></div>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-barcode" style="color: var(--primary-light);"></i>
+                Price<span class="highlight">Check</span> <span style="font-size: 0.8rem; opacity: 0.7;">| Research</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">App</a>
+                <a href="#kiosk">Kiosk Mode</a>
+                <a href="#security">Seguridad</a>
+                <a href="#api">API/Retrofit</a>
+                <a href="index.html" class="btn-nav">Volver</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="tech-hero container">
+        <h1>Arquitectura Kiosko de Alta Seguridad</h1>
+        <p style="max-width: 700px; margin: 0 auto; color: var(--text-muted); font-size: 1.1rem;">
+            Análisis técnico de la implementación de bloqueo de sistema, gestión de publicidad y seguridad en dispositivos retail.
+        </p>
+    </header>
+
+    <section id="kiosk" class="container">
+        <h2 class="section-title">1. Implementación de Kiosk Mode (Lock Task)</h2>
+        <div class="tech-grid">
+            <div class="tech-card">
+                <h3><i class="fas fa-lock"></i> Bloqueo de Sistema</h3>
+                <p>Uso de <code>startLockTask()</code> y configuración de la app como <strong>Home Launcher</strong> en el AndroidManifest. Esto previene que el usuario salga de la aplicación mediante gestos o botones físicos.</p>
+                <div class="code-block">
+                    &lt;category android:name="android.intent.category.HOME" /&gt;
+                    &lt;category android:name="android.intent.category.DEFAULT" /&gt;
+                </div>
+            </div>
+            <div class="tech-card">
+                <h3><i class="fas fa-expand"></i> Immersive Sticky Mode</h3>
+                <p>Ocultación sistemática de barras de estado y navegación con la clase <code>WindowInsetsControllerCompat</code>, asegurando que la interfaz ocupe el 100% de la pantalla sin distracciones.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="security" class="container" style="margin-top: 80px;">
+        <h2 class="section-title">2. Capa de Seguridad y Timeouts</h2>
+        <div class="tech-grid">
+            <div class="tech-card" style="grid-column: span 2;">
+                <h3><i class="fas fa-user-shield"></i> Acceso Protegido por IT</h3>
+                <p>Las funciones críticas (ajustes de red, URLs de API) están protegidas por un login administrativo. Se ha implementado un <strong>temporizador reactivo</strong> de 30 segundos.</p>
+                <div class="code-block">
+                    LaunchedEffect(Unit) {
+                        while (secondsRemaining > 0) {
+                            delay(1000)
+                            secondsRemaining--
+                        }
+                        navController.popBackStack() // Auto-exit
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="api" class="container" style="margin-top: 80px;">
+        <h2 class="section-title">3. Arquitectura de Datos Reactiva</h2>
+        <div class="tech-grid">
+            <div class="tech-card">
+                <h3><i class="fas fa-exchange-alt"></i> Retrofit & MVVM</h3>
+                <p>Comunicación asíncrona mediante corrutinas de Kotlin para la consulta de productos. Uso de StateFlow para propagar cambios de la API a la UI en tiempo real.</p>
+            </div>
+            <div class="tech-card">
+                <h3><i class="fas fa-photo-video"></i> Media3 & ExoPlayer</h3>
+                <p>Gestión eficiente de recursos multimedia para la publicidad. Cacheo inteligente de videos para funcionamiento estable incluso ante fluctuaciones de ancho de banda.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 PriceCheck Technical. Desarrollado por Jorge A. Centeno.</p>
+        </div>
+    </footer>
+</body>
+</html>
