@@ -4340,6 +4340,10 @@
             <!-- The user should save the provided image as "images/mdpi_publication.png" -->
             <img src="images/mdpi_publication.png" alt="Applied Sciences Publication" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.9); transition: transform 0.5s ease;" class="pub-img" onerror="this.src='https://images.unsplash.com/photo-1456324504439-367cee3b3c32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'; this.onerror=null;">
             <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--bg-card) 0%, transparent 80%);"></div>
+            <!-- Functional QR code overlay to ensure scannability -->
+            <div style="position: absolute; bottom: 20px; right: 20px; background: white; padding: 6px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.4); z-index: 3;">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://doi.org/10.3390/app16052399" alt="QR Code a Publicación" style="width: 75px; height: 75px; display: block; filter: none;">
+            </div>
             <div style="position: absolute; top: 20px; right: 20px;">
               <span style="background: rgba(16, 185, 129, 0.2); color: #10b981; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; border: 1px solid rgba(16, 185, 129, 0.3); backdrop-filter: blur(4px); box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
                 ⭐ OPEN ACCESS
