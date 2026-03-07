@@ -4334,42 +4334,56 @@
       <h2 class="section-title gradient-text">Publicaciones Científicas</h2>
 
       <div class="projects-grid" style="grid-template-columns: 1fr; max-width: 900px; margin: 0 auto;">
-        <div class="project-card">
-          <div class="project-content">
-            <div class="project-header">
-              <div class="project-icon" style="background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));">📚</div>
-              <div class="project-status" style="color: var(--accent-green); font-weight: 600;">Publicado - Febrero 2026</div>
+        <div class="project-card publication-card" style="padding: 0; overflow: hidden; border: 1px solid rgba(59, 130, 246, 0.3); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(59, 130, 246, 0.1);">
+          <!-- Image Banner Section -->
+          <div style="width: 100%; height: 280px; position: relative; overflow: hidden; background: var(--bg-elevated);">
+            <!-- The user should save the provided image as "images/mdpi_publication.png" -->
+            <img src="images/mdpi_publication.png" alt="Applied Sciences Publication" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.9); transition: transform 0.5s ease;" class="pub-img" onerror="this.src='https://images.unsplash.com/photo-1456324504439-367cee3b3c32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'; this.onerror=null;">
+            <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--bg-card) 0%, transparent 80%);"></div>
+            <div style="position: absolute; top: 20px; right: 20px;">
+              <span style="background: rgba(16, 185, 129, 0.2); color: #10b981; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; border: 1px solid rgba(16, 185, 129, 0.3); backdrop-filter: blur(4px); box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                ⭐ OPEN ACCESS
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Section -->
+          <div class="project-content" style="padding: 0 40px 50px 40px; position: relative; z-index: 2; margin-top: -30px;">
+            <div class="project-header" style="margin-bottom: 25px;">
+              <div class="project-icon" style="background: linear-gradient(135deg, var(--accent-green), var(--accent-blue)); width: 50px; height: 50px; font-size: 24px; box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);">📚</div>
+              <div class="project-status" style="color: var(--accent-green); font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Publicado - Febrero 2026</div>
             </div>
 
-            <h3 style="font-size: 26px; line-height: 1.4; margin-bottom: 20px;">
+            <h3 style="font-size: 28px; font-weight: 800; line-height: 1.35; margin-bottom: 20px; background: linear-gradient(to right, #ffffff, #a1a1aa); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
               Precision Agriculture Management System and Traceability Architecture in Specialty Coffee Farms in Chiriquí, Panama
             </h3>
 
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 25px;">
-              <p style="color: var(--text-primary); margin-bottom: 8px;">
-                <strong>Revista:</strong> Applied Sciences (Appl. Sci. 2026, Volume 16, Issue 5, 2399) - MDPI
+            <div style="background: rgba(59, 130, 246, 0.05); border-left: 4px solid var(--accent-blue); padding: 20px 25px; margin-bottom: 25px; border-radius: 0 12px 12px 0;">
+              <p style="color: var(--text-primary); margin-bottom: 10px; font-size: 15px;">
+                <strong style="color: var(--accent-blue);">Revista:</strong> Applied Sciences (Appl. Sci. 2026, Volume 16, Issue 5, 2399) - MDPI
               </p>
-              <p style="color: var(--text-primary); margin-bottom: 0;">
-                <strong>Autores:</strong> Elia E. Cano; Milva Eileen Justavino-Castillo; 
-                <span style="color: var(--accent-blue); font-weight: 600;">Jorge Centeno (Coautor)</span>; 
+              <p style="color: var(--text-primary); margin-bottom: 0; font-size: 15px; line-height: 1.6;">
+                <strong style="color: var(--accent-blue);">Autores:</strong> Elia E. Cano; Milva Eileen Justavino-Castillo; 
+                <span style="background: rgba(59, 130, 246, 0.15); color: var(--accent-blue); padding: 3px 10px; border-radius: 6px; font-weight: 600; display: inline-block; margin: 0 4px; box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.3);">Jorge Centeno (Coautor)</span>; 
                 Marlín Villamil-Barrios; Aracelly Vega; Carlos Alvino Rovetto
               </p>
             </div>
 
-            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 25px;">
+            <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 35px; font-size: 16px;">
               Diseño e implementación de un marco de trabajo integrado que combina Sistemas de Gestión de Agricultura de Precisión (PAMSs) con una arquitectura de trazabilidad. El sistema utiliza una aplicación móvil operando bajo una arquitectura descentralizada con tecnología blockchain para asegurar la recolección y sincronización de datos biométricos de los granos de especialidad y preservar el origen geográfico en entornos offline.
             </p>
 
-            <div class="project-tags">
-              <span class="tech-tag tech-backend">Arquitectura Descentralizada</span>
-              <span class="tech-tag tech-data">Traceability</span>
-              <span class="tech-tag tech-backend">Blockchain Privada</span>
-              <span class="tech-tag tech-android">Mobile Offline Sync</span>
+            <div class="project-tags" style="gap: 12px; margin-bottom: 40px;">
+              <span class="tech-tag" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3); color: #c4b5fd;">🔗 Blockchain Privada</span>
+              <span class="tech-tag" style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3); color: #93c5fd;">📱 Mobile Offline Sync</span>
+              <span class="tech-tag" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #6ee7b7;">🌱 Traceability</span>
+              <span class="tech-tag" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); color: #fcd34d;">⚙️ Arq. Descentralizada</span>
             </div>
 
-            <div style="margin-top: 30px;">
-              <a href="https://doi.org/10.3390/app16052399" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size: 14px; padding: 12px 24px;">
-                📄 Leer Publicación en MDPI
+            <div>
+              <a href="https://doi.org/10.3390/app16052399" target="_blank" rel="noopener" class="btn btn-primary" style="font-size: 15px; padding: 14px 28px; border-radius: 12px; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                Leer Publicación en MDPI
               </a>
             </div>
           </div>
