@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01_Módulos/M1_Analisis_vs_Reportes.md",
+                "file": "Inicio.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "M1_Analisis_vs_Reportes"
+              "title": "Inicio"
             }
           }
         ]
@@ -54,7 +54,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "[\"aliases\"]",
+                "query": "[\"titulo\"]",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -80,7 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "7d95b6588932cf18",
@@ -124,14 +124,19 @@
   },
   "active": "ac9ffb9691df1a96",
   "lastOpenFiles": [
-    "Inicio.md",
-    "01_Módulos/M1_Analisis_vs_Reportes.md",
-    "Sin título.canvas",
-    "Mapa_del_Curso.canvas",
     "01_Módulos/M2_Proceso_Analisis.md",
+    "Mapa_del_Curso.canvas",
+    "Mapa_del_Curso.png",
+    "Inicio.md",
+    "Inicio.pdf",
+    "01_Módulos/M8_Big_Data_PySpark.md",
+    "01_Módulos/Laboratorios.md",
+    "01_Módulos/M1_Analisis_vs_Reportes.md",
+    "M1_Analisis_vs_Reportes.pdf",
+    "Archivos_Adjuntos/banner_maritimo.png",
+    "Sin título.canvas",
     "04_Recursos/Manual_Python_Maritimo.md",
     "04_Recursos/Fuentes_de_Datos.md",
-    "01_Módulos/Laboratorios.md",
     "02_Datasets/lloyds_register.csv",
     "02_Datasets/flota_historial.csv",
     "02_Datasets/corozal_ops.csv",
@@ -140,15 +145,11 @@
     "03_Notebooks/M7_Proyecto_Final.ipynb",
     "03_Notebooks/M6_Eficiencia_CII.ipynb",
     "03_Notebooks/M5_Auditoria_Calidad.ipynb",
-    "03_Notebooks/M4_Mineria_Flota.ipynb",
-    "03_Notebooks/M3_Analisis_Corozal.ipynb",
-    "01_Módulos/M8_Big_Data_PySpark.md",
     "01_Módulos/M7_Competencias.md",
     "01_Módulos/M6_Aplicaciones_CII.md",
     "01_Módulos/M5_Calidad_Dato.md",
     "01_Módulos/M4_Mineria_Datos.md",
     "01_Módulos/M3_Tipos_Analisis.md",
-    "Archivos_Adjuntos/banner_maritimo.png",
     "Home.md",
     "04_Recursos/Glosario.md"
   ]
