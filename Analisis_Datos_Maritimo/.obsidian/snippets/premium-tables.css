@@ -1,0 +1,48 @@
+/* Premium Tables Snippet */
+.markdown-rendered table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    margin: 1.5em 0;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.markdown-rendered th {
+    background: linear-gradient(135deg, #0f6e56 0%, #004d40 100%);
+    color: white !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+    padding: 12px 15px;
+    border: none;
+    text-align: left;
+}
+
+.markdown-rendered td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--background-modifier-border);
+    font-size: 0.95em;
+}
+
+.markdown-rendered tr:last-child td {
+    border-bottom: none;
+}
+
+.markdown-rendered tr:nth-child(even) {
+    background-color: var(--background-secondary-alt);
+}
+
+.markdown-rendered tr:hover {
+    background-color: var(--background-modifier-hover);
+    transition: background-color 0.2s ease;
+}
+
+/* Specific styling for the :--- part removal style if possible, 
+   but since that's functional Markdown, we just hide the default thin borders */
+.markdown-rendered thead th {
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+}

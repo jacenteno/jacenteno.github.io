@@ -1,0 +1,26 @@
+{
+	"nodes":[
+		{"id":"group-modules","type":"group","x":-100,"y":-150,"width":1950,"height":1050,"color":"4","label":"CONTENIDO ACADÉMICO"},
+		{"id":"group-intro","type":"group","x":-680,"y":840,"width":450,"height":350,"color":"1","label":"PRÁCTICA Y TAREAS"},
+		{"id":"m1","type":"file","file":"01_Módulos/M1_Analisis_vs_Reportes.md","x":0,"y":0,"width":400,"height":350},
+		{"id":"m2","type":"file","file":"01_Módulos/M2_Proceso_Analisis.md","x":450,"y":0,"width":400,"height":350},
+		{"id":"m3","type":"file","file":"01_Módulos/M3_Tipos_Analisis.md","x":950,"y":0,"width":400,"height":350},
+		{"id":"m5","type":"file","file":"01_Módulos/M5_Calidad_Dato.md","x":0,"y":450,"width":400,"height":350},
+		{"id":"m6","type":"file","file":"01_Módulos/M6_Aplicaciones_CII.md","x":450,"y":450,"width":400,"height":350},
+		{"id":"home","type":"file","file":"Inicio.md","x":-600,"y":-150,"width":400,"height":650,"color":"2"},
+		{"id":"m4","type":"file","file":"01_Módulos/M4_Mineria_Datos.md","x":1400,"y":0,"width":400,"height":350},
+		{"id":"m7","type":"file","file":"01_Módulos/M7_Competencias.md","x":950,"y":450,"width":400,"height":350},
+		{"id":"m8","type":"file","file":"01_Módulos/M8_Big_Data_PySpark.md","x":1400,"y":450,"width":400,"height":350},
+		{"id":"labs","type":"file","file":"01_Módulos/Laboratorios.md","x":-630,"y":920,"width":350,"height":200},
+		{"id":"header","type":"text","text":"# 🚢 Ruta de Aprendizaje: Maestría UMIP\nEstructura integrada con Laboratorios y Google Colab.","x":-680,"y":-520,"width":800,"height":180}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"home","fromSide":"right","toNode":"m1","toSide":"left"},
+		{"id":"e_labs","fromNode":"home","fromSide":"bottom","toNode":"labs","toSide":"top"},
+		{"id":"e-m1-m2","fromNode":"m1","fromSide":"right","toNode":"m2","toSide":"left"},
+		{"id":"e-m2-m3","fromNode":"m2","fromSide":"right","toNode":"m3","toSide":"left"},
+		{"id":"e-m3-m4","fromNode":"m3","fromSide":"right","toNode":"m4","toSide":"left"},
+		{"id":"e-m4-m8","fromNode":"m4","fromSide":"bottom","toNode":"m8","toSide":"top"},
+		{"id":"e-m8-m7","fromNode":"m8","fromSide":"left","toNode":"m7","toSide":"right"}
+	]
+}
