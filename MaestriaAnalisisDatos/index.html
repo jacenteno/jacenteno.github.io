@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <title>Maestría Análisis de Datos · Jorge Centeno</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dashboard de la Maestría en Análisis de Datos Marítimos. Módulos, Notebooks y Recursos.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-dark: #0a0e27;
+      --bg-card: #151932;
+      --bg-elevated: #1a1f3a;
+      --text-primary: #e4e4e7;
+      --text-secondary: #a1a1aa;
+      --accent-blue: #3b82f6;
+      --accent-purple: #8b5cf6;
+      --accent-pink: #ec4899;
+      --accent-green: #10b981;
+      --accent-orange: #f59e0b;
+      --border: rgba(255, 255, 255, 0.1);
+      --glow-blue: rgba(59, 130, 246, 0.4);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Background Blobs */
+    .bg-gradient {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    .gradient-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: float 20s infinite ease-in-out;
+    }
+
+    .blob-1 {
+      width: 500px;
+      height: 500px;
+      background: var(--accent-blue);
+      top: -200px;
+      left: -200px;
+    }
+
+    .blob-2 {
+      width: 400px;
+      height: 400px;
+      background: var(--accent-purple);
+      bottom: -150px;
+      right: -150px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -30px) scale(1.05); }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 20px;
+      transition: all 0.3s;
+    }
+
+    .back-link:hover {
+      transform: translateX(-5px);
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 40px 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title span {
+      width: 40px;
+      height: 2px;
+      background: var(--accent-blue);
+    }
+
+    /* Grid Layout */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-blue);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      background: var(--bg-elevated);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(59, 130, 246, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: var(--accent-blue);
+    }
+
+    .card h3 {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-md { background: rgba(59, 130, 246, 0.2); color: var(--accent-blue); }
+    .badge-ipynb { background: rgba(245, 158, 11, 0.2); color: var(--accent-orange); }
+    .badge-pdf { background: rgba(236, 72, 153, 0.2); color: var(--accent-pink); }
+
+    /* Map Section */
+    .map-section {
+      margin-top: 60px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .map-section img {
+      max-width: 100%;
+      border-radius: 15px;
+      margin-top: 20px;
+      border: 1px solid var(--border);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-gradient">
+    <div class="gradient-blob blob-1"></div>
+    <div class="gradient-blob blob-2"></div>
+  </div>
+
+  <div class="container">
+    <a href="../index.html" class="back-link">← Volver al Portfolio</a>
+    
+    <header>
+      <h1>Maestría Análisis de Datos Marítimos</h1>
+      <p class="subtitle">Recursos académicos, laboratorios y cuadernos de análisis de datos para el sector portuario y marítimo.</p>
+    </header>
+
+    <h2 class="section-title"><span></span> Módulos Académicos</h2>
+    <div class="grid">
+      <a href="01_Módulos/M1_Analisis_vs_Reportes.md" class="card">
+        <div class="card-icon">📊</div>
+        <div>
+          <span class="badge badge-md">Módulo 1</span>
+          <h3>Análisis vs Reportes</h3>
+          <p>Diferenciación conceptual y fundamentos del análisis de datos.</p>
+        </div>
+      </a>
+      <a href="01_Módulos/M2_Proceso_Analisis.md" class="card">
+        <div class="card-icon">⚙️</div>
+        <div>
+          <span class="badge badge-md">Módulo 2</span>
+          <h3>Proceso de Análisis</h3>
+          <p>Metodología y ciclo de vida del dato marítimo.</p>
+        </div>
+      </a>
+      <a href="01_Módulos/M3_Tipos_Analisis.md" class="card">
+        <div class="card-icon">🔍</div>
+        <div>
+          <span class="badge badge-md">Módulo 3</span>
+          <h3>Tipos de Análisis</h3>
+          <p>Descriptivo, diagnóstico, predictivo y prescriptivo.</p>
+        </div>
+      </a>
+      <a href="01_Módulos/M4_Mineria_Datos.md" class="card">
+        <div class="card-icon">⛏️</div>
+        <div>
+          <span class="badge badge-md">Módulo 4</span>
+          <h3>Minería de Datos</h3>
+          <p>Extracción de patrones y conocimiento en flotas.</p>
+        </div>
+      </a>
+      <a href="01_Módulos/M5_Calidad_Dato.md" class="card">
+        <div class="card-icon">🛡️</div>
+        <div>
+          <span class="badge badge-md">Módulo 5</span>
+          <h3>Calidad del Dato</h3>
+          <p>Gobernanza y auditoría de datos AIS y operativos.</p>
+        </div>
+      </a>
+      <a href="01_Módulos/M6_Aplicaciones_CII.md" class="card">
+        <div class="card-icon">🚢</div>
+        <div>
+          <span class="badge badge-md">Módulo 6</span>
+          <h3>Aplicaciones CII</h3>
+          <p>Eficiencia energética y cumplimiento normativo marítimo.</p>
+        </div>
+      </a>
+      <a href="01_Módulos/M7_Competencias.md" class="card">
+        <div class="card-icon">🎓</div>
+        <div>
+          <span class="badge badge-md">Módulo 7</span>
+          <h3>Competencias</h3>
+          <p>Habilidades requeridas para el analista de datos moderno.</p>
+        </div>
+      </a>
+      <a href="01_Módulos/M8_Big_Data_PySpark.md" class="card">
+        <div class="card-icon">⚡</div>
+        <div>
+          <span class="badge badge-md">Módulo 8</span>
+          <h3>Big Data & PySpark</h3>
+          <p>Procesamiento distribuido de grandes volúmenes de datos AIS.</p>
+        </div>
+      </a>
+    </div>
+
+    <h2 class="section-title"><span></span> Notebooks (Laboratorios)</h2>
+    <div class="grid">
+      <a href="03_Notebooks/M1_Analisis_Puerto.ipynb" class="card">
+        <div class="card-icon">📓</div>
+        <div>
+          <span class="badge badge-ipynb">Lab 1</span>
+          <h3>Análisis de Puerto</h3>
+          <p>Exploración inicial de datos portuarios en Python.</p>
+        </div>
+      </a>
+      <a href="03_Notebooks/M2_Limpieza_AIS.ipynb" class="card">
+        <div class="card-icon">🧹</div>
+        <div>
+          <span class="badge badge-ipynb">Lab 2</span>
+          <h3>Limpieza AIS</h3>
+          <p>Preprocesamiento y limpieza de trayectorias marítimas.</p>
+        </div>
+      </a>
+      <a href="03_Notebooks/M3_Analisis_Corozal.ipynb" class="card">
+        <div class="card-icon">📍</div>
+        <div>
+          <span class="badge badge-ipynb">Lab 3</span>
+          <h3>Análisis Corozal</h3>
+          <p>Estudio de caso específico sobre datos de Corozal.</p>
+        </div>
+      </a>
+      <a href="03_Notebooks/M4_Mineria_Flota.ipynb" class="card">
+        <div class="card-icon">🧩</div>
+        <div>
+          <span class="badge badge-ipynb">Lab 4</span>
+          <h3>Minería de Flota</h3>
+          <p>Clustering y patrones de movimiento de barcos.</p>
+        </div>
+      </a>
+      <a href="03_Notebooks/M5_Auditoria_Calidad.ipynb" class="card">
+        <div class="card-icon">🧪</div>
+        <div>
+          <span class="badge badge-ipynb">Lab 5</span>
+          <h3>Calidad del Dato</h3>
+          <p>Auditoría y validación de datasets marítimos.</p>
+        </div>
+      </a>
+      <a href="03_Notebooks/M6_Eficiencia_CII.ipynb" class="card">
+        <div class="card-icon">📉</div>
+        <div>
+          <span class="badge badge-ipynb">Lab 6</span>
+          <h3>Eficiencia CII</h3>
+          <p>Cálculo y monitoreo de indicadores de eficiencia.</p>
+        </div>
+      </a>
+      <a href="03_Notebooks/M7_Proyecto_Final.ipynb" class="card">
+        <div class="card-icon">🏆</div>
+        <div>
+          <span class="badge badge-ipynb">Lab 7</span>
+          <h3>Proyecto Final</h3>
+          <p>Integración de todas las fases del proceso analítico.</p>
+        </div>
+      </a>
+      <a href="03_Notebooks/M8_Spark_AIS.ipynb" class="card">
+        <div class="card-icon">🔥</div>
+        <div>
+          <span class="badge badge-ipynb">Lab 8</span>
+          <h3>Spark AIS</h3>
+          <p>Escalamiento de análisis con Apache Spark.</p>
+        </div>
+      </a>
+    </div>
+
+    <h2 class="section-title"><span></span> Recursos y PDFs</h2>
+    <div class="grid">
+      <a href="Inicio.pdf" class="card">
+        <div class="card-icon">📄</div>
+        <div>
+          <span class="badge badge-pdf">PDF</span>
+          <h3>Guía de Inicio</h3>
+          <p>Introducción general al programa de maestría.</p>
+        </div>
+      </a>
+      <a href="M1_Analisis_vs_Reportes.pdf" class="card">
+        <div class="card-icon">📖</div>
+        <div>
+          <span class="badge badge-pdf">PDF</span>
+          <h3>Material Lectura M1</h3>
+          <p>Contenido extendido del primer módulo.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="map-section">
+      <h2 class="section-title" style="justify-content: center;">Mapa del Curso</h2>
+      <img src="Mapa_del_Curso.png" alt="Mapa del Curso Maestría Análisis de Datos">
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Jorge Centeno · Maestría en Análisis de Datos Marítimos</p>
+    </footer>
+  </div>
+</body>
+
+</html>
