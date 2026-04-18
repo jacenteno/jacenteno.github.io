@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <title>Visor de Módulos · Maestría Análisis de Datos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-dark: #0a0e27;
+      --bg-sidebar: #0f1430;
+      --bg-card: #151932;
+      --text-primary: #e4e4e7;
+      --text-secondary: #a1a1aa;
+      --accent-blue: #3b82f6;
+      --accent-purple: #8b5cf6;
+      --border: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Sidebar */
+    aside {
+      width: 300px;
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border);
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      overflow-y: auto;
+      padding: 40px 20px;
+      z-index: 100;
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar-header {
+      margin-bottom: 40px;
+    }
+
+    .sidebar-header h2 {
+      font-size: 18px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-group {
+      margin-bottom: 30px;
+    }
+
+    .nav-group-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      padding-left: 10px;
+    }
+
+    .nav-links { list-style: none; }
+
+    .nav-links a {
+      display: block;
+      padding: 10px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      border-radius: 8px;
+      transition: all 0.2s;
+      margin-bottom: 4px;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--accent-blue);
+    }
+
+    /* Main Content */
+    main {
+      flex: 1;
+      margin-left: 300px;
+      padding: 60px 40px;
+      max-width: 1200px;
+    }
+
+    .content-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      padding: 60px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+
+    /* Markdown Styling */
+    #content { line-height: 1.8; }
+    #content h1 { font-size: 36px; margin-bottom: 30px; letter-spacing: -1px; }
+    #content h2 { font-size: 28px; margin: 40px 0 20px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+    #content p { margin-bottom: 20px; color: var(--text-secondary); }
+    #content code { background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+    #content pre { background: #05081a; padding: 20px; border-radius: 12px; overflow-x: auto; margin: 20px 0; border: 1px solid var(--border); }
+    #content ul, #content ol { margin: 20px 0 20px 20px; color: var(--text-secondary); }
+    #content li { margin-bottom: 10px; }
+    #content img { max-width: 100%; border-radius: 12px; margin: 20px 0; }
+    #content blockquote { border-left: 4px solid var(--accent-blue); padding-left: 20px; color: var(--text-secondary); font-style: italic; margin: 30px 0; }
+
+    /* Back Link */
+    .btn-back {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Mobile Toggle */
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--accent-blue);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      z-index: 1000;
+      border: none;
+      color: white;
+      font-size: 24px;
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+    }
+
+    @media (max-width: 900px) {
+      aside { transform: translateX(-100%); width: 260px; }
+      aside.open { transform: translateX(0); }
+      main { margin-left: 0; padding: 40px 20px; }
+      .content-wrapper { padding: 30px; }
+      .menu-toggle { display: block; }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <h2>Maestría Datos</h2>
+    </div>
+
+    <div class="nav-group">
+      <p class="nav-group-title">Módulos</p>
+      <ul class="nav-links">
+        <li><a href="?file=01_Modulos/M1_Analisis_vs_Reportes.md" data-file="01_Modulos/M1_Analisis_vs_Reportes.md">M1. Análisis vs Reportes</a></li>
+        <li><a href="?file=01_Modulos/M2_Proceso_Analisis.md" data-file="01_Modulos/M2_Proceso_Analisis.md">M2. Proceso de Análisis</a></li>
+        <li><a href="?file=01_Modulos/M3_Tipos_Analisis.md" data-file="01_Modulos/M3_Tipos_Analisis.md">M3. Tipos de Análisis</a></li>
+        <li><a href="?file=01_Modulos/M4_Mineria_Datos.md" data-file="01_Modulos/M4_Mineria_Datos.md">M4. Minería de Datos</a></li>
+        <li><a href="?file=01_Modulos/M5_Calidad_Dato.md" data-file="01_Modulos/M5_Calidad_Dato.md">M5. Calidad del Dato</a></li>
+        <li><a href="?file=01_Modulos/M6_Aplicaciones_CII.md" data-file="01_Modulos/M6_Aplicaciones_CII.md">M6. Aplicaciones CII</a></li>
+        <li><a href="?file=01_Modulos/M7_Competencias.md" data-file="01_Modulos/M7_Competencias.md">M7. Competencias</a></li>
+        <li><a href="?file=01_Modulos/M8_Big_Data_PySpark.md" data-file="01_Modulos/M8_Big_Data_PySpark.md">M8. Big Data & PySpark</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-group">
+      <p class="nav-group-title">Notebooks</p>
+      <ul class="nav-links">
+        <li><a href="?file=03_Notebooks/M1_Analisis_Puerto.ipynb" data-file="03_Notebooks/M1_Analisis_Puerto.ipynb">Lab 1. Análisis Puerto</a></li>
+        <li><a href="?file=03_Notebooks/M2_Limpieza_AIS.ipynb" data-file="03_Notebooks/M2_Limpieza_AIS.ipynb">Lab 2. Limpieza AIS</a></li>
+        <li><a href="?file=03_Notebooks/M3_Analisis_Corozal.ipynb" data-file="03_Notebooks/M3_Analisis_Corozal.ipynb">Lab 3. Análisis Corozal</a></li>
+        <li><a href="?file=03_Notebooks/M4_Mineria_Flota.ipynb" data-file="03_Notebooks/M4_Mineria_Flota.ipynb">Lab 4. Minería Flota</a></li>
+        <li><a href="?file=03_Notebooks/M5_Auditoria_Calidad.ipynb" data-file="03_Notebooks/M5_Auditoria_Calidad.ipynb">Lab 5. Calidad Dato</a></li>
+        <li><a href="?file=03_Notebooks/M6_Eficiencia_CII.ipynb" data-file="03_Notebooks/M6_Eficiencia_CII.ipynb">Lab 6. Eficiencia CII</a></li>
+        <li><a href="?file=03_Notebooks/M7_Proyecto_Final.ipynb" data-file="03_Notebooks/M7_Proyecto_Final.ipynb">Lab 7. Proyecto Final</a></li>
+        <li><a href="?file=03_Notebooks/M8_Spark_AIS.ipynb" data-file="03_Notebooks/M8_Spark_AIS.ipynb">Lab 8. Spark AIS</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-group">
+      <p class="nav-group-title">Recursos</p>
+      <ul class="nav-links">
+        <li><a href="?file=Inicio.md" data-file="Inicio.md">Guía de Inicio</a></li>
+        <li><a href="?file=04_Recursos/Fuentes_de_Datos.md" data-file="04_Recursos/Fuentes_de_Datos.md">Fuentes de Datos</a></li>
+        <li><a href="?file=04_Recursos/Glosario.md" data-file="04_Recursos/Glosario.md">Glosario</a></li>
+        <li><a href="?file=04_Recursos/Manual_Python_Maritimo.md" data-file="04_Recursos/Manual_Python_Maritimo.md">Manual Python</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-group">
+      <p class="nav-group-title">Volver</p>
+      <ul class="nav-links">
+        <li><a href="index.html">← Panel Principal</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main>
+    <a href="index.html" class="btn-back">← Dashboard</a>
+    <div class="content-wrapper">
+      <div id="content">Cargando contenido...</div>
+    </div>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+
+    async function loadContent() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const fileName = urlParams.get('file');
+      const contentDiv = document.getElementById('content');
+
+      if (!fileName) {
+        contentDiv.innerHTML = '<h1>Bienvenido</h1><p>Selecciona un módulo en el menú lateral para comenzar.</p>';
+        return;
+      }
+
+      // Marcar link activo
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        if (a.getAttribute('data-file') === fileName) a.classList.add('active');
+        else a.classList.remove('active');
+      });
+
+      try {
+        if (fileName.endsWith('.ipynb')) {
+          const githubPath = 'jacenteno/jacenteno.github.io/blob/main/MaestriaAnalisisDatos/' + fileName;
+          contentDiv.innerHTML = `<h1>Notebook Jupyter</h1><p>Los archivos .ipynb son complejos para mostrar directamente. Haz clic abajo para verlo en el visor oficial:</p>
+          <a href="https://nbviewer.org/github/${githubPath}" target="_blank" class="card" style="margin-top:20px; text-align:center; display:block;">
+            <div class="card-icon" style="margin: 0 auto 10px;">📓</div>
+            <h3>Abrir en NBViewer</h3>
+            <p>Ver cuaderno interactivo con todos los gráficos y código.</p>
+          </a>`;
+          return;
+        }
+
+        const response = await fetch(fileName);
+        if (!response.ok) throw new Error('No se pudo cargar el archivo');
+        const text = await response.text();
+        
+        // Configurar marked para permitir HTML y manejar rutas de imágenes
+        marked.setOptions({
+          headerIds: true,
+          gfm: true,
+          breaks: true
+        });
+
+        contentDiv.innerHTML = marked.parse(text);
+        
+        // Ajustar rutas de imágenes si es necesario
+        contentDiv.querySelectorAll('img').forEach(img => {
+          const src = img.getAttribute('src');
+          if (src && !src.startsWith('http')) {
+            // Si la imagen está en Archivos_Adjuntos, ajustar la ruta
+            // Por ahora asumimos que las rutas en el MD son relativas al archivo MD
+            // o a la raíz de la carpeta MaestriaAnalisisDatos
+          }
+        });
+
+      } catch (error) {
+        contentDiv.innerHTML = '<h1>Error</h1><p>No se pudo cargar el contenido: ' + fileName + '</p>';
+        console.error(error);
+      }
+    }
+
+    window.onload = loadContent;
+    window.onpopstate = loadContent; // Soporte para navegación atrás/adelante
+  </script>
+</body>
+
+</html>
